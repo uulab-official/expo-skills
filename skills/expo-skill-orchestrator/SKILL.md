@@ -1,6 +1,6 @@
 ---
 name: expo-skill-orchestrator
-description: Route broad Expo app requests to the right Expo skills and drive the work end to end. Use when the user asks to create an app, add a feature, choose backend/release options, prepare a store submission, or says a vague request such as "build this Expo app", "make it production-ready", "set up everything", or "what skills do I need".
+description: Route broad Expo app requests to the right Expo skills and drive the work end to end. Use when the user asks to create an app, shape an app idea, add a feature, choose backend/release options, prepare a store submission, or says a vague request such as "build this Expo app", "make it production-ready", "set up everything", or "what skills do I need".
 ---
 
 # Expo Skill Orchestrator
@@ -21,6 +21,7 @@ Use this skill as the entry point for broad or vague Expo work. Its job is to se
 Collect or infer these values:
 
 - app name and slug
+- app idea, target user, core problem, one-sentence promise, and MVP success criteria
 - new app or existing app
 - target platforms: iOS, Android, web
 - backend choice: none, Supabase, Appwrite, Firebase, custom
@@ -55,6 +56,7 @@ Which track should I use?
 Use these skills in order when relevant:
 
 - Team defaults: `expo-team-conventions`
+- Idea to MVP: `expo-idea-composer`
 - New or messy project: `expo-project-foundation`
 - App shell boilerplate: `expo-app-shell-boilerplate`
 - Environment flavors: `expo-environment-flavors`
@@ -84,12 +86,13 @@ Use these skills in order when relevant:
 
 ### New MVP
 
-1. `expo-team-conventions`
-2. `expo-project-foundation`
-3. `expo-app-shell-boilerplate`
-4. `expo-router-navigation`
-5. `expo-ui-system`
-6. `expo-quality-performance`
+1. `expo-idea-composer` when product shape is unclear
+2. `expo-team-conventions`
+3. `expo-project-foundation`
+4. `expo-app-shell-boilerplate`
+5. `expo-router-navigation`
+6. `expo-ui-system`
+7. `expo-quality-performance`
 
 ### Auth App
 
@@ -136,6 +139,7 @@ Use these skills in order when relevant:
 Use these defaults unless the user, project, or profile says otherwise:
 
 - Navigation: Expo Router
+- Idea planning: use `expo-idea-composer` before implementation when the user gives a rough concept, asks for MVP shaping, or has not decided screens/backend/release target
 - Config: `app.config.ts` when env or profile values are needed
 - Language: TypeScript
 - Backend: ask; do not guess between Supabase, Appwrite, and Firebase for a production app

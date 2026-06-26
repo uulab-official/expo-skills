@@ -4,6 +4,10 @@ Use this when starting a new Expo app or turning a prototype into a production a
 
 ## Product
 
+- Idea brief doc: docs/idea-brief.md
+- Product blueprint doc: docs/product-blueprint.md
+- Feature roadmap doc: docs/feature-roadmap.md
+- Skill execution plan doc: docs/skill-execution-plan.md
 - App name:
 - One-line purpose:
 - Primary users:

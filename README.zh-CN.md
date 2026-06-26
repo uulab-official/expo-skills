@@ -7,7 +7,7 @@
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-26-2ea44f)
+![Skills](https://img.shields.io/badge/skills-27-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -21,6 +21,7 @@ Expo 很适合入门，但真实应用通常还需要路由、UI 系统、认证
 ## 包含内容
 
 - Expo 应用创建、迁移和基础结构
+- 将应用创意整理成 MVP、产品蓝图、功能路线图和技能执行计划的规划技能
 - 用于底部标签、应用栏、底部弹窗、设置页、主题、启动页和应用图标的应用外壳样板
 - Expo Router、主题、字体、图标、启动页和 OTA
 - shimmer、skeleton、empty、error、offline、progress 加载状态模式
@@ -65,13 +66,14 @@ rsync -a --delete skills/ "$HOME/.claude/skills/"
 ## 推荐使用流程
 
 1. 使用 `expo-skill-orchestrator` 选择合适的技能。
-2. 使用 `expo-team-conventions` 应用团队默认值。
-3. 使用 `expo-project-foundation` 建立应用基础结构。
-4. 使用 `expo-app-shell-boilerplate` 建立通用应用外壳，再用 `expo-router-navigation` 和 `expo-ui-system` 完善页面和 UI 系统。
-5. 使用 `expo-startup-ota` 和 `expo-auth-secure-storage` 处理启动流程和认证。
-6. 在 `expo-supabase-backend`、`expo-appwrite-backend`、`expo-firebase-backend` 中选择后端。
-7. 根据需要添加媒体、地图、离线、通知、后台任务和质量相关技能。
-8. 发布前使用 `expo-environment-flavors`、`expo-store-console-setup`、`expo-store-review-info`、`expo-android-jks-signing`、`expo-eas-build-strategy`、`expo-release-operator`、`expo-version-ota-governance`、`expo-fastlane-automation`、`expo-release-review`。
+2. 如果创意或 MVP 范围还不清楚，先使用 `expo-idea-composer` 生成产品蓝图。
+3. 使用 `expo-team-conventions` 应用团队默认值。
+4. 使用 `expo-project-foundation` 建立应用基础结构。
+5. 使用 `expo-app-shell-boilerplate` 建立通用应用外壳，再用 `expo-router-navigation` 和 `expo-ui-system` 完善页面和 UI 系统。
+6. 使用 `expo-startup-ota` 和 `expo-auth-secure-storage` 处理启动流程和认证。
+7. 在 `expo-supabase-backend`、`expo-appwrite-backend`、`expo-firebase-backend` 中选择后端。
+8. 根据需要添加媒体、地图、离线、通知、后台任务和质量相关技能。
+9. 发布前使用 `expo-environment-flavors`、`expo-store-console-setup`、`expo-store-review-info`、`expo-android-jks-signing`、`expo-eas-build-strategy`、`expo-release-operator`、`expo-version-ota-governance`、`expo-fastlane-automation`、`expo-release-review`。
 
 ## OTA 与构建策略
 
@@ -100,6 +102,10 @@ mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/idea-brief.md /path/to/app/docs/idea-brief.md
+cp templates/product-blueprint.md /path/to/app/docs/product-blueprint.md
+cp templates/feature-roadmap.md /path/to/app/docs/feature-roadmap.md
+cp templates/skill-execution-plan.md /path/to/app/docs/skill-execution-plan.md
 cp templates/account-automation.md /path/to/app/docs/account-automation.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md

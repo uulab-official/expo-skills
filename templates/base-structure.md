@@ -69,6 +69,10 @@ src/
   utils/
   types/
 docs/
+  idea-brief.md
+  product-blueprint.md
+  feature-roadmap.md
+  skill-execution-plan.md
   app-intake.md
   account-automation.md
   backend.md

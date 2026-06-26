@@ -14,6 +14,10 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 
 - App name:
 - App slug:
+- Idea brief: docs/idea-brief.md
+- Product blueprint: docs/product-blueprint.md
+- Feature roadmap: docs/feature-roadmap.md
+- Skill execution plan: docs/skill-execution-plan.md
 - Platforms: iOS, Android
 - Backend: Supabase / Appwrite / Firebase / custom / none
 - Backend hosting: cloud / self-hosted / local development / undecided
@@ -64,6 +68,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 ## Preferred Skill Order
 
 - Broad task: `expo-skill-orchestrator`
+- Idea to MVP: `expo-idea-composer`
 - Team defaults: `expo-team-conventions`
 - Project setup: `expo-project-foundation`
 - App shell: `expo-app-shell-boilerplate`

@@ -14,6 +14,10 @@ Use this as a starting point for a project or team profile. Replace placeholders
 ## Defaults
 
 - backend: supabase
+- ideaBriefPath: docs/idea-brief.md
+- productBlueprintPath: docs/product-blueprint.md
+- featureRoadmapPath: docs/feature-roadmap.md
+- skillExecutionPlanPath: docs/skill-execution-plan.md
 - backendHosting: cloud
 - backendDeploymentPath: docs/backend-deployment.md
 - accountAutomationPath: docs/account-automation.md

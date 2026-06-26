@@ -20,6 +20,10 @@ development, staging, production 환경 분리를 다룹니다. app.config varia
 
 넓거나 모호한 요청의 진입점을 다룹니다. 필요한 정보를 수집하고, 선택지를 제시하고, `expo-team-conventions`, `expo-project-foundation`, backend/release 관련 스킬을 자연스럽게 조합합니다. 사용자가 "Expo 앱 만들어줘", "스토어까지 준비해줘", "필요한 스킬 알아서 써줘"처럼 요청할 때 먼저 사용합니다.
 
+### `expo-idea-composer`
+
+앱 아이디어를 제품과 구현 가능한 MVP로 정리하는 기획 진입점을 다룹니다. target user, problem, MVP scope, screen map, feature roadmap, backend/release implications, skill execution plan이 여기에 속합니다. 사용자가 "이런 앱 만들고 싶어", "아이디어를 앱 구성으로 정리해줘", "MVP로 쪼개줘"처럼 요청할 때 사용합니다.
+
 ### `expo-team-conventions`
 
 팀/개인별 Expo 기본값을 다룹니다. bundle/package prefix, Expo owner, credential directory, backend choice, release policy, support/privacy URL pattern, 로컬 profile 파일이 여기에 속합니다. 공개 스킬에는 UULab 같은 특정 팀 값을 넣지 않고, 이 스킬이 로컬 설정을 읽어 다른 스킬에 적용합니다.

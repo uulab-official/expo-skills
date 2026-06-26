@@ -8,14 +8,16 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 
 1. Read `EXPO_SKILLS.md` and `.expo-skills/profile.md` if present.
 2. Use `expo-skill-orchestrator` to classify the task.
-3. Use the smallest set of specialized skills.
-4. Ask for missing information only when needed.
-5. Present choices when the decision changes architecture, backend, release cost, or store setup.
-6. Implement, verify, and summarize.
+3. Use `expo-idea-composer` before implementation when the idea, MVP scope, screen map, backend, or release path is unclear.
+4. Use the smallest set of specialized skills.
+5. Ask for missing information only when needed.
+6. Present choices when the decision changes architecture, backend, release cost, or store setup.
+7. Implement, verify, and summarize.
 
 ## Information To Collect
 
 - App name and slug
+- Product idea, target user, problem, one-sentence promise, MVP success criteria
 - Existing app or new app
 - Platforms: iOS, Android, web
 - Backend: none, Supabase, Appwrite, Firebase, custom
@@ -38,6 +40,15 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Team defaults: owner, bundle prefix, credential directory, URL patterns
 
 ## Recommended Choice Prompts
+
+### Idea Shape
+
+```text
+How should I shape this idea?
+1. MVP: smallest useful app to prove the core value
+2. Production app: plan auth, backend, QA, release, and store review now
+3. Internal tool: optimize for controlled users and fast operations
+```
 
 ### Backend
 
@@ -133,6 +144,7 @@ How should I handle provider accounts?
 
 ### MVP Bundle
 
+- `expo-idea-composer` when the app concept, MVP, or screen map is unclear
 - `expo-team-conventions`
 - `expo-project-foundation`
 - `expo-app-shell-boilerplate`

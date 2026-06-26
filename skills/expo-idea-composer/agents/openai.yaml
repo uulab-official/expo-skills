@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Idea Composer"
+  short_description: "Turn app ideas into Expo product blueprints."
+  default_prompt: "Turn this app idea into an Expo MVP blueprint and skill execution plan."
