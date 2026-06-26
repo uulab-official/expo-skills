@@ -25,6 +25,8 @@ This repository turns those workflows into reusable agent skills so anyone can a
 - UI loading patterns for shimmer, skeleton, empty, error, offline, and progress states.
 - Expo component and folder architecture conventions for Router apps, feature modules, background tasks, and notification services.
 - Backend playbooks for Supabase, Appwrite, and Firebase.
+- Cloud or self-hosted Supabase/Appwrite planning with public-safe deployment docs.
+- Kakao, Google, and Apple social login setup guidance for Expo auth flows.
 - Store launch workflows for Apple, Google, JKS signing, EAS, and fastlane.
 - Store review information templates for Apple App Review and Google Play.
 - Version, runtime, and OTA governance checks for safer releases.
@@ -194,6 +196,8 @@ expo-skills/
     EXPO_SKILLS.md
     agent-start-prompt.md
     app-intake.md
+    backend-deployment.md
+    social-auth-providers.md
     component-architecture.md
     ui-loading-patterns.md
     profile.example.md
@@ -226,6 +230,8 @@ mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
+cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
 cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 ```
@@ -344,7 +350,14 @@ At minimum, check that every skill has:
 - [Expo TaskManager](https://docs.expo.dev/versions/latest/sdk/task-manager/)
 - [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
 - [Supabase Expo React Native quickstart](https://supabase.com/docs/guides/getting-started/quickstarts/expo-react-native)
+- [Supabase self-hosted OAuth providers](https://supabase.com/docs/guides/self-hosting/self-hosted-oauth)
+- [Supabase Kakao login](https://supabase.com/docs/guides/auth/social-login/auth-kakao)
+- [Supabase Google login](https://supabase.com/docs/guides/auth/social-login/auth-google)
 - [Appwrite React Native quickstart](https://appwrite.io/docs/quick-starts/react-native)
+- [Appwrite self-hosting](https://appwrite.io/docs/advanced/self-hosting)
+- [Appwrite OAuth2 login](https://appwrite.io/docs/products/auth/oauth2)
+- [Appwrite Google OAuth](https://appwrite.io/integrations/oauth-google)
+- [Kakao Login](https://developers.kakao.com/docs/latest/en/kakaologin/common)
 - [Expo app credentials](https://docs.expo.dev/app-signing/app-credentials/)
 - [Expo local credentials](https://docs.expo.dev/app-signing/local-credentials/)
 - [Expo local EAS builds](https://docs.expo.dev/build-reference/local-builds/)

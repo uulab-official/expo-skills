@@ -20,7 +20,15 @@ Use this when starting a new Expo app or turning a prototype into a production a
 ## Backend
 
 - Backend choice: Supabase / Appwrite / Firebase / custom / none
+- Backend hosting: cloud / self-hosted / local development / undecided
+- Backend public endpoint:
+- Backend private deployment doc: docs/backend-deployment.md
 - Auth methods:
+- Social providers: Kakao / Google / Apple / none
+- Kakao login needed:
+- Google login needed:
+- Apple login needed:
+- Custom OIDC needed:
 - Data model summary:
 - File upload needs:
 - Realtime needs:

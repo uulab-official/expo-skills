@@ -16,6 +16,9 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - App slug:
 - Platforms: iOS, Android
 - Backend: Supabase / Appwrite / Firebase / custom / none
+- Backend hosting: cloud / self-hosted / local development / undecided
+- Backend deployment: docs/backend-deployment.md
+- Social auth providers: docs/social-auth-providers.md
 - Auth:
 - Store target: prototype / internal test / public review
 - Store review info: docs/store-review-info.md

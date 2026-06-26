@@ -30,7 +30,7 @@
 
 ### `expo-auth-secure-storage`
 
-로그인과 세션 보안을 다룹니다. SecureStore, token refresh, auto login, logout cleanup, biometric unlock, auth provider 연결이 여기에 속합니다.
+로그인과 세션 보안을 다룹니다. SecureStore, token refresh, auto login, logout cleanup, biometric unlock, Kakao/Google/Apple social login, OAuth redirect, auth provider 연결이 여기에 속합니다.
 
 ### `expo-device-media`
 
@@ -38,11 +38,11 @@
 
 ### `expo-supabase-backend`
 
-Supabase 백엔드를 다룹니다. Auth, Postgres, RLS, Storage, Realtime, Edge Functions, Expo Router auth gate, mobile session persistence가 여기에 속합니다.
+Supabase 백엔드를 다룹니다. Cloud/self-hosted Supabase, Auth, Kakao/Google/Apple OAuth, Postgres, RLS, Storage, Realtime, Edge Functions, Expo Router auth gate, mobile session persistence가 여기에 속합니다.
 
 ### `expo-appwrite-backend`
 
-Appwrite 백엔드를 다룹니다. Auth, Databases, Storage, Functions, Realtime, Appwrite Console platform settings, permissions가 여기에 속합니다.
+Appwrite 백엔드를 다룹니다. Cloud/self-hosted Appwrite, Auth, Google/Apple OAuth, Kakao 지원 여부 검증, Databases, Storage, Functions, Realtime, Appwrite Console platform settings, permissions가 여기에 속합니다.
 
 ### `expo-firebase-backend`
 

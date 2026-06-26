@@ -48,6 +48,8 @@ src/
 docs/
   app-intake.md
   backend.md
+  backend-deployment.md
+  social-auth-providers.md
   component-architecture.md
   ui-loading-patterns.md
   versioning-policy.md

@@ -13,6 +13,7 @@ Use this skill when authentication or sensitive local persistence is involved.
 2. Inspect storage usage: `expo-secure-store`, AsyncStorage, SQLite, provider SDK persistence, and custom token caches.
 3. Check route protection in Expo Router layouts.
 4. Confirm redirect URI, scheme, and provider console settings before changing OAuth flows.
+5. Identify social providers: Kakao, Google, Apple, email/password, anonymous, enterprise SSO, or custom OIDC.
 
 ## Storage Rules
 
@@ -41,6 +42,29 @@ Use this skill when authentication or sensitive local persistence is involved.
 - For Supabase, prefer public anon key on-device and keep service role keys server-side only.
 - For Appwrite, keep project IDs public but protect server API keys.
 - For Firebase, distinguish client config from admin service account credentials.
+- For Kakao, confirm the selected backend officially supports Kakao OAuth or document the custom token exchange/OIDC bridge.
+- For Google, configure OAuth consent, client IDs, SHA fingerprints when needed, and redirect URLs for every environment.
+- For Apple, configure Service ID/App ID, return URLs, key/team IDs where required, and test on iOS before review.
+
+## Social Login Rules
+
+- Use one internal auth callback route regardless of provider, such as `<scheme>://auth/callback`.
+- Keep provider-specific code in auth services/hooks, not inside route screens.
+- Validate OAuth `state`/nonce where the provider or SDK exposes it.
+- Handle provider cancel, denied consent, missing email, duplicate email, and account linking explicitly.
+- Do not store provider access tokens unless the product actually needs provider APIs.
+- If provider access tokens are stored, treat them as sensitive and use secure storage or server-side storage.
+- Apple Sign in should be available on iOS when the app offers other third-party social login, unless the app qualifies for an App Store exception.
+- Store review demo accounts should not depend on the reviewer having a Kakao/Google/Apple account.
+
+## Mobile Redirect Checklist
+
+- `scheme` exists in Expo config.
+- Deep link route handles success, failure, cancellation, and unknown provider.
+- Provider console callback URL matches backend callback URL exactly.
+- Backend allow-list includes development, preview, and production redirect URLs.
+- Production build, not only Expo Go, has been tested for each social provider.
+- Logout clears provider/backend session and local cached profile.
 
 ## Verification
 
@@ -52,3 +76,4 @@ Test these flows:
 - token refresh or expired session
 - logout cleanup
 - deep link/OAuth return when applicable
+- Kakao/Google/Apple cancel and failure paths when enabled

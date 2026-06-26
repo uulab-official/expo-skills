@@ -14,6 +14,13 @@ Use this as a starting point for a project or team profile. Replace placeholders
 ## Defaults
 
 - backend: supabase
+- backendHosting: cloud
+- backendDeploymentPath: docs/backend-deployment.md
+- socialAuthProvidersPath: docs/social-auth-providers.md
+- socialProviders: kakao, google, apple
+- kakaoAuthProvider: supabase-or-custom
+- googleAuthProvider: backend
+- appleAuthProvider: backend
 - navigation: expo-router
 - folderArchitecture: expo-router-thin-routes-feature-modules
 - loadingPattern: skeleton-first

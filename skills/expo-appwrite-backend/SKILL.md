@@ -10,7 +10,7 @@ Use this skill when Appwrite is the app backend.
 ## First Pass
 
 1. Inspect `package.json`, Expo config, `.env.example`, Appwrite client setup, auth routes, and data access code.
-2. Confirm endpoint, project ID, platform bundle/package IDs, and Appwrite region or self-hosted URL.
+2. Confirm endpoint, project ID, platform bundle/package IDs, and Appwrite Cloud region or self-hosted URL.
 3. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially backend project naming, credential directory, and local env policy.
 4. Check official Appwrite React Native docs before installing because the React Native SDK has been documented as beta and setup details can change.
 5. Keep server API keys out of the mobile app.
@@ -49,6 +49,27 @@ EXPO_PUBLIC_APPWRITE_BUCKET_ID=
 ```
 
 Do not put Appwrite server API keys in `EXPO_PUBLIC_*` or mobile source code.
+
+For self-hosted Appwrite, the endpoint must be reachable from real devices and store review devices:
+
+```env
+EXPO_PUBLIC_APPWRITE_ENDPOINT=https://appwrite.example.com/v1
+EXPO_PUBLIC_APPWRITE_PROJECT_ID=
+EXPO_PUBLIC_APPWRITE_PLATFORM=
+```
+
+Document private self-hosted settings outside the app repo:
+
+```text
+Appwrite version
+Public endpoint and proxy/TLS owner
+SMTP/SMS provider
+Storage adapter and backup plan
+Functions runtimes
+OAuth provider credentials
+Database and volume backup plan
+Upgrade and rollback plan
+```
 
 ## Client Boilerplate
 
@@ -116,6 +137,39 @@ Record Appwrite Console IDs in public-safe docs, but keep server API keys privat
 - Connect auth state to route protection in Expo Router.
 - Clear cached user data and notification token association on logout.
 - Store review demo accounts separately from owner/admin accounts.
+
+## Social Login
+
+Appwrite OAuth2 creates an Appwrite identity/session after the provider redirects back. Configure each provider in Appwrite Console under Auth settings, then add the redirect URI from Appwrite to the provider console.
+
+Recommended provider posture:
+
+| Provider | Appwrite posture | Notes |
+| --- | --- | --- |
+| Google | Official OAuth provider | Configure OAuth consent screen, client ID/secret, and Appwrite redirect URI. |
+| Apple | Official OAuth provider | Required by Apple when third-party social login is offered on iOS, unless an exception applies. |
+| Kakao | Verify current Appwrite support first | If Kakao is not available as an official provider in the installed Appwrite version, use Supabase Auth for Kakao, a custom backend/OIDC bridge, or a separate Kakao token exchange flow. Do not imply first-class Appwrite Kakao support without checking current docs/version. |
+
+Expo checklist:
+
+- Configure Appwrite platform identifiers for iOS bundle ID and Android package.
+- Configure success and failure redirect URLs using the app scheme or universal/app links.
+- Add provider callback/redirect URLs exactly as shown by Appwrite Console.
+- Keep OAuth client secrets only in Appwrite/server configuration.
+- Test on a production-like build and a real device when possible; OAuth redirects can differ from Expo Go.
+- Define duplicate email/account linking behavior before release.
+
+Feature code should wrap the SDK call so screens do not know provider details:
+
+```ts
+await account.createOAuth2Session({
+  provider: 'google',
+  success: 'myapp://auth/callback',
+  failure: 'myapp://auth/error',
+});
+```
+
+Use the current Appwrite SDK/provider enum for the installed SDK before shipping.
 
 ## Databases And Permissions
 

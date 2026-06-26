@@ -21,3 +21,6 @@
 - Add release operator session and auth-check templates for app repositories.
 - Strengthen UI, loading, push notification, background task, component structure, and folder architecture guidance.
 - Add component architecture and UI loading pattern templates for Expo app repositories.
+- Add repository validation workflow and release rehearsal example.
+- Strengthen Supabase/Appwrite self-hosting and Kakao/Google/Apple social login guidance.
+- Add backend deployment and social auth provider templates.

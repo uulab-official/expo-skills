@@ -25,6 +25,8 @@ Expo は始めやすい一方で、実際のアプリにはルーティング、
 - shimmer、skeleton、empty、error、offline、progress のローディングパターン
 - Expo Router アプリ向けのコンポーネント構造とフォルダアーキテクチャ
 - Supabase、Appwrite、Firebase バックエンド
+- Supabase/Appwrite cloud または self-hosted 構成ドキュメント
+- Kakao、Google、Apple ソーシャルログインのチェックリスト
 - 認証、SecureStore、カメラ、画像、ファイルアップロード、オフライン同期
 - プッシュ通知、バックグラウンドタスク、パフォーマンス、QA
 - Apple/Google コンソール、Android JKS、fastlane match、EAS Build/Submit
@@ -92,6 +94,8 @@ mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
+cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
 cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 cp templates/release-state.example.json /path/to/app/release-state.json

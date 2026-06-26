@@ -24,7 +24,8 @@ Collect or infer these values:
 - new app or existing app
 - target platforms: iOS, Android, web
 - backend choice: none, Supabase, Appwrite, Firebase, custom
-- auth needs: none, email, social, anonymous, enterprise
+- backend hosting: cloud, self-hosted, local development, or undecided
+- auth needs: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
 - media/device needs: camera, gallery, location, notifications, background tasks
 - release target: prototype, internal test, TestFlight, Play internal, public store
 - build strategy: EAS cloud build, local EAS build, quota-aware mixed mode, or OTA-only
@@ -117,6 +118,7 @@ Use these defaults unless the user, project, or profile says otherwise:
 - Config: `app.config.ts` when env or profile values are needed
 - Language: TypeScript
 - Backend: ask; do not guess between Supabase, Appwrite, and Firebase for a production app
+- Kakao auth: verify backend support; Supabase has official Kakao provider, Appwrite support must be checked against the installed version/docs before promising it
 - Auth storage: secure storage for sensitive credentials
 - Release tooling: EAS first, fastlane as metadata/signing/upload companion
 - Build mode: ask or infer from quota/cost constraints; do not burn cloud builds for JS-only changes

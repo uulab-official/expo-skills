@@ -10,7 +10,7 @@ Use this skill when Supabase is the app backend.
 ## First Pass
 
 1. Inspect `package.json`, Expo config, `.env.example`, auth providers, API clients, and route guards.
-2. Confirm whether the app uses Supabase Auth, Database, Storage, Realtime, or Edge Functions.
+2. Confirm whether the app uses Supabase Cloud, self-hosted Supabase, Auth, Database, Storage, Realtime, or Edge Functions.
 3. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially backend project naming, credential directory, and local env policy.
 4. Verify current Supabase and Expo setup from official docs when installing or changing SDK behavior.
 5. Keep service role or secret keys server-side only. On-device apps use the project URL and publishable/anon client key.
@@ -38,6 +38,25 @@ EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_xxx
 For legacy projects, `EXPO_PUBLIC_SUPABASE_ANON_KEY` may exist. Prefer the current publishable key for new projects when available.
 
 Never put `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_SECRET_KEY`, or any secret key in app code, `EXPO_PUBLIC_*`, screenshots, docs, or committed env files.
+
+For self-hosted Supabase, set the public URL to the externally reachable API gateway URL, not an internal Docker hostname:
+
+```env
+EXPO_PUBLIC_SUPABASE_URL=https://supabase.example.com
+EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+```
+
+Document self-hosted operational values in private deployment docs:
+
+```text
+SITE_URL
+API_EXTERNAL_URL
+JWT_SECRET
+SMTP settings
+Storage backend
+Auth provider env vars
+Backup and restore plan
+```
 
 ## Client Boilerplate
 
@@ -103,6 +122,42 @@ Keep generated schema/types in the repo when the project uses Supabase CLI or ty
 - Keep email confirmation and password reset links compatible with mobile deep links.
 - Clear cached profile and notification token association on logout.
 - Store review demo accounts separately from owner/admin accounts.
+
+## Social Login
+
+Support social login deliberately; each provider needs console setup, backend setup, Expo deep links, and a real-device test.
+
+Recommended providers for Korean production apps:
+
+| Provider | Supabase support | Notes |
+| --- | --- | --- |
+| Kakao | Official provider | Uses Kakao REST API key as client ID and Kakao Login client secret as client secret. |
+| Google | Official provider | Configure Google OAuth client IDs and redirect URLs for web/native as required. |
+| Apple | Official provider | Required by Apple when the app offers third-party social login on iOS, unless an exception applies. |
+
+For Supabase Cloud, configure providers in the Dashboard. For self-hosted Supabase, configure OAuth providers in Docker/env config because provider settings are not managed through the cloud dashboard.
+
+OAuth checklist:
+
+- Add Supabase callback URL to each provider. Cloud shape is normally `https://<project-ref>.supabase.co/auth/v1/callback`; self-hosted shape is normally `https://<auth-domain>/auth/v1/callback`.
+- Add Expo development and production redirect URLs to Supabase allow lists.
+- Use the app scheme for native return URLs, such as `<scheme>://auth/callback`.
+- Store provider client secrets only in Supabase/server env, never in the Expo app.
+- Test Kakao, Google, and Apple on a production-like build because provider apps, universal links, and callback URLs often behave differently outside Expo Go.
+- Verify account linking or duplicate email behavior before release.
+
+Client login should live behind feature-level functions, for example:
+
+```ts
+await supabase.auth.signInWithOAuth({
+  provider: 'kakao',
+  options: {
+    redirectTo: 'myapp://auth/callback',
+  },
+});
+```
+
+Use the current Supabase SDK docs for provider names and mobile redirect handling before shipping.
 
 ## Database And RLS
 

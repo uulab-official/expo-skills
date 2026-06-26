@@ -19,7 +19,8 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Existing app or new app
 - Platforms: iOS, Android, web
 - Backend: none, Supabase, Appwrite, Firebase, custom
-- Auth: none, email, social, anonymous, enterprise
+- Backend hosting: cloud, self-hosted, local development, undecided
+- Auth: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
 - Device features: camera, gallery, location, notifications, background tasks
 - Release target: prototype, internal test, public store
 - Store review info: contact, demo account, privacy policy, data safety, permission reasons
@@ -36,9 +37,18 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 
 ```text
 Which backend should I wire?
-1. Supabase: Postgres, RLS, Storage, Realtime
-2. Appwrite: Auth, Databases, Storage, Functions
+1. Supabase: Postgres, RLS, Storage, Realtime, Kakao/Google/Apple social auth
+2. Appwrite: Auth, Databases, Storage, Functions, Google/Apple OAuth
 3. Firebase: Firebase Auth/Firestore/Storage or native Firebase services
+```
+
+### Social Auth
+
+```text
+Which social login providers should I prepare?
+1. Korea-ready: Kakao + Google + Apple
+2. Global default: Google + Apple
+3. Email only: no social provider
 ```
 
 ### Release Track
