@@ -30,6 +30,7 @@ Collect or infer these values:
 - media/device needs: camera, gallery, location, maps, markers, notifications, background tasks
 - map needs: Naver Map, Kakao Map, Google Maps, Apple Maps, search/geocoding, clustering, marker optimization
 - release target: prototype, internal test, TestFlight, Play internal, public store
+- environment flavors: development, staging, production, app identifiers, package names, channels, branches
 - build strategy: EAS cloud build, local EAS build, quota-aware mixed mode, or OTA-only
 - review information: contact, demo account, privacy URLs, data safety, permission reasons
 - version and OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
@@ -53,6 +54,7 @@ Use these skills in order when relevant:
 - Team defaults: `expo-team-conventions`
 - New or messy project: `expo-project-foundation`
 - App shell boilerplate: `expo-app-shell-boilerplate`
+- Environment flavors: `expo-environment-flavors`
 - Navigation: `expo-router-navigation`
 - Design system: `expo-ui-system`
 - Startup, splash, OTA: `expo-startup-ota`
@@ -137,6 +139,7 @@ Use these defaults unless the user, project, or profile says otherwise:
 - Auth storage: secure storage for sensitive credentials
 - Release tooling: EAS first, fastlane as metadata/signing/upload companion
 - Build mode: ask or infer from quota/cost constraints; do not burn cloud builds for JS-only changes
+- Environment flavors: use separate development/staging/production app identity when side-by-side installs, QA, or store release candidates matter
 - OTA server: EAS Update by default; custom Expo Updates server only when the team can own hosting, manifests, rollout, monitoring, and rollback
 - Credentials: private directory outside the app repo
 

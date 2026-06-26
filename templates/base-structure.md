@@ -78,6 +78,7 @@ docs/
   brand-assets-checklist.md
   component-architecture.md
   ui-loading-patterns.md
+  environment-flavors.md
   versioning-policy.md
   release-operator-session.md
   store-review-info.md

@@ -28,3 +28,5 @@
 - Add app shell and brand asset templates for reusable Expo app boilerplates.
 - Add `expo-maps-location` for Naver, Kakao, Google, Apple maps, provider decisions, and marker optimization.
 - Add maps provider decision template for Expo app repositories.
+- Add `expo-environment-flavors` for development, staging, and production app variants across EAS, OTA, versioning, and fastlane.
+- Add environment flavor matrix template for app repositories.

@@ -10,7 +10,7 @@ Use this skill when deciding how an Expo app should be built.
 ## First Pass
 
 1. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present.
-2. Inspect `eas.json`, app config, credentials references, package scripts, release docs, and `release-state.json`.
+2. Inspect `docs/environment-flavors.md`, `eas.json`, app config, credentials references, package scripts, release docs, and `release-state.json`.
 3. Verify the current Expo pricing/plan limits from official Expo pricing or billing docs before quoting build quota or EAS Update MAU numbers.
 4. Identify target build type: development, preview/internal, simulator, production, or store submission.
 5. Decide whether the change needs a binary build or can ship as OTA.
@@ -95,6 +95,7 @@ Use `cli.appVersionSource` deliberately:
 - Use cloud builds intentionally for shared QA, final internal testing, and store-bound artifacts.
 - Track failed/canceled builds and verify current billing behavior from official docs.
 - Record monthly build budget in `docs/eas-build-policy.md` when the team cares about quota.
+- For development/staging/production variants, use `expo-environment-flavors` to confirm profile, channel, branch, app identity, and env values before building.
 
 ## Files To Create
 
@@ -102,6 +103,7 @@ Use `templates/eas-build-policy.md` in app repos:
 
 ```text
 docs/eas-build-policy.md
+docs/environment-flavors.md
 eas.json
 release-state.json
 scripts/check-expo-release-state.js

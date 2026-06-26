@@ -7,7 +7,7 @@ Use them with Codex, Claude, or any agent that understands the Agent Skills patt
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-24-2ea44f)
+![Skills](https://img.shields.io/badge/skills-25-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -32,6 +32,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 - Store launch workflows for Apple, Google, JKS signing, EAS, and fastlane.
 - Store review information templates for Apple App Review and Google Play.
 - Version, runtime, and OTA governance checks for safer releases.
+- Development, staging, and production flavor matrices for app identity, EAS profiles, OTA branches, and fastlane lanes.
 - EAS Build strategy for cloud quota, local builds, OTA tradeoffs, and current EAS Update free-tier planning.
 - Interactive release operation for local logins, OTP/2FA, Expo/EAS, Apple/Google, fastlane match, and backend CLIs.
 - Public-safe conventions for credentials without publishing private values.
@@ -151,6 +152,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 | Production | `expo-store-console-setup` | Apple/Google console setup and API keys |
 | Production | `expo-store-review-info` | Review contact, demo account, privacy, data safety |
 | Production | `expo-android-jks-signing` | JKS upload keys, SHA fingerprints, EAS credentials |
+| Production | `expo-environment-flavors` | Development, staging, production app variants with EAS, OTA, fastlane |
 | Production | `expo-eas-build-strategy` | Cloud/local EAS builds, quota, build profiles |
 | Production | `expo-fastlane-automation` | fastlane match, deliver, supply, TestFlight |
 | Production | `expo-release-operator` | Interactive local login, OTP, credentials, build/submit operations |
@@ -167,7 +169,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 6. Pick a backend: `expo-supabase-backend`, `expo-appwrite-backend`, or `expo-firebase-backend`.
 7. Add app-specific capabilities such as media, maps, offline sync, notifications, and background tasks.
 8. Run `expo-quality-performance`.
-9. Prepare store launch with console setup, review info, Android signing, EAS build strategy, fastlane, release operator, version/OTA governance, and release review skills.
+9. Prepare store launch with environment flavors, console setup, review info, Android signing, EAS build strategy, fastlane, release operator, version/OTA governance, and release review skills.
 
 ## Repository Layout
 
@@ -189,6 +191,7 @@ expo-skills/
     expo-appwrite-backend/
     expo-firebase-backend/
     expo-maps-location/
+    expo-environment-flavors/
     expo-release-operator/
     ...
   docs/
@@ -209,6 +212,7 @@ expo-skills/
     brand-assets-checklist.md
     component-architecture.md
     ui-loading-patterns.md
+    environment-flavors.md
     profile.example.md
     store-review-info.md
     privacy-data-inventory.md
@@ -246,6 +250,7 @@ cp templates/app-shell-blueprint.md /path/to/app/docs/app-shell-blueprint.md
 cp templates/brand-assets-checklist.md /path/to/app/docs/brand-assets-checklist.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
 cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
+cp templates/environment-flavors.md /path/to/app/docs/environment-flavors.md
 ```
 
 Then start your agent with [templates/agent-start-prompt.md](templates/agent-start-prompt.md). The recommended entry skill is [expo-skill-orchestrator](skills/expo-skill-orchestrator/SKILL.md), which will choose the smaller specialized skills as needed.
@@ -390,7 +395,12 @@ At minimum, check that every skill has:
 - [Expo pricing](https://expo.dev/pricing)
 - [Expo usage-based pricing](https://docs.expo.dev/billing/usage-based-pricing/)
 - [Expo app version management](https://docs.expo.dev/build-reference/app-versions/)
+- [Expo multiple app variants](https://docs.expo.dev/tutorial/eas/multiple-app-variants/)
+- [Expo environment variables](https://docs.expo.dev/guides/environment-variables/)
+- [EAS environment variables](https://docs.expo.dev/eas/environment-variables/)
+- [EAS build profiles in eas.json](https://docs.expo.dev/build/eas-json/)
 - [Expo EAS Update runtime versions](https://docs.expo.dev/eas-update/runtime-versions/)
+- [EAS Update deployment](https://docs.expo.dev/eas-update/deployment/)
 - [How EAS Update works](https://docs.expo.dev/eas-update/how-it-works/)
 - [fastlane docs](https://docs.fastlane.tools/)
 - [fastlane match](https://docs.fastlane.tools/actions/match/)

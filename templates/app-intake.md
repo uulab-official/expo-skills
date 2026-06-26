@@ -75,6 +75,9 @@ Use this when starting a new Expo app or turning a prototype into a production a
 ## Release
 
 - Target: prototype / internal test / public store
+- Environment flavors: development / staging / production / production-only
+- Environment flavors doc: docs/environment-flavors.md
+- Side-by-side installs needed:
 - Build strategy: EAS cloud / local EAS / mixed / OTA-only
 - Monthly cloud build budget:
 - Public version:
@@ -85,6 +88,9 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - Build number policy: YYMMDDNN / EAS remote / custom
 - EAS channel:
 - EAS branch:
+- Development channel/branch:
+- Staging channel/branch:
+- Production channel/branch:
 - Update server: EAS Update / custom
 - EAS Update plan: free / starter / production / enterprise / custom
 - EAS Update plan checked on:

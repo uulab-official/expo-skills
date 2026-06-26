@@ -20,8 +20,10 @@ Use this file to decide when to spend EAS cloud builds and when to build locally
 | Profile | Platform | Distribution | Channel | Build mode | Purpose |
 | --- | --- | --- | --- | --- | --- |
 | development | ios/android | internal | development | local/cloud | dev client |
-| preview | ios/android | internal | preview | cloud | QA |
+| staging | ios/android | internal | staging | cloud/local | QA/release candidate |
 | production | ios/android | store | production | cloud/local | store submission |
+
+Keep profile, channel, branch, app identifier, Android package, and backend endpoint aligned in `docs/environment-flavors.md`.
 
 ## Use Cloud Build When
 
@@ -55,6 +57,9 @@ npm run ota:check
 
 eas build --profile preview --platform ios
 eas build --profile preview --platform android
+
+eas build --profile staging --platform ios
+eas build --profile staging --platform android
 
 eas build --profile production --platform ios --local
 eas build --profile production --platform android --local

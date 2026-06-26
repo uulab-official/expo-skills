@@ -11,7 +11,7 @@ Use this skill when preparing an Expo app for TestFlight, Play internal testing,
 
 1. Identify the app root and read project release docs.
 2. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially release version policy, credential directory, URL patterns, and store account placeholders.
-3. Inspect `app.config.*`, `eas.json`, `package.json`, `docs/store-review-info.md`, privacy/data inventories, store metadata files, screenshots, and credentials references.
+3. Inspect `app.config.*`, `eas.json`, `package.json`, `docs/environment-flavors.md`, `docs/store-review-info.md`, privacy/data inventories, store metadata files, screenshots, and credentials references.
 4. Inspect `release-state.json` and version/OTA check scripts when present.
 5. Inspect `docs/eas-build-policy.md` when present and decide cloud build, local build, or OTA.
 6. Inspect `docs/release-operator-session.md` when present for account, credential, and auth status.
@@ -81,6 +81,7 @@ Prepare or verify:
 
 - `npm run verify` or equivalent passes.
 - App identity is consistent across Expo config, store metadata, screenshots, and review notes.
+- Target flavor, EAS profile, channel, branch, app identity, and store track are consistent.
 - Version/build numbers are valid and monotonic.
 - `release-state.json` matches app config when the project uses local version governance.
 - Required URLs are live.

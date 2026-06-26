@@ -25,6 +25,7 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Device features: camera, gallery, location, maps, markers, notifications, background tasks
 - Maps: Naver, Kakao, Google, Apple, search/geocoding, marker count, clustering, provider quota
 - Release target: prototype, internal test, public store
+- Environment flavors: development, staging, production, app identifiers, packages, channels, branches
 - Store review info: contact, demo account, privacy policy, data safety, permission reasons
 - Version/OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
 - EAS Update plan check: plan, pricing checked date, estimated monthly active updated users, upgrade threshold
@@ -89,6 +90,15 @@ Which OTA update server should I use?
 3. No OTA yet: binary releases only
 ```
 
+### Environment Flavors
+
+```text
+Which environment setup should I use?
+1. Three flavors: development + staging + production side-by-side
+2. Two flavors: staging + production
+3. Production only: simplest release path
+```
+
 ### Credentials
 
 ```text
@@ -114,6 +124,7 @@ Which release operation should I run?
 - `expo-team-conventions`
 - `expo-project-foundation`
 - `expo-app-shell-boilerplate`
+- `expo-environment-flavors` when dev/staging/prod variants, EAS profiles, or flavor-specific OTA are needed
 - `expo-router-navigation`
 - `expo-ui-system`
 - `expo-maps-location` when maps, location UI, place search, or markers are needed

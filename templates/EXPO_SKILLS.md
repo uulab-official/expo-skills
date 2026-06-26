@@ -28,6 +28,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Brand assets checklist: docs/brand-assets-checklist.md
 - UI loading patterns: docs/ui-loading-patterns.md
 - Release state: release-state.json
+- Environment flavors: docs/environment-flavors.md
 - Versioning policy: docs/versioning-policy.md
 - Update server policy: docs/update-server-policy.md
 - EAS build policy: docs/eas-build-policy.md
@@ -57,6 +58,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Team defaults: `expo-team-conventions`
 - Project setup: `expo-project-foundation`
 - App shell: `expo-app-shell-boilerplate`
+- Environment flavors: `expo-environment-flavors`
 - Navigation: `expo-router-navigation`
 - UI: `expo-ui-system`
 - Startup/OTA: `expo-startup-ota`

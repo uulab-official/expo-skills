@@ -9,6 +9,11 @@ Use this file during an interactive Expo release. Commit only non-secret state.
 - Branch:
 - Commit:
 - Release type: OTA / EAS cloud build / local EAS build / EAS submit / fastlane upload / store review
+- Flavor: development / staging / production
+- EAS profile:
+- EAS channel:
+- EAS branch:
+- Runtime version:
 - Platforms: iOS / Android
 - Store track: TestFlight / App Store review / Play internal / Play closed / Play production
 

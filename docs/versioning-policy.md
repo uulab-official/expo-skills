@@ -55,6 +55,21 @@ This stays below Android's maximum `versionCode` and sorts naturally by date.
 | Native module/config/permission/icon/splash change | maybe | increase | change if runtime compatibility changes | Requires new binary |
 | Backend-only change | unchanged | unchanged | unchanged | No app release unless client behavior changes |
 
+## Environment Flavors
+
+When an app has development, staging, and production variants, keep `docs/environment-flavors.md` as the source of truth for:
+
+- app display name
+- iOS bundle ID
+- Android package
+- URL scheme
+- backend endpoint
+- EAS build profile
+- EAS Update channel and branch
+- store track or internal distribution target
+
+Development and staging can share the next production public version, but every binary upload still needs a unique build number/version code. Production channel and branch must never receive staging updates unless the team intentionally promotes them.
+
 ## Runtime Version Policy
 
 Use one policy and document it.

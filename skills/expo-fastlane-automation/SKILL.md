@@ -11,7 +11,7 @@ Use this skill when fastlane should automate store release tasks for an Expo app
 
 1. Identify whether EAS Build/Submit already covers the release path.
 2. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially credential env names, store account placeholders, and release policy.
-3. Inspect `fastlane/`, `eas.json`, `package.json`, store metadata, screenshots, and credential docs.
+3. Inspect `docs/environment-flavors.md`, `fastlane/`, `eas.json`, `package.json`, store metadata, screenshots, and credential docs.
 4. Decide fastlane's role: fallback uploader, metadata manager, screenshot uploader, iOS signing manager, or full release lane.
 5. Keep fastlane and EAS complementary. Do not remove EAS scripts just because fastlane is added.
 6. Use `expo-release-operator` for interactive account login, OTP/2FA, match password prompting, and actual upload execution.
@@ -24,6 +24,7 @@ Use this skill when fastlane should automate store release tasks for an Expo app
 - fastlane `testflight`/`pilot`: TestFlight fallback or tester management.
 - fastlane `deliver`: App Store metadata, screenshots, and review submission workflows.
 - fastlane `supply`: Google Play metadata, screenshots, and track uploads after Play API setup.
+- flavor lanes: development/staging/production release targets when app identifiers, packages, tracks, or metadata differ by environment.
 
 ## Files To Create
 
@@ -119,6 +120,8 @@ platform :ios do
   end
 end
 ```
+
+For multiple flavors, verify each lane's `app_identifier`, artifact path, version, build number, and TestFlight/App Store target against `docs/environment-flavors.md`.
 
 ## Android Lanes
 

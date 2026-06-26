@@ -38,11 +38,22 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - mapMarkerStrategy: visible-bounds-query, cluster-low-zoom, native-image-markers
 - mapSearchProvider: provider-specific
 - releaseBuildNumber: yymmddnn
+- environmentFlavorsPath: docs/environment-flavors.md
+- environmentFlavors: development, staging, production
+- defaultAppVariant: development
+- stagingAppVariant: staging
+- productionAppVariant: production
 - runtimeVersionPolicy: app-version
 - versionSource: local
 - buildNumberPolicy: YYMMDDNN
 - easChannel: production
 - easBranch: production
+- developmentChannel: development
+- developmentBranch: development
+- stagingChannel: staging
+- stagingBranch: staging
+- productionChannel: production
+- productionBranch: production
 - updateServerMode: eas
 - updatesUrlPattern: https://u.expo.dev/<project-id>
 - customUpdatePublishCommand:

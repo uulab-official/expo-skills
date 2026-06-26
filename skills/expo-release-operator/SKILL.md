@@ -20,7 +20,7 @@ Run the release like a calm operator: inspect local state, ask for only the next
 
 ## First Pass
 
-1. Read `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `docs/app-intake.md`, `docs/release-operator-session.md`, `release-state.json`, `eas.json`, `fastlane/`, store docs, and backend docs when present.
+1. Read `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `docs/app-intake.md`, `docs/environment-flavors.md`, `docs/release-operator-session.md`, `release-state.json`, `eas.json`, `fastlane/`, store docs, and backend docs when present.
 2. Identify target actions: OTA, EAS build, local build, EAS submit, TestFlight, Play internal, store review, metadata upload, backend deploy.
 3. Determine required accounts: Expo, Apple Developer/App Store Connect, Google Play, Google Cloud/Firebase, Supabase, Appwrite, fastlane match storage.
 4. Run safe status checks before login commands.
@@ -66,7 +66,7 @@ Commands and flags can change. Verify current official docs when a command fails
 ### 1. Preflight
 
 - Run project verification, release state check, and OTA safety check when scripts exist.
-- Confirm version, build numbers, runtimeVersion, channel, branch, and target store track.
+- Confirm flavor, app identity, version, build numbers, runtimeVersion, channel, branch, and target store track.
 - Decide cloud build, local EAS build, OTA, or fastlane upload path.
 - Copy `templates/release-operator-session.md` into `docs/release-operator-session.md` when the app lacks a release runbook.
 
@@ -104,6 +104,7 @@ Commands and flags can change. Verify current official docs when a command fails
 Ask concise questions only when the agent cannot infer safely:
 
 - Which Expo account or organization should own this build?
+- Which flavor should this release target: development, staging, or production?
 - Which Apple team or App Store Connect provider should be used?
 - Which Google Play app/account should receive this package?
 - Should iOS signing come from EAS managed credentials or fastlane match?
@@ -121,6 +122,7 @@ Record non-secret state in `docs/release-operator-session.md`:
 - verified identity
 - credential paths used
 - artifact paths
+- flavor, EAS profile, channel, branch
 - store track
 - remaining manual console steps
 

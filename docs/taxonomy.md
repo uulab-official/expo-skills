@@ -12,6 +12,10 @@
 
 대부분의 앱에서 반복되는 첫 화면 기반을 다룹니다. bottom tabs, root stack, modal/formSheet routes, app bars, settings screen, theme provider, splash/icon branding, root providers, reusable screen chrome이 여기에 속합니다.
 
+### `expo-environment-flavors`
+
+development, staging, production 환경 분리를 다룹니다. app.config variant, APP_VARIANT, bundle ID, Android package, scheme, app name, EAS profile, channel, branch, runtimeVersion, OTA publish target, fastlane lane matrix가 여기에 속합니다.
+
 ### `expo-skill-orchestrator`
 
 넓거나 모호한 요청의 진입점을 다룹니다. 필요한 정보를 수집하고, 선택지를 제시하고, `expo-team-conventions`, `expo-project-foundation`, backend/release 관련 스킬을 자연스럽게 조합합니다. 사용자가 "Expo 앱 만들어줘", "스토어까지 준비해줘", "필요한 스킬 알아서 써줘"처럼 요청할 때 먼저 사용합니다.

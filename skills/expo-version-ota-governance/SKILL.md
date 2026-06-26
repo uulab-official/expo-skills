@@ -10,7 +10,7 @@ Use this skill when release versioning or OTA safety matters.
 ## First Pass
 
 1. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present.
-2. Inspect `docs/versioning-policy.md`, `app.config.*`, `app.json`, `eas.json`, `package.json`, `store.config.*`, update scripts, and release docs.
+2. Inspect `docs/environment-flavors.md`, `docs/versioning-policy.md`, `app.config.*`, `app.json`, `eas.json`, `package.json`, `store.config.*`, update scripts, and release docs.
 3. Identify the release action: new binary, internal build, public store version, or OTA update.
 4. Separate native changes from JS/assets-only changes.
 5. Verify current Expo EAS Build and EAS Update docs before changing version or update policy.
@@ -28,6 +28,7 @@ Use this skill when release versioning or OTA safety matters.
 - Before spending cloud build quota, check whether the change can safely ship as OTA.
 - Before choosing EAS Update based on free-tier usage, verify current official Expo pricing. As of 2026-06-26, Expo lists Free plan EAS Update limits as 1,000 MAUs, 100 GiB bandwidth, and 20 GiB storage.
 - Keep channel, branch, profile, and runtimeVersion relationships documented.
+- Keep development, staging, and production flavor relationships documented when the app has multiple installable variants.
 - Prefer a committed `docs/versioning-policy.md` for team decisions.
 
 ## Recommended Policy
@@ -85,6 +86,16 @@ Create a committed release state file when the team manages versions locally:
 Use `templates/release-state.example.json` as a starting point.
 
 Also copy `docs/versioning-policy.md` or create an app-local equivalent when the release policy differs from this repository.
+
+## Flavor Governance
+
+When the app has development, staging, and production variants, use `expo-environment-flavors` first. Version and OTA checks must validate the selected flavor's:
+
+- app name, bundle ID, Android package, and scheme
+- EAS profile, channel, and branch
+- backend/public env values
+- runtimeVersion and update server URL
+- store track or internal distribution target
 
 ## Checks To Add
 

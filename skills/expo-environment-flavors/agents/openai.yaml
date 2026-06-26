@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Environment Flavors"
+  short_description: "Configure Expo dev, staging, production flavors with EAS, OTA, and fastlane."
+  default_prompt: "Set up development, staging, and production flavors for this Expo app."
