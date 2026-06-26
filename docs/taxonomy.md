@@ -36,6 +36,10 @@ development, staging, production 환경 분리를 다룹니다. app.config varia
 
 앱 시작 경험을 다룹니다. native splash, React Native custom splash, font loading, session bootstrap, EAS Update, OTA progress, reload safety가 여기에 속합니다.
 
+### `expo-custom-ota-server`
+
+Expo Updates protocol을 구현하는 자체 OTA 서버를 다룹니다. manifest endpoint, asset hosting, runtimeVersion/platform/flavor filtering, publish pipeline, code signing, rollout, rollback, monitoring, EAS Update와의 공존/전환 정책이 여기에 속합니다.
+
 ### `expo-auth-secure-storage`
 
 로그인과 세션 보안을 다룹니다. SecureStore, token refresh, auto login, logout cleanup, biometric unlock, Kakao/Google/Apple social login, OAuth redirect, auth provider 연결이 여기에 속합니다.

@@ -7,7 +7,7 @@ Use them with Codex, Claude, or any agent that understands the Agent Skills patt
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-25-2ea44f)
+![Skills](https://img.shields.io/badge/skills-26-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -34,6 +34,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 - Version, runtime, and OTA governance checks for safer releases.
 - Development, staging, and production flavor matrices for app identity, EAS profiles, OTA branches, and fastlane lanes.
 - EAS Build strategy for cloud quota, local builds, OTA tradeoffs, and current EAS Update free-tier planning.
+- Custom Expo Updates protocol server guidance for manifests, asset hosting, rollout, rollback, and code signing.
 - Interactive release operation for local logins, OTP/2FA, Expo/EAS, Apple/Google, fastlane match, and backend CLIs.
 - Public-safe conventions for credentials without publishing private values.
 - A personalization layer for team defaults without hardcoding private values.
@@ -158,6 +159,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 | Production | `expo-release-operator` | Interactive local login, OTP, credentials, build/submit operations |
 | Production | `expo-release-review` | EAS build/submit, metadata, screenshots, review |
 | Production | `expo-version-ota-governance` | Store versions, runtimeVersion, OTA safety |
+| Production | `expo-custom-ota-server` | Custom Expo Updates protocol server, manifests, assets, rollout, rollback |
 
 ## Recommended Path
 
@@ -192,6 +194,7 @@ expo-skills/
     expo-firebase-backend/
     expo-maps-location/
     expo-environment-flavors/
+    expo-custom-ota-server/
     expo-release-operator/
     ...
   docs/
@@ -213,6 +216,7 @@ expo-skills/
     component-architecture.md
     ui-loading-patterns.md
     environment-flavors.md
+    custom-ota-server.md
     profile.example.md
     store-review-info.md
     privacy-data-inventory.md
@@ -251,9 +255,20 @@ cp templates/brand-assets-checklist.md /path/to/app/docs/brand-assets-checklist.
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
 cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 cp templates/environment-flavors.md /path/to/app/docs/environment-flavors.md
+cp templates/custom-ota-server.md /path/to/app/docs/custom-ota-server.md
+cp templates/scripts/check-custom-ota-server.js /path/to/app/scripts/check-custom-ota-server.js
+cp templates/scripts/publish-custom-ota.js /path/to/app/scripts/publish-custom-ota.js
 ```
 
 Then start your agent with [templates/agent-start-prompt.md](templates/agent-start-prompt.md). The recommended entry skill is [expo-skill-orchestrator](skills/expo-skill-orchestrator/SKILL.md), which will choose the smaller specialized skills as needed.
+
+## Official References
+
+- [Expo Updates v1 protocol](https://docs.expo.dev/technical-specs/expo-updates-1/)
+- [expo-updates SDK](https://docs.expo.dev/versions/latest/sdk/updates/)
+- [Expo custom updates server example](https://github.com/expo/custom-expo-updates-server)
+- [Expo Updates code signing](https://docs.expo.dev/eas-update/code-signing/)
+- [Expo Structured Field Values](https://docs.expo.dev/technical-specs/expo-sfv-0/)
 
 ## Release Rehearsal
 

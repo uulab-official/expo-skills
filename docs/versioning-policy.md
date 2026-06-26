@@ -192,6 +192,8 @@ Requirements:
 
 Do not assume `eas update` publishes to a custom server.
 
+For implementation details, keep `docs/custom-ota-server.md` in the app repo and use `expo-custom-ota-server` before changing manifest endpoints, asset hosting, code signing, rollout, or rollback behavior.
+
 ### EAS Update vs Custom Server
 
 | Situation | Prefer |

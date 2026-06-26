@@ -29,6 +29,7 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Store review info: contact, demo account, privacy policy, data safety, permission reasons
 - Version/OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
 - EAS Update plan check: plan, pricing checked date, estimated monthly active updated users, upgrade threshold
+- Custom OTA server: manifest endpoint, asset base URL, publish command, rollback command, monitoring owner
 - Version policy document: `docs/versioning-policy.md` when present
 - Build strategy: cloud EAS, local EAS, quota budget, or OTA
 - Interactive release access: Expo/EAS login, Apple/Google accounts, OTP/2FA, fastlane match, backend CLI auth
@@ -146,6 +147,7 @@ Which release operation should I run?
 - `expo-android-jks-signing`
 - `expo-eas-build-strategy`
 - `expo-version-ota-governance`
+- `expo-custom-ota-server` when the app uses a self-hosted Expo Updates protocol server
 - `expo-release-operator` when local logins, OTP, credential checks, or real upload/build commands are needed
 - `expo-fastlane-automation` when needed
 - `expo-release-review`

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Custom OTA Server"
+  short_description: "Design and implement self-hosted Expo OTA update servers."
+  default_prompt: "Design a custom Expo OTA update server and publish pipeline for this app."

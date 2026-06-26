@@ -12,7 +12,7 @@ Use this skill when touching app launch, splash, startup loading, or OTA behavio
 1. Inspect Expo config for `expo-splash-screen`, `updates`, `runtimeVersion`, `scheme`, and platform icons.
 2. Read `docs/brand-assets-checklist.md` when app icon, splash, display name, or scheme are part of the task.
 3. Read the root layout and startup/session providers before editing.
-4. Inspect `release-state.json`, `eas.json` channel/branch setup, and OTA check scripts when present.
+4. Inspect `release-state.json`, `eas.json` channel/branch setup, `docs/custom-ota-server.md`, and OTA check scripts when present.
 5. Determine whether the change is native config, JS/assets-only, or both. Native config changes require a new binary.
 6. Verify current Expo Updates guidance from official Expo docs if behavior depends on the latest SDK.
 
@@ -44,7 +44,7 @@ Use this skill when touching app launch, splash, startup loading, or OTA behavio
 - Custom update servers are for teams that explicitly want to own update hosting, manifest generation, rollout, monitoring, and rollback.
 - Native modules, config plugins, permissions, icons, splash assets, bundle IDs, and runtime changes need a new binary.
 - Use a deliberate `runtimeVersion` policy and document it.
-- If using a custom update server, document publish, rollback, monitoring, and asset hosting before enabling production OTA.
+- If using a custom update server, use `expo-custom-ota-server` and document publish, rollback, monitoring, manifest behavior, and asset hosting before enabling production OTA.
 - Before quoting EAS Update free-tier numbers, verify current official Expo pricing. As of 2026-06-26, Expo's pricing page lists Free plan EAS Update limits as 1,000 MAUs, 100 GiB bandwidth, and 20 GiB storage.
 - Avoid automatic update checks that fight a custom startup sequence.
 - Make progress monotonic. It should never jump backward across reload.
@@ -58,6 +58,8 @@ Use this skill when touching app launch, splash, startup loading, or OTA behavio
 | Team wants Expo-hosted CDN, dashboard, channel/branch workflow, and `eas update` | EAS Update |
 | Team needs private update infrastructure, custom routing, special compliance, or non-Expo publishing pipeline | Custom Expo Updates server |
 | Team cannot operate update monitoring and rollback yet | EAS Update |
+
+When the project chooses Custom Expo Updates server, verify `docs/custom-ota-server.md`, the manifest endpoint, asset URLs, code signing behavior, and rollback command before enabling startup update gates.
 
 ## Progress UI Checklist
 

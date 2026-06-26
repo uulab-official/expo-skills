@@ -31,6 +31,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Environment flavors: docs/environment-flavors.md
 - Versioning policy: docs/versioning-policy.md
 - Update server policy: docs/update-server-policy.md
+- Custom OTA server: docs/custom-ota-server.md
 - EAS build policy: docs/eas-build-policy.md
 - Release operator session: docs/release-operator-session.md
 - EAS Update plan checked on:
@@ -47,6 +48,10 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Credential directory:
 - Release build number policy:
 - Update server mode: EAS Update / custom Expo Updates protocol server
+- Custom OTA manifest endpoint:
+- Custom OTA asset base URL:
+- Custom OTA publish command:
+- Custom OTA rollback command:
 - EAS Update plan: free / starter / production / enterprise / custom
 - Apple account source: local session / App Store Connect API key / ask
 - Google Play credential source: service account JSON / ask
@@ -62,6 +67,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Navigation: `expo-router-navigation`
 - UI: `expo-ui-system`
 - Startup/OTA: `expo-startup-ota`
+- Custom OTA server: `expo-custom-ota-server`
 - Auth: `expo-auth-secure-storage`
 - Backend: `expo-supabase-backend`, `expo-appwrite-backend`, or `expo-firebase-backend`
 - Media: `expo-device-media`

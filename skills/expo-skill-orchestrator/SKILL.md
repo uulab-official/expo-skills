@@ -35,6 +35,7 @@ Collect or infer these values:
 - review information: contact, demo account, privacy URLs, data safety, permission reasons
 - version and OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
 - EAS Update plan check: plan name, pricing checked date, estimated monthly active updated users, upgrade threshold
+- custom OTA server details: manifest endpoint, asset base URL, publish command, rollback command, monitoring owner
 - interactive release access: Expo/EAS login, Apple/Google account, OTP/2FA, fastlane match, backend CLI auth
 - team conventions: bundle prefix, Expo owner, credential directory, URL patterns
 
@@ -72,6 +73,7 @@ Use these skills in order when relevant:
 - Android JKS: `expo-android-jks-signing`
 - EAS build strategy: `expo-eas-build-strategy`
 - Version/OTA safety: `expo-version-ota-governance`
+- Custom OTA server: `expo-custom-ota-server`
 - Interactive release operation: `expo-release-operator`
 - fastlane: `expo-fastlane-automation`
 - Final release: `expo-release-review`
@@ -122,9 +124,10 @@ Use these skills in order when relevant:
 6. `expo-android-jks-signing`
 7. `expo-eas-build-strategy`
 8. `expo-version-ota-governance`
-9. `expo-release-operator` when local login, OTP, match, backend CLI auth, or actual upload/build operations are needed
-10. `expo-fastlane-automation` when metadata/signing automation is desired
-11. `expo-release-review`
+9. `expo-custom-ota-server` when updateServerMode is custom
+10. `expo-release-operator` when local login, OTP, match, backend CLI auth, or actual upload/build operations are needed
+11. `expo-fastlane-automation` when metadata/signing automation is desired
+12. `expo-release-review`
 
 ## Choice Defaults
 

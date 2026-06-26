@@ -9,7 +9,7 @@ Use this skill when an Expo app needs predictable development, staging, and prod
 
 ## First Pass
 
-1. Read `docs/environment-flavors.md`, `docs/versioning-policy.md`, `docs/eas-build-policy.md`, `release-state.json`, `eas.json`, `app.config.*`, `package.json`, and `fastlane/` when present.
+1. Read `docs/environment-flavors.md`, `docs/versioning-policy.md`, `docs/eas-build-policy.md`, `docs/custom-ota-server.md`, `release-state.json`, `eas.json`, `app.config.*`, `package.json`, and `fastlane/` when present.
 2. Identify the requested target: development, staging, production, or all.
 3. Separate runtime JS env values from native identity values. Bundle IDs, package names, schemes, icons, splash, permissions, update URLs, and channels need a new binary.
 4. Verify current Expo docs before changing EAS env, update channel/branch, runtimeVersion, or version source policy.
@@ -111,7 +111,8 @@ Adapt to the app's existing config style and avoid importing secret files into a
 
 - Publish dev updates to `development`, staging updates to `staging`, production updates to `production`.
 - Use `eas update --branch <branch> --message "<message>"` for EAS Update.
-- Use custom publish commands only when `updateServerMode` is custom and documented.
+- Use custom publish commands only when `updateServerMode` is custom and `docs/custom-ota-server.md` documents manifest endpoint, asset base URL, publish command, rollback command, and owner.
+- Use `expo-custom-ota-server` before adding per-flavor custom OTA endpoints or server-side channel/branch filtering.
 - Never use staging OTA to patch production unless the channel mapping and runtime are deliberately promoted.
 - Use rollout commands only after confirming the target channel has the intended current branch.
 

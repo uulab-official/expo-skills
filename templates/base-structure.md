@@ -79,6 +79,7 @@ docs/
   component-architecture.md
   ui-loading-patterns.md
   environment-flavors.md
+  custom-ota-server.md
   versioning-policy.md
   release-operator-session.md
   store-review-info.md
@@ -88,6 +89,8 @@ scripts/
   check-expo-release-state.js
   check-ota-safety.js
   check-release-auth.js
+  publish-custom-ota.js
+  check-custom-ota-server.js
 fastlane/
   Matchfile
   Fastfile
@@ -110,6 +113,9 @@ EXPO_SKILLS.md
   "verify": "npm run typecheck && npm run lint && npm run test && npm run expo:config && npm run release:check && npm run ota:check && npm run release:auth",
   "release:check": "node scripts/check-expo-release-state.js",
   "ota:check": "node scripts/check-ota-safety.js",
+  "ota:check:server": "node scripts/check-custom-ota-server.js",
+  "ota:publish:staging": "node scripts/publish-custom-ota.js --flavor staging",
+  "ota:publish:production": "node scripts/publish-custom-ota.js --flavor production",
   "release:auth": "node scripts/check-release-auth.js expo",
   "release:auth:strict": "node scripts/check-release-auth.js --strict expo ios android"
 }

@@ -20,8 +20,8 @@ Run the release like a calm operator: inspect local state, ask for only the next
 
 ## First Pass
 
-1. Read `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `docs/app-intake.md`, `docs/environment-flavors.md`, `docs/release-operator-session.md`, `release-state.json`, `eas.json`, `fastlane/`, store docs, and backend docs when present.
-2. Identify target actions: OTA, EAS build, local build, EAS submit, TestFlight, Play internal, store review, metadata upload, backend deploy.
+1. Read `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `docs/app-intake.md`, `docs/environment-flavors.md`, `docs/custom-ota-server.md`, `docs/release-operator-session.md`, `release-state.json`, `eas.json`, `fastlane/`, store docs, and backend docs when present.
+2. Identify target actions: OTA, custom OTA publish, EAS build, local build, EAS submit, TestFlight, Play internal, store review, metadata upload, backend deploy.
 3. Determine required accounts: Expo, Apple Developer/App Store Connect, Google Play, Google Cloud/Firebase, Supabase, Appwrite, fastlane match storage.
 4. Run safe status checks before login commands.
 5. Build a short missing-access list and resolve it one item at a time.
@@ -51,6 +51,7 @@ If it is not logged in, I will run `npx expo login` and wait for you to finish t
 | --- | --- | --- | --- |
 | Expo CLI | `npx expo whoami` | `npx expo login` or `EXPO_TOKEN` | `npx expo whoami` |
 | EAS CLI | `eas --version` | `eas account:login` or shared Expo auth | `npx expo whoami` plus a safe EAS command |
+| Custom OTA server | `node scripts/check-custom-ota-server.js` when configured | project-specific storage/CDN/server auth outside repo | strict manifest smoke check with target runtime |
 | Apple ASC API | env/path check | private `.p8` file and `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_PATH` | fastlane metadata dry run or EAS submit config check |
 | Apple interactive | fastlane lane check | let fastlane/App Store Connect request 2FA in terminal | lane reaches metadata/readiness step |
 | Google Play | service account path check | private JSON path in `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON` | `supply` metadata-only or EAS submit config check |
@@ -68,6 +69,7 @@ Commands and flags can change. Verify current official docs when a command fails
 - Run project verification, release state check, and OTA safety check when scripts exist.
 - Confirm flavor, app identity, version, build numbers, runtimeVersion, channel, branch, and target store track.
 - Decide cloud build, local EAS build, OTA, or fastlane upload path.
+- For custom OTA, confirm manifest endpoint, asset base URL, publish command, rollback command, storage/CDN auth, and monitoring owner.
 - Copy `templates/release-operator-session.md` into `docs/release-operator-session.md` when the app lacks a release runbook.
 
 ### 2. Local Access
@@ -96,6 +98,7 @@ Commands and flags can change. Verify current official docs when a command fails
 
 - Use `expo-eas-build-strategy` before spending cloud quota.
 - Use `expo-version-ota-governance` before OTA or binary release.
+- Use `expo-custom-ota-server` before running custom OTA publish commands.
 - Use `expo-release-review` for final store readiness.
 - Run upload/submit commands only after identity, team, package/bundle ID, version, and artifact path are verified.
 

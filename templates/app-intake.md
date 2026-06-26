@@ -96,8 +96,14 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - EAS Update plan checked on:
 - Estimated OTA monthly active users:
 - OTA upgrade threshold:
+- Custom OTA server needed:
+- Custom OTA server doc: docs/custom-ota-server.md
 - Custom update URL:
+- Custom manifest endpoint:
+- Custom asset base URL:
 - Custom update publish command:
+- Custom update rollback command:
+- Custom OTA monitoring:
 - Expo owner:
 - Expo login method: local session / EXPO_TOKEN / ask
 - Interactive release needed: yes / no

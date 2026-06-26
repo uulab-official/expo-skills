@@ -56,7 +56,12 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - productionBranch: production
 - updateServerMode: eas
 - updatesUrlPattern: https://u.expo.dev/<project-id>
+- customOtaServerPath: docs/custom-ota-server.md
+- customOtaManifestEndpoint:
+- customOtaAssetBaseUrl:
 - customUpdatePublishCommand:
+- customUpdateRollbackCommand:
+- customOtaMonitoring:
 - easUpdatePlan: free
 - easUpdateLimitCheckedAt:
 - easUpdateMonthlyActiveUsersLimit: 1000

@@ -30,3 +30,5 @@
 - Add maps provider decision template for Expo app repositories.
 - Add `expo-environment-flavors` for development, staging, and production app variants across EAS, OTA, versioning, and fastlane.
 - Add environment flavor matrix template for app repositories.
+- Add `expo-custom-ota-server` for self-hosted Expo Updates protocol servers, manifest/assets, rollout, rollback, monitoring, and code signing.
+- Add custom OTA server planning template plus smoke-check and publish scaffold scripts for app repositories.

@@ -29,6 +29,8 @@ As of 2026-06-26, Expo's official pricing page lists the Free plan EAS Update al
 - publish command must be documented by the team
 - team owns hosting, asset storage, rollout, monitoring, and rollback
 - use only when private infrastructure, custom routing, compliance, or a non-Expo publishing pipeline is required
+- detailed implementation doc: `docs/custom-ota-server.md`
+- smoke check command: `node scripts/check-custom-ota-server.js --strict --url <manifest-url> --runtime-version <runtime>`
 
 ## Decision Matrix
 
@@ -45,5 +47,7 @@ As of 2026-06-26, Expo's official pricing page lists the Free plan EAS Update al
 - Platform matches target binary.
 - Assets are reachable.
 - Update manifest is valid.
+- Manifest endpoint returns protocol headers expected by `expo-updates`.
+- Code signing response is valid when `expo-expect-signature` is present.
 - Rollback path exists.
 - Production binary has been tested against the update server.
