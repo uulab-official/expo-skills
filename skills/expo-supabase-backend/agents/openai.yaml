@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Supabase Backend"
+  short_description: "Build Expo apps with Supabase auth, data, storage, and realtime."
+  default_prompt: "Add Supabase backend features to this Expo app."

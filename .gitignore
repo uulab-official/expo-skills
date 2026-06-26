@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+credentials/
+*.jks
+*.keystore
+*.p8
+*.mobileprovision
+*.cer
+*.pem
+dist/
+build/
+tmp/
+.expo-skills/profile.local.md
+.expo-skills/*.secret.md

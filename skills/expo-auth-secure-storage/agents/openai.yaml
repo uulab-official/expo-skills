@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Auth Secure Storage"
+  short_description: "Implement auth, session persistence, and secure storage."
+  default_prompt: "Add authentication and secure session storage to this Expo app."

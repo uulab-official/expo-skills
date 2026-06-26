@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Android JKS Signing"
+  short_description: "Create and manage Android JKS signing credentials."
+  default_prompt: "Set up Android JKS signing for this Expo app."

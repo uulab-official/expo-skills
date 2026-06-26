@@ -1,0 +1,12 @@
+This app requires sign-in to test the main flow.
+
+Use the private review demo account configured for this release.
+
+Test path:
+1. Launch the app.
+2. Sign in with the demo account.
+3. Open the main feature.
+4. Open settings, support, privacy policy, and logout.
+
+Special notes:
+- Replace this text before submission.

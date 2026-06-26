@@ -1,0 +1,29 @@
+{
+  "configVersion": 0,
+  "apple": {
+    "info": {
+      "en-US": {
+        "title": "App Name",
+        "subtitle": "Short app subtitle",
+        "description": "Describe what the app does, who it is for, and why it is useful.",
+        "keywords": ["keyword1", "keyword2"],
+        "releaseNotes": "Initial release.",
+        "marketingUrl": "https://example.com",
+        "supportUrl": "https://example.com/support",
+        "privacyPolicyUrl": "https://example.com/privacy"
+      }
+    },
+    "categories": ["PRODUCTIVITY"],
+    "copyright": "2026 Example Team"
+  },
+  "google": {
+    "info": {
+      "en-US": {
+        "title": "App Name",
+        "shortDescription": "Short app description.",
+        "fullDescription": "Describe what the app does, who it is for, and why it is useful.",
+        "video": ""
+      }
+    }
+  }
+}

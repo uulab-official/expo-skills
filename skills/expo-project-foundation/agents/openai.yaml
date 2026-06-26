@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Project Foundation"
+  short_description: "Create or migrate Expo app foundations."
+  default_prompt: "Set up a production-ready Expo project foundation."

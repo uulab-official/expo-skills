@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Fastlane Automation"
+  short_description: "Automate store metadata, signing, and upload with fastlane."
+  default_prompt: "Add fastlane automation for this Expo app release workflow."

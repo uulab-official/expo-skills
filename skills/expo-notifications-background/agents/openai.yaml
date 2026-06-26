@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Notifications Background"
+  short_description: "Configure push, local notifications, and background tasks."
+  default_prompt: "Add notifications and background task behavior to this Expo app."

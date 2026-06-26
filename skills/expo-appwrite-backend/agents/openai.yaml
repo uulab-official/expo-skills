@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Appwrite Backend"
+  short_description: "Build Expo apps with Appwrite services."
+  default_prompt: "Add Appwrite backend features to this Expo app."

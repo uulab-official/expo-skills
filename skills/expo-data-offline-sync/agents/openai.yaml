@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Data Offline Sync"
+  short_description: "Design data fetching, SQLite, caching, and offline sync."
+  default_prompt: "Implement data storage and offline sync for this Expo app."

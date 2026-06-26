@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Router Navigation"
+  short_description: "Build Expo Router navigation flows."
+  default_prompt: "Implement Expo Router navigation for this app."

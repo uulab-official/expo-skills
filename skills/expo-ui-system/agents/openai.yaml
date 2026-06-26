@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo UI System"
+  short_description: "Create Expo themes, fonts, icons, and reusable UI."
+  default_prompt: "Build a reusable UI system for this Expo app."

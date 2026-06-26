@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Skill Orchestrator"
+  short_description: "Route Expo tasks to the right skills."
+  default_prompt: "Choose the right Expo skills and drive the task end to end."

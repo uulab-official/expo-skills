@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Startup OTA"
+  short_description: "Handle splash screens, startup, and EAS Update."
+  default_prompt: "Implement a smooth Expo startup and OTA update flow."

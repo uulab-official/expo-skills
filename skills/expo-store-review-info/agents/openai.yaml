@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Store Review Info"
+  short_description: "Prepare Apple and Google review information."
+  default_prompt: "Collect and scaffold store review information for this Expo app."

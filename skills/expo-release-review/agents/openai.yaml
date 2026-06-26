@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Release Review"
+  short_description: "Prepare EAS builds, store metadata, screenshots, and review."
+  default_prompt: "Prepare this Expo app for store build, submission, and review."

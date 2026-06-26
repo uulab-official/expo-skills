@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Store Console Setup"
+  short_description: "Set up Apple and Google store consoles."
+  default_prompt: "Prepare Apple and Google console settings for this Expo app."

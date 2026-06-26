@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Device Media"
+  short_description: "Use camera, image picker, files, and uploads."
+  default_prompt: "Add device media capture, picking, and upload flows."

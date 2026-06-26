@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Quality Performance"
+  short_description: "Audit testing, accessibility, debugging, and performance."
+  default_prompt: "Review and improve quality and performance for this Expo app."

@@ -1,0 +1,27 @@
+name: Skill request
+description: Suggest a new Expo skill or improvement
+title: "[Skill]: "
+labels: ["skill-request"]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow
+      description: What should the skill help an agent do?
+      placeholder: Add Stripe Checkout to an Expo app...
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: Trigger examples
+      description: What would a user ask that should invoke this skill?
+      placeholder: "Add payments to my Expo app"
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: How should the agent know the work is done?
+      placeholder: typecheck passes, payment sheet opens, webhook verified...

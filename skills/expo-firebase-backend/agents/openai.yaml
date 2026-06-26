@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Firebase Backend"
+  short_description: "Build Expo apps with Firebase services."
+  default_prompt: "Add Firebase backend features to this Expo app."

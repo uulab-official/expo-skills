@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Team Conventions"
+  short_description: "Apply team-specific Expo defaults safely."
+  default_prompt: "Create or apply team-specific Expo app conventions."
