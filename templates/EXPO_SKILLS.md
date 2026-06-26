@@ -19,6 +19,8 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Auth:
 - Store target: prototype / internal test / public review
 - Store review info: docs/store-review-info.md
+- Component architecture: docs/component-architecture.md
+- UI loading patterns: docs/ui-loading-patterns.md
 - Release state: release-state.json
 - Versioning policy: docs/versioning-policy.md
 - Update server policy: docs/update-server-policy.md
@@ -56,6 +58,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Media: `expo-device-media`
 - Offline: `expo-data-offline-sync`
 - Notifications: `expo-notifications-background`
+- Shimmer/loading/component architecture: `expo-ui-system`, `expo-project-foundation`
 - Quality: `expo-quality-performance`
 - Store: `expo-store-console-setup`, `expo-store-review-info`, `expo-android-jks-signing`, `expo-eas-build-strategy`, `expo-version-ota-governance`, `expo-release-operator`, `expo-fastlane-automation`, `expo-release-review`
 

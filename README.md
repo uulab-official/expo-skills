@@ -22,6 +22,8 @@ This repository turns those workflows into reusable agent skills so anyone can a
 
 - Step-by-step Expo app creation and migration guidance.
 - Reusable skills for navigation, UI, auth, media, offline sync, notifications, performance, and release.
+- UI loading patterns for shimmer, skeleton, empty, error, offline, and progress states.
+- Expo component and folder architecture conventions for Router apps, feature modules, background tasks, and notification services.
 - Backend playbooks for Supabase, Appwrite, and Firebase.
 - Store launch workflows for Apple, Google, JKS signing, EAS, and fastlane.
 - Store review information templates for Apple App Review and Google Play.
@@ -192,6 +194,8 @@ expo-skills/
     EXPO_SKILLS.md
     agent-start-prompt.md
     app-intake.md
+    component-architecture.md
+    ui-loading-patterns.md
     profile.example.md
     store-review-info.md
     privacy-data-inventory.md
@@ -220,6 +224,8 @@ cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 mkdir -p /path/to/app/.expo-skills
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
+cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 ```
 
 Then start your agent with [templates/agent-start-prompt.md](templates/agent-start-prompt.md). The recommended entry skill is [expo-skill-orchestrator](skills/expo-skill-orchestrator/SKILL.md), which will choose the smaller specialized skills as needed.
@@ -312,6 +318,11 @@ At minimum, check that every skill has:
 - [Anthropic Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Expo Firebase guide](https://docs.expo.dev/guides/using-firebase/)
 - [Expo Supabase guide](https://docs.expo.dev/guides/using-supabase/)
+- [Expo Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)
+- [Expo push notifications setup](https://docs.expo.dev/push-notifications/push-notifications-setup/)
+- [Expo BackgroundTask](https://docs.expo.dev/versions/latest/sdk/background-task/)
+- [Expo TaskManager](https://docs.expo.dev/versions/latest/sdk/task-manager/)
+- [Expo Image](https://docs.expo.dev/versions/latest/sdk/image/)
 - [Supabase Expo React Native quickstart](https://supabase.com/docs/guides/getting-started/quickstarts/expo-react-native)
 - [Appwrite React Native quickstart](https://appwrite.io/docs/quick-starts/react-native)
 - [Expo app credentials](https://docs.expo.dev/app-signing/app-credentials/)

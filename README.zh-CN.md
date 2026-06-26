@@ -22,6 +22,8 @@ Expo 很适合入门，但真实应用通常还需要路由、UI 系统、认证
 
 - Expo 应用创建、迁移和基础结构
 - Expo Router、主题、字体、图标、启动页和 OTA
+- shimmer、skeleton、empty、error、offline、progress 加载状态模式
+- 面向 Expo Router 应用的组件结构和文件夹架构
 - Supabase、Appwrite、Firebase 后端技能
 - 认证、SecureStore、相机、图片、文件上传和离线同步
 - 推送通知、后台任务、性能、可访问性和 QA
@@ -90,6 +92,8 @@ cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
+cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 cp templates/release-state.example.json /path/to/app/release-state.json
 cp docs/versioning-policy.md /path/to/app/docs/versioning-policy.md
 cp templates/update-server-policy.md /path/to/app/docs/update-server-policy.md

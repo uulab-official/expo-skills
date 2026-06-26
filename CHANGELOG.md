@@ -19,3 +19,5 @@
 - Add Korean, Japanese, and Simplified Chinese README files.
 - Add `expo-release-operator` for interactive local release execution, account login, OTP/2FA prompts, fastlane match, and backend CLI authentication.
 - Add release operator session and auth-check templates for app repositories.
+- Strengthen UI, loading, push notification, background task, component structure, and folder architecture guidance.
+- Add component architecture and UI loading pattern templates for Expo app repositories.

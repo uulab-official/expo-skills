@@ -15,6 +15,10 @@ Use this as a starting point for a project or team profile. Replace placeholders
 
 - backend: supabase
 - navigation: expo-router
+- folderArchitecture: expo-router-thin-routes-feature-modules
+- loadingPattern: skeleton-first
+- shimmerMotion: respect-reduce-motion
+- imagePlaceholder: expo-image-blurhash-or-thumbhash
 - releaseBuildNumber: yymmddnn
 - runtimeVersionPolicy: app-version
 - versionSource: local
@@ -65,4 +69,7 @@ Use this as a starting point for a project or team profile. Replace placeholders
 
 - requiredScreens: home, settings, support, privacy
 - defaultTabs: home, settings
+- requiredUiStates: loading, empty, error, offline
+- notificationsModule: src/lib/notifications
+- backgroundTasksModule: src/lib/background
 - reviewDemoAccount: use-private-env-only

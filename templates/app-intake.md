@@ -32,9 +32,21 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - Gallery:
 - Location:
 - Push notifications:
+- Push service: Expo Push Service / direct FCM/APNs / none
 - Background tasks:
+- Background task type: sync / prefetch / OTA check / location / none
 - Biometrics:
 - Deep links:
+
+## UI And Architecture
+
+- Component architecture doc: docs/component-architecture.md
+- Loading patterns doc: docs/ui-loading-patterns.md
+- Shimmer/skeleton needed:
+- Empty/error/offline states needed:
+- Image placeholders: expo-image BlurHash / ThumbHash / none
+- Route groups:
+- Feature modules:
 
 ## Release
 

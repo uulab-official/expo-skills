@@ -23,8 +23,64 @@ Use this skill before feature work when the app foundation is missing, inconsist
 - Add scripts for common gates: `typecheck`, `lint`, `test`, `verify`, `start`, `ios`, `android`, and release-specific scripts when needed.
 - Prefer Expo Router for navigation unless the project already uses another navigation architecture intentionally.
 - Prefer TypeScript, strict-enough compiler settings, and path aliases only when they reduce real repetition.
-- Keep product code under a predictable structure such as `app/`, `src/components`, `src/features`, `src/lib`, `src/theme`, and `src/utils`.
+- Keep product code under a predictable structure such as `app/`, `src/components`, `src/features`, `src/lib`, `src/theme`, `src/hooks`, `src/providers`, `src/services`, and `src/utils`.
 - Document required native config changes because they require a new binary and cannot ship by OTA alone.
+
+## Folder Architecture
+
+Use Expo Router routes as routing shells, not the whole application:
+
+```text
+app/
+  _layout.tsx
+  (auth)/
+  (tabs)/
+  modals/
+  +not-found.tsx
+src/
+  components/
+    ui/
+    feedback/
+    layout/
+  features/
+    auth/
+      components/
+      hooks/
+      screens/
+      services/
+      types.ts
+    notifications/
+    settings/
+  hooks/
+  lib/
+    api/
+    background/
+    notifications/
+  providers/
+  services/
+  theme/
+  types/
+  utils/
+```
+
+Rules:
+
+- Keep `app/` files thin. They should assemble providers, route groups, and feature screens.
+- Keep app-wide primitives in `src/components/ui`; keep domain UI inside `src/features/<feature>/components`.
+- Keep backend clients in `src/lib` and feature-specific API calls in feature services/hooks.
+- Keep long-running setup such as notification listeners, background tasks, and auth bootstrap in providers or `src/lib`, not inside random screens.
+- Keep feature modules portable: `screens`, `components`, `hooks`, `services`, and `types` should be enough for most features.
+- Add barrels only when they simplify imports; avoid hiding circular dependencies.
+- Do not put secrets, service account files, keystores, or generated native credentials inside `src/`.
+
+## Component Structure
+
+- Create shared UI primitives before duplicating screen-specific widgets.
+- Use state components consistently: `Loading`, `Skeleton`, `EmptyState`, `ErrorState`, `OfflineBanner`.
+- Prefer composition over large prop-heavy components.
+- Keep navigation side effects out of pure UI components.
+- Keep animations and haptics opt-in at the screen or feature layer unless they are core UI primitives.
+- Document any required native config next to the feature that needs it and in release docs.
 
 ## App Config Rules
 

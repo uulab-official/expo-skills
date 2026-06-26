@@ -6,7 +6,7 @@
 
 ### `expo-project-foundation`
 
-프로젝트를 만들거나 기존 앱을 Expo 실무 구조로 정리하는 시작점입니다. SDK, app config, package scripts, TypeScript, lint/test/verify, env example, EAS 기본값을 다룹니다.
+프로젝트를 만들거나 기존 앱을 Expo 실무 구조로 정리하는 시작점입니다. SDK, app config, package scripts, TypeScript, lint/test/verify, env example, EAS 기본값, Expo Router 중심 폴더 아키텍처, feature module 구조를 다룹니다.
 
 ### `expo-skill-orchestrator`
 
@@ -22,7 +22,7 @@
 
 ### `expo-ui-system`
 
-제품 UI의 반복 기반을 다룹니다. theme tokens, fonts, icons, app bars, buttons, inputs, empty/loading/error states, accessibility defaults가 여기에 속합니다.
+제품 UI의 반복 기반을 다룹니다. theme tokens, fonts, icons, app bars, buttons, inputs, shimmer/skeleton, empty/loading/error/offline states, accessibility defaults가 여기에 속합니다.
 
 ### `expo-startup-ota`
 
@@ -54,7 +54,7 @@ Firebase 백엔드를 다룹니다. Firebase JS SDK, React Native Firebase, Auth
 
 ### `expo-notifications-background`
 
-알림과 백그라운드 실행을 다룹니다. push tokens, local notifications, badges, notification routing, background fetch/task limits가 여기에 속합니다.
+알림과 백그라운드 실행을 다룹니다. Expo Push Service, direct FCM/APNs 선택, push tokens, local notifications, badges, notification routing, expo-background-task, TaskManager, task definition scope, background limits가 여기에 속합니다.
 
 ### `expo-quality-performance`
 
