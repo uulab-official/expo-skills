@@ -8,7 +8,9 @@ This repository is distributed as source. Use the latest commit on the default b
 
 ## Reporting A Vulnerability
 
-Open a private security advisory when available, or contact the maintainers through the repository's security contact.
+Use GitHub's private vulnerability reporting or security advisory flow for this repository when it is available.
+
+If private reporting is not available, open a public issue that contains no sensitive details and ask a maintainer to enable a private channel. Do not include exploit steps, secrets, private app identifiers, or account-specific data in that public issue.
 
 Do not open a public issue containing:
 

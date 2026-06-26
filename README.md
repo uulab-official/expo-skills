@@ -329,11 +329,17 @@ Each `SKILL.md` uses only required frontmatter:
 ```yaml
 ---
 name: skill-name
-description: What this skill does and when to use it.
+description: Use when adding, reviewing, or repairing a specific Expo workflow.
 ---
 ```
 
 Codex can also use the optional `agents/openai.yaml` metadata. Claude ignores that file and reads the `SKILL.md` instructions.
+
+## Community
+
+- [Contributing](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security](SECURITY.md)
 
 ## Public Safety
 

@@ -21,7 +21,7 @@ Thanks for helping make Expo Skills better.
 ```yaml
 ---
 name: expo-payments-stripe
-description: What this skill does and when to use it.
+description: Use when adding, reviewing, or repairing Stripe payment flows in an Expo app.
 ---
 ```
 
@@ -50,7 +50,7 @@ Review each match manually. Safety checklists can mention these words; real valu
 
 - Skill name is lowercase hyphen-case.
 - Skill has `name` and `description`.
-- Description says when the skill should trigger.
+- Description starts with `Use when` and says when the skill should trigger.
 - No secrets or private account values are present.
 - README catalog is updated.
 - Validation has passed or the reason it could not run is stated.

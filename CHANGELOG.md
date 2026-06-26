@@ -34,3 +34,4 @@
 - Add custom OTA server planning template plus smoke-check and publish scaffold scripts for app repositories.
 - Add account automation runbook for Supabase, Appwrite, Firebase, Google, Apple, Kakao, CLI/API credentials, and browser console fallback.
 - Strengthen release/backend/store skills so agents can verify local auth, guide browser logins, configure provider consoles, and record only non-secret status.
+- Add community polish for open-source contributors, including clearer skill description examples, security reporting guidance, and a code of conduct.
