@@ -18,6 +18,41 @@ Expo is beginner-friendly, but real apps need more than snippets. You eventually
 
 This repository turns those workflows into reusable agent skills so anyone can ask an AI coding agent to do production-shaped Expo work with better defaults.
 
+## Quick Start
+
+1. Install the skills for your agent.
+
+```bash
+git clone https://github.com/uulab-official/expo-skills.git
+cd expo-skills
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" "$HOME/.claude/skills"
+rsync -a --delete skills/ "${CODEX_HOME:-$HOME/.codex}/skills/"
+rsync -a --delete skills/ "$HOME/.claude/skills/"
+```
+
+2. Copy the app boilerplate docs you need into an Expo app repo.
+
+```bash
+mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
+cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
+cp templates/agent-start-prompt.md /path/to/app/docs/agent-start-prompt.md
+cp templates/app-intake.md /path/to/app/docs/app-intake.md
+```
+
+3. Start the agent with a plain product request.
+
+```text
+Use the Expo Skills pack. I want to build an Expo app for <idea>.
+Start with expo-skill-orchestrator. If the idea or MVP is unclear, use expo-idea-composer first.
+```
+
+## Best For
+
+- Founders or small teams turning an idea into an Expo MVP.
+- Developers who want repeatable app setup, backend, OTA, and release workflows.
+- Teams using Codex, Claude Code, or another agent that can read `SKILL.md`.
+- Public projects that need reusable docs without private team defaults.
+
 ## What You Get
 
 - Step-by-step Expo app creation and migration guidance.
@@ -45,7 +80,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 
 ## Installation
 
-Clone the repository:
+Clone the repository if you have not already:
 
 ```bash
 git clone https://github.com/uulab-official/expo-skills.git
@@ -250,11 +285,12 @@ It does not include root `.codex/` or `.claude/` directories. Those are usually 
 
 ## Agent Boilerplate
 
-For a new Expo app repo, copy the boilerplate files you need:
+For a new Expo app repo, copy only the boilerplate files you need. Start small with `EXPO_SKILLS.md`, `agent-start-prompt.md`, `app-intake.md`, and the planning docs; add release/store docs when the app is moving toward TestFlight, Play internal testing, or public review.
 
 ```bash
 mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
+cp templates/agent-start-prompt.md /path/to/app/docs/agent-start-prompt.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/idea-brief.md /path/to/app/docs/idea-brief.md

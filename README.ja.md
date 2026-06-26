@@ -18,6 +18,39 @@ Expo は始めやすい一方で、実際のアプリにはルーティング、
 
 このリポジトリは、その繰り返し作業を公開可能なスキルとして分離し、誰でも AI エージェントに段階的に依頼できるようにするためのものです。
 
+## クイックスタート
+
+```bash
+git clone https://github.com/uulab-official/expo-skills.git
+cd expo-skills
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" "$HOME/.claude/skills"
+rsync -a --delete skills/ "${CODEX_HOME:-$HOME/.codex}/skills/"
+rsync -a --delete skills/ "$HOME/.claude/skills/"
+```
+
+アプリリポジトリには、必要なドキュメントから小さくコピーします。
+
+```bash
+mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
+cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
+cp templates/agent-start-prompt.md /path/to/app/docs/agent-start-prompt.md
+cp templates/app-intake.md /path/to/app/docs/app-intake.md
+```
+
+エージェントにはこのように開始できます。
+
+```text
+Use the Expo Skills pack. I want to build an Expo app for <idea>.
+Start with expo-skill-orchestrator. If the idea or MVP is unclear, use expo-idea-composer first.
+```
+
+## 向いている用途
+
+- アプリアイデアを Expo MVP に整理したいチーム
+- 作成から審査までの繰り返し可能な基準が必要な開発者
+- Codex、Claude Code、または `SKILL.md` を読むエージェントを使うチーム
+- private なデフォルトを含まない公開可能な Expo 実務ドキュメントが必要なプロジェクト
+
 ## 含まれるもの
 
 - Expo アプリ作成、移行、ベース構造
@@ -97,9 +130,12 @@ rsync -a --delete skills/ "$HOME/.claude/skills/"
 
 ## アプリリポジトリ用ボイラープレート
 
+必要なものからコピーしてください。リリース段階に近づいたら release/store 関連ドキュメントを追加します。
+
 ```bash
 mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
+cp templates/agent-start-prompt.md /path/to/app/docs/agent-start-prompt.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/idea-brief.md /path/to/app/docs/idea-brief.md

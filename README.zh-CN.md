@@ -18,6 +18,39 @@ Expo 很适合入门，但真实应用通常还需要路由、UI 系统、认证
 
 这个仓库把这些重复流程拆成可公开共享的技能，让任何人都能让 AI 代理按步骤完成更接近生产环境的 Expo 工作。
 
+## 快速开始
+
+```bash
+git clone https://github.com/uulab-official/expo-skills.git
+cd expo-skills
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" "$HOME/.claude/skills"
+rsync -a --delete skills/ "${CODEX_HOME:-$HOME/.codex}/skills/"
+rsync -a --delete skills/ "$HOME/.claude/skills/"
+```
+
+在应用仓库中，先复制最需要的文档。
+
+```bash
+mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
+cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
+cp templates/agent-start-prompt.md /path/to/app/docs/agent-start-prompt.md
+cp templates/app-intake.md /path/to/app/docs/app-intake.md
+```
+
+可以这样启动代理。
+
+```text
+Use the Expo Skills pack. I want to build an Expo app for <idea>.
+Start with expo-skill-orchestrator. If the idea or MVP is unclear, use expo-idea-composer first.
+```
+
+## 适合谁
+
+- 想把应用创意整理成 Expo MVP 的团队
+- 需要从项目创建到审核发布都有可重复标准的开发者
+- 使用 Codex、Claude Code，或能读取 `SKILL.md` 的代理的团队
+- 需要不包含私有默认值、可公开共享的 Expo 实战文档的项目
+
 ## 包含内容
 
 - Expo 应用创建、迁移和基础结构
@@ -97,9 +130,12 @@ rsync -a --delete skills/ "$HOME/.claude/skills/"
 
 ## 应用仓库样板文件
 
+按需复制即可。接近发布阶段时，再加入 release/store 相关文档。
+
 ```bash
 mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
+cp templates/agent-start-prompt.md /path/to/app/docs/agent-start-prompt.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/idea-brief.md /path/to/app/docs/idea-brief.md
