@@ -70,6 +70,7 @@ src/
   types/
 docs/
   app-intake.md
+  account-automation.md
   backend.md
   backend-deployment.md
   social-auth-providers.md
@@ -117,6 +118,7 @@ EXPO_SKILLS.md
   "ota:publish:staging": "node scripts/publish-custom-ota.js --flavor staging",
   "ota:publish:production": "node scripts/publish-custom-ota.js --flavor production",
   "release:auth": "node scripts/check-release-auth.js expo",
+  "release:auth:backend": "node scripts/check-release-auth.js expo supabase appwrite firebase google-cloud",
   "release:auth:strict": "node scripts/check-release-auth.js --strict expo ios android"
 }
 ```

@@ -32,3 +32,5 @@
 - Add environment flavor matrix template for app repositories.
 - Add `expo-custom-ota-server` for self-hosted Expo Updates protocol servers, manifest/assets, rollout, rollback, monitoring, and code signing.
 - Add custom OTA server planning template plus smoke-check and publish scaffold scripts for app repositories.
+- Add account automation runbook for Supabase, Appwrite, Firebase, Google, Apple, Kakao, CLI/API credentials, and browser console fallback.
+- Strengthen release/backend/store skills so agents can verify local auth, guide browser logins, configure provider consoles, and record only non-secret status.

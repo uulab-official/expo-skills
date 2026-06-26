@@ -16,6 +16,7 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - backend: supabase
 - backendHosting: cloud
 - backendDeploymentPath: docs/backend-deployment.md
+- accountAutomationPath: docs/account-automation.md
 - socialAuthProvidersPath: docs/social-auth-providers.md
 - mapsProviderDecisionPath: docs/maps-provider-decision.md
 - appShellBlueprintPath: docs/app-shell-blueprint.md
@@ -76,6 +77,8 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - appleAuthMethod: asc-api-key
 - googlePlayAuthMethod: service-account-json
 - backendCliAuth: ask
+- accountAutomationMode: cli-api-first
+- browserConsoleAutomation: ask
 - releaseOperatorSessionPath: docs/release-operator-session.md
 - publicVersionStart: 1.0.0
 - appConfigFile: app.config.ts

@@ -27,6 +27,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 - Expo component and folder architecture conventions for Router apps, feature modules, background tasks, and notification services.
 - Backend playbooks for Supabase, Appwrite, and Firebase.
 - Cloud or self-hosted Supabase/Appwrite planning with public-safe deployment docs.
+- Account automation runbooks for Supabase, Appwrite, Firebase, Google, Apple, Kakao, CLI/API tokens, and browser console fallback.
 - Kakao, Google, and Apple social login setup guidance for Expo auth flows.
 - Naver Map, Kakao Map, Google Maps, Apple Maps, provider choice, and marker clustering/performance guidance.
 - Store launch workflows for Apple, Google, JKS signing, EAS, and fastlane.
@@ -208,6 +209,7 @@ expo-skills/
     EXPO_SKILLS.md
     agent-start-prompt.md
     app-intake.md
+    account-automation.md
     backend-deployment.md
     social-auth-providers.md
     maps-provider-decision.md
@@ -247,6 +249,7 @@ mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/account-automation.md /path/to/app/docs/account-automation.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
 cp templates/maps-provider-decision.md /path/to/app/docs/maps-provider-decision.md
@@ -258,6 +261,7 @@ cp templates/environment-flavors.md /path/to/app/docs/environment-flavors.md
 cp templates/custom-ota-server.md /path/to/app/docs/custom-ota-server.md
 cp templates/scripts/check-custom-ota-server.js /path/to/app/scripts/check-custom-ota-server.js
 cp templates/scripts/publish-custom-ota.js /path/to/app/scripts/publish-custom-ota.js
+cp templates/scripts/check-release-auth.js /path/to/app/scripts/check-release-auth.js
 ```
 
 Then start your agent with [templates/agent-start-prompt.md](templates/agent-start-prompt.md). The recommended entry skill is [expo-skill-orchestrator](skills/expo-skill-orchestrator/SKILL.md), which will choose the smaller specialized skills as needed.

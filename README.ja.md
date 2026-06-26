@@ -27,6 +27,7 @@ Expo は始めやすい一方で、実際のアプリにはルーティング、
 - Expo Router アプリ向けのコンポーネント構造とフォルダアーキテクチャ
 - Supabase、Appwrite、Firebase バックエンド
 - Supabase/Appwrite cloud または self-hosted 構成ドキュメント
+- Supabase、Appwrite、Firebase、Google、Apple、Kakao のアカウント自動化とブラウザコンソール fallback の実行ドキュメント
 - Kakao、Google、Apple ソーシャルログインのチェックリスト
 - Naver Map、Kakao Map、Google Maps、Apple Maps の選択基準とマーカー/クラスタ最適化
 - 認証、SecureStore、カメラ、画像、ファイルアップロード、オフライン同期
@@ -99,6 +100,7 @@ mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/account-automation.md /path/to/app/docs/account-automation.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
 cp templates/maps-provider-decision.md /path/to/app/docs/maps-provider-decision.md

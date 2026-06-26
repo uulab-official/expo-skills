@@ -9,7 +9,7 @@ Use this skill as the entry point for broad or vague Expo work. Its job is to se
 
 ## Operating Mode
 
-- Start by reading team/project conventions: `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `.expo-skills/profile.example.md`, `AGENTS.md`, `CLAUDE.md`, `CODEX.md`, `README.md`.
+- Start by reading team/project conventions: `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `.expo-skills/profile.example.md`, `docs/account-automation.md`, `AGENTS.md`, `CLAUDE.md`, `CODEX.md`, `README.md`.
 - Use project files as the source of truth for existing apps.
 - Ask for missing information only when a safe default would be risky or irreversible.
 - Present 2-3 choices when there is a real product or platform tradeoff.
@@ -25,6 +25,7 @@ Collect or infer these values:
 - target platforms: iOS, Android, web
 - backend choice: none, Supabase, Appwrite, Firebase, custom
 - backend hosting: cloud, self-hosted, local development, or undecided
+- account automation mode: CLI/API first, browser console fallback, or ask each time
 - auth needs: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
 - app shell needs: bottom tabs, app bars, bottom sheet modals, settings, theme, splash, app icon
 - media/device needs: camera, gallery, location, maps, markers, notifications, background tasks
@@ -37,6 +38,7 @@ Collect or infer these values:
 - EAS Update plan check: plan name, pricing checked date, estimated monthly active updated users, upgrade threshold
 - custom OTA server details: manifest endpoint, asset base URL, publish command, rollback command, monitoring owner
 - interactive release access: Expo/EAS login, Apple/Google account, OTP/2FA, fastlane match, backend CLI auth
+- browser console automation access for Supabase, Appwrite, Firebase, Google, Apple, Kakao when CLI/API is unavailable
 - team conventions: bundle prefix, Expo owner, credential directory, URL patterns
 
 If many values are unknown, ask one compact question with choices:
@@ -145,6 +147,7 @@ Use these defaults unless the user, project, or profile says otherwise:
 - Environment flavors: use separate development/staging/production app identity when side-by-side installs, QA, or store release candidates matter
 - OTA server: EAS Update by default; custom Expo Updates server only when the team can own hosting, manifests, rollout, monitoring, and rollback
 - Credentials: private directory outside the app repo
+- Account automation: CLI/API first, browser console fallback when available, and ask before paid, destructive, or credential-rotation actions
 
 ## Response Pattern
 

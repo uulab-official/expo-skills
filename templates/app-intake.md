@@ -23,6 +23,7 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - Backend hosting: cloud / self-hosted / local development / undecided
 - Backend public endpoint:
 - Backend private deployment doc: docs/backend-deployment.md
+- Account automation doc: docs/account-automation.md
 - Auth methods:
 - Social providers: Kakao / Google / Apple / none
 - Kakao login needed:
@@ -129,6 +130,8 @@ Use this when starting a new Expo app or turning a prototype into a production a
 ## Credentials
 
 - Credential directory:
+- Account automation mode: CLI/API first / browser first / ask each time
+- Browser console automation allowed:
 - CI secret manager:
 - Apple team:
 - Apple auth method: App Store Connect API key / interactive 2FA / ask

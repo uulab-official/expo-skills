@@ -14,7 +14,7 @@ Use this skill when fastlane should automate store release tasks for an Expo app
 3. Inspect `docs/environment-flavors.md`, `fastlane/`, `eas.json`, `package.json`, store metadata, screenshots, and credential docs.
 4. Decide fastlane's role: fallback uploader, metadata manager, screenshot uploader, iOS signing manager, or full release lane.
 5. Keep fastlane and EAS complementary. Do not remove EAS scripts just because fastlane is added.
-6. Use `expo-release-operator` for interactive account login, OTP/2FA, match password prompting, and actual upload execution.
+6. Use `expo-release-operator` for interactive account login, OTP/2FA, browser console automation, match password prompting, API key setup checks, and actual upload execution.
 
 ## Recommended Roles
 
@@ -89,6 +89,8 @@ api_key = app_store_connect_api_key(
 
 Pass `api_key: api_key` to `deliver`, `upload_to_testflight`, or other supported actions.
 
+When the API key does not exist yet, use `expo-store-console-setup` plus `expo-release-operator` to create or locate it through App Store Connect. Store the `.p8` outside the repo and record only env names and paths.
+
 ## iOS Lanes
 
 Use `match` only when the team wants shared signing in a private repo or storage backend. Avoid `match nuke` unless the user explicitly requests destructive certificate cleanup.
@@ -148,6 +150,8 @@ platform :android do
   end
 end
 ```
+
+When the service account or app permission is missing, use `expo-store-console-setup` plus `expo-release-operator` to configure Google Cloud/Play Console through CLI/API or browser console automation. Keep the JSON key outside the repo.
 
 ## Metadata And Review
 

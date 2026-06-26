@@ -27,6 +27,7 @@ Expo 很适合入门，但真实应用通常还需要路由、UI 系统、认证
 - 面向 Expo Router 应用的组件结构和文件夹架构
 - Supabase、Appwrite、Firebase 后端技能
 - Supabase/Appwrite cloud 或 self-hosted 配置文档
+- Supabase、Appwrite、Firebase、Google、Apple、Kakao 账户自动化和浏览器控制台 fallback 执行文档
 - Kakao、Google、Apple 社交登录检查清单
 - Naver Map、Kakao Map、Google Maps、Apple Maps 选择策略以及标记/聚类性能优化
 - 认证、SecureStore、相机、图片、文件上传和离线同步
@@ -99,6 +100,7 @@ mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
+cp templates/account-automation.md /path/to/app/docs/account-automation.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
 cp templates/maps-provider-decision.md /path/to/app/docs/maps-provider-decision.md

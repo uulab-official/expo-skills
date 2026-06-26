@@ -8,6 +8,7 @@ Use this file to document cloud or self-hosted backend decisions without committ
 - Hosting mode: cloud / self-hosted / local development
 - Public API endpoint:
 - Admin console URL:
+- Account automation doc: docs/account-automation.md
 - Environment: development / preview / production
 - Owner:
 
@@ -77,6 +78,18 @@ Do not commit these values.
 - Admin credentials
 - Database passwords
 - Backup credentials
+
+## Automation Access
+
+- CLI/API automation preferred:
+- Browser console fallback allowed:
+- Local auth status recorded in: `docs/account-automation.md`
+- Supabase token source: `SUPABASE_ACCESS_TOKEN` / native CLI credential store / browser setup
+- Appwrite API key source: private env / browser setup
+- Firebase auth source: browser login / Application Default Credentials / service account path
+- Google Play API source: service account path outside repo
+- Apple API source: App Store Connect API key path outside repo
+- Kakao console source: browser session only unless a backend/provider API supports the needed task
 
 ## Verification
 

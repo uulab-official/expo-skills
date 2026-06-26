@@ -27,6 +27,7 @@ Use this file during an interactive Expo release. Commit only non-secret state.
 - Firebase project:
 - Supabase project:
 - Appwrite project:
+- Kakao Developers app:
 
 ## Credential Sources
 
@@ -43,6 +44,8 @@ Do not paste secret contents here. Record paths and env names only.
 - Supabase token env: `SUPABASE_ACCESS_TOKEN`
 - Firebase auth method: browser login / service account / CI token
 - Appwrite auth method: CLI login / non-interactive API key
+- Browser automation mode: allowed / used / not available
+- Account automation doc: `docs/account-automation.md`
 
 ## Auth Status
 
@@ -55,6 +58,8 @@ Do not paste secret contents here. Record paths and env names only.
 | Firebase | yes/no | `firebase projects:list` | pending | |
 | Supabase | yes/no | `supabase projects list` | pending | |
 | Appwrite | yes/no | `appwrite whoami` | pending | |
+| Google Cloud | yes/no | `gcloud config get project` | pending | |
+| Kakao Developers | yes/no | browser console | pending | |
 
 ## Commands Run
 
@@ -65,6 +70,7 @@ Do not paste secret contents here. Record paths and env names only.
 ## User Prompts Needed
 
 - Browser login completed:
+- Browser console automation completed:
 - OTP/2FA entered in terminal:
 - Store team selected:
 - Build mode confirmed:

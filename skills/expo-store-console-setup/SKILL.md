@@ -13,7 +13,7 @@ Use this skill before build submission automation. It covers console-side setup 
 2. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, using them only as defaults.
 3. Inspect `app.config.*`, `eas.json`, `credentials.json`, `store.config.json`, `fastlane/`, and docs before making changes.
 4. Separate console tasks from repo tasks. Console tasks may need the account owner in a browser; repo tasks should record required IDs and file paths.
-5. Use `expo-release-operator` when console setup requires interactive local login, browser authentication, OTP/2FA, or verifying local credential paths.
+5. Use `expo-release-operator` when console setup requires interactive local login, browser authentication, browser console automation, OTP/2FA, API key creation, service account setup, or verifying local credential paths.
 6. Use official docs for current console UI because Apple, Google, Expo, and fastlane screens change over time.
 
 ## Required Decisions
@@ -34,6 +34,7 @@ Use this skill before build submission automation. It covers console-side setup 
 - Create an App Store Connect API key when automation needs EAS Submit or fastlane without interactive Apple login.
 - Store API key files outside the repo or in a private secret manager. Commit only path placeholders.
 - Keep issuer ID, key ID, and private key path documented in a local-only env example or team credential guide.
+- If API key creation must be done in the browser, let the user complete login/2FA and then use browser automation to navigate App Store Connect. Record only key ID, issuer ID, team ID, and private file path.
 
 Suggested env names:
 
@@ -53,6 +54,7 @@ ASC_TEAM_ID=
 - Enable Google Play Developer API and connect a Google Cloud project.
 - Create a service account, invite it to Play Console, and grant the minimum app permissions needed for upload/metadata.
 - Store the service account JSON outside the repo or in a private secret manager.
+- If Play Console API access must be configured in the browser, use browser automation after the user completes login/2FA. Record only project ID, service account email, app package, and JSON path.
 
 Suggested env names:
 
@@ -73,6 +75,7 @@ GOOGLE_PLAY_PACKAGE_NAME=com.example.app
 Record placeholders, not secrets:
 
 - `docs/store-console-setup.md` with console IDs and pending setup items.
+- `docs/account-automation.md` with CLI/API versus browser-console status for Apple, Google, Firebase, and Kakao.
 - `docs/store-review-info.md` with review contact, demo account, URLs, and manual console items.
 - `.env.example` with required variable names.
 - `credentials.example.json` or comments showing expected local file paths.

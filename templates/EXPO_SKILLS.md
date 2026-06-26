@@ -18,6 +18,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Backend: Supabase / Appwrite / Firebase / custom / none
 - Backend hosting: cloud / self-hosted / local development / undecided
 - Backend deployment: docs/backend-deployment.md
+- Account automation: docs/account-automation.md
 - Social auth providers: docs/social-auth-providers.md
 - Maps provider decision: docs/maps-provider-decision.md
 - Auth:
@@ -34,6 +35,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Custom OTA server: docs/custom-ota-server.md
 - EAS build policy: docs/eas-build-policy.md
 - Release operator session: docs/release-operator-session.md
+- Account automation policy: docs/account-automation.md
 - EAS Update plan checked on:
 - Estimated OTA monthly active users:
 - OTA upgrade threshold:
@@ -56,6 +58,8 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Apple account source: local session / App Store Connect API key / ask
 - Google Play credential source: service account JSON / ask
 - Backend CLI auth: Supabase / Appwrite / Firebase / none
+- Browser console automation: allowed / ask / disabled
+- Private credential directory:
 
 ## Preferred Skill Order
 

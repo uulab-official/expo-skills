@@ -2,6 +2,8 @@
 
 Use this file to track Kakao, Google, Apple, and custom OAuth/OIDC setup for an Expo app.
 
+Use `docs/account-automation.md` to record whether each provider is configured through CLI/API automation or browser console automation.
+
 ## App Redirects
 
 - Expo scheme:
@@ -24,6 +26,7 @@ Use this file to track Kakao, Google, Apple, and custom OAuth/OIDC setup for an 
 ## Kakao
 
 - Kakao Developers app:
+- Console automation status:
 - REST API key source:
 - Client secret source:
 - Consent items:
@@ -36,6 +39,7 @@ Kakao secrets belong in the backend provider settings or server env, not in Expo
 ## Google
 
 - Google Cloud project:
+- Console/API automation status:
 - OAuth consent screen status:
 - Web client ID:
 - iOS client ID:
@@ -47,6 +51,7 @@ Kakao secrets belong in the backend provider settings or server env, not in Expo
 ## Apple
 
 - Apple team:
+- Console/API automation status:
 - App ID:
 - Services ID:
 - Key ID:

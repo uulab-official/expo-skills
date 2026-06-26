@@ -14,7 +14,15 @@ Use this skill when Appwrite is the app backend.
 3. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially backend project naming, credential directory, and local env policy.
 4. Check official Appwrite React Native docs before installing because the React Native SDK has been documented as beta and setup details can change.
 5. Keep server API keys out of the mobile app.
-6. Use `expo-release-operator` when the task requires `appwrite login`, project pull/push, function deploy, non-interactive API key setup, or private token handling.
+6. Use `expo-release-operator` when the task requires `appwrite login`, project pull/push, function deploy, non-interactive API key setup, browser console setup, OAuth provider configuration, or private token handling.
+
+## Account Automation
+
+- Prefer existing Appwrite CLI auth, then `APPWRITE_API_KEY` from a private env, then browser-created API keys for non-interactive CLI work.
+- If project/platform/provider settings are console-only, use browser automation when available and let the user complete login/2FA directly.
+- Verify with `appwrite whoami` or a safe project list/pull before mutating resources.
+- Record endpoint, project ID, platform IDs, function IDs, and provider setup status in `docs/account-automation.md`; never record server API keys or OAuth client secrets.
+- For self-hosted Appwrite, confirm the public endpoint, TLS, console admin policy, and backup owner before the agent changes production settings.
 
 ## Install
 

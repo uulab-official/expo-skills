@@ -20,6 +20,7 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Platforms: iOS, Android, web
 - Backend: none, Supabase, Appwrite, Firebase, custom
 - Backend hosting: cloud, self-hosted, local development, undecided
+- Account automation: CLI/API first, browser console fallback, private credential directory, user approval boundaries
 - Auth: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
 - App shell: bottom tabs, app bars, bottom sheet modals, settings, theme, splash, app icon
 - Device features: camera, gallery, location, maps, markers, notifications, background tasks
@@ -33,6 +34,7 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Version policy document: `docs/versioning-policy.md` when present
 - Build strategy: cloud EAS, local EAS, quota budget, or OTA
 - Interactive release access: Expo/EAS login, Apple/Google accounts, OTP/2FA, fastlane match, backend CLI auth
+- Browser console automation access: Supabase/Appwrite/Firebase/Google/Apple/Kakao console tasks when CLI/API is unavailable
 - Team defaults: owner, bundle prefix, credential directory, URL patterns
 
 ## Recommended Choice Prompts
@@ -116,6 +118,15 @@ Which release operation should I run?
 1. Login/preflight only: verify local accounts and credential paths
 2. Build and submit: EAS/local build plus store upload
 3. Store automation: fastlane match, metadata, screenshots, or track upload
+```
+
+### Account Automation
+
+```text
+How should I handle provider accounts?
+1. CLI/API first: use existing local sessions or private env paths, browser only when needed
+2. Browser first: use logged-in consoles for setup, then save only non-secret paths/status
+3. Ask each time: confirm before each provider console or token step
 ```
 
 ## Skill Bundles

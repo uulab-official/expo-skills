@@ -14,7 +14,15 @@ Use this skill when Supabase is the app backend.
 3. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially backend project naming, credential directory, and local env policy.
 4. Verify current Supabase and Expo setup from official docs when installing or changing SDK behavior.
 5. Keep service role or secret keys server-side only. On-device apps use the project URL and publishable/anon client key.
-6. Use `expo-release-operator` when the task requires `supabase login`, project linking, function deploy, type generation from a remote project, or private token handling.
+6. Use `expo-release-operator` when the task requires `supabase login`, project linking, function deploy, type generation from a remote project, browser console setup, OAuth provider configuration, or private token handling.
+
+## Account Automation
+
+- Prefer existing Supabase CLI auth, then `SUPABASE_ACCESS_TOKEN` from a private env, then `supabase login`.
+- If the token must be created in the dashboard, use browser automation when available and let the user complete login/2FA directly.
+- Verify with `supabase projects list` before linking, deploying, or generating types.
+- Record project ref, org, linked path, and provider setup status in `docs/account-automation.md`; never record PATs, service role keys, JWT secrets, or OAuth client secrets.
+- For OAuth providers, the agent may configure Supabase Dashboard values when logged in, but provider secrets must be stored only in Supabase/server settings.
 
 ## Install
 

@@ -96,9 +96,17 @@ if (selected.has('fastlane-match')) {
 if (selected.has('firebase')) {
   requireCommand('firebase', 'Firebase');
   if (!process.env.FIREBASE_TOKEN && !process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-    markWarn('Firebase has no FIREBASE_TOKEN or GOOGLE_APPLICATION_CREDENTIALS. Browser login may still work via firebase login.');
+    markWarn('Firebase has no FIREBASE_TOKEN or GOOGLE_APPLICATION_CREDENTIALS. Browser login or Application Default Credentials may still work.');
   }
   maybePathEnv('GOOGLE_APPLICATION_CREDENTIALS', 'Firebase');
+}
+
+if (selected.has('google-cloud') || selected.has('gcloud')) {
+  requireCommand('gcloud', 'Google Cloud');
+  maybePathEnv('GOOGLE_APPLICATION_CREDENTIALS', 'Google Cloud');
+  if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+    markWarn('GOOGLE_APPLICATION_CREDENTIALS is not set. User ADC or gcloud browser login may still work.');
+  }
 }
 
 if (selected.has('supabase')) {
@@ -113,6 +121,10 @@ if (selected.has('appwrite')) {
   if (!process.env.APPWRITE_API_KEY) {
     markWarn('APPWRITE_API_KEY is not set. Interactive login may still work via appwrite login.');
   }
+}
+
+if (selected.has('kakao')) {
+  markWarn('Kakao Developers has no standard CLI check here. Use browser console automation and record status in docs/account-automation.md.');
 }
 
 if (failed) {

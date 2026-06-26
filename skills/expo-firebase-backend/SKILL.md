@@ -13,7 +13,15 @@ Use this skill when Firebase is the app backend or native Firebase services are 
 2. Inspect Expo config, `package.json`, service files, auth flow, and native build setup.
 3. Verify current Expo Firebase guidance and React Native Firebase plugin requirements before editing.
 4. Decide whether Expo Go support is required. Native Firebase modules generally require a dev client or production build.
-5. Use `expo-release-operator` when the task requires `firebase login`, project listing, app registration, App Distribution, functions deploy, or private service account handling.
+5. Use `expo-release-operator` when the task requires `firebase login`, Application Default Credentials, project listing, app registration, App Distribution, functions deploy, browser console setup, Google OAuth setup, or private service account handling.
+
+## Account Automation
+
+- Prefer existing Firebase CLI auth, then Google Application Default Credentials, then service account paths from a private env.
+- Use browser automation for Firebase Console or Google Cloud Console tasks that are not safe or available through CLI/API.
+- Verify with `firebase projects:list` and, when Google Cloud APIs are involved, a harmless `gcloud` project/auth check.
+- Record project IDs, app IDs, config file paths, and provider setup status in `docs/account-automation.md`; never record Firebase Admin service account JSON contents.
+- For Google Play, use the store/release skills because Play API access and service account permissions cross into release operations.
 
 ## Choose SDK Path
 
