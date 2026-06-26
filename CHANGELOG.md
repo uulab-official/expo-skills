@@ -17,3 +17,5 @@
 - Add EAS build strategy skill and build policy template for cloud quota/local build tradeoffs.
 - Document EAS Update free-tier planning, EAS-vs-custom update server decisions, and OTA quota check fields.
 - Add Korean, Japanese, and Simplified Chinese README files.
+- Add `expo-release-operator` for interactive local release execution, account login, OTP/2FA prompts, fastlane match, and backend CLI authentication.
+- Add release operator session and auth-check templates for app repositories.

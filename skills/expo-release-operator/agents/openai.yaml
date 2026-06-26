@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Release Operator"
+  short_description: "Run interactive Expo release operations with local credentials."
+  default_prompt: "Use this skill to guide an Expo app release that needs local logins, OTP prompts, store credentials, fastlane match, EAS build/submit, or backend CLI authentication."

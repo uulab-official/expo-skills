@@ -22,12 +22,14 @@ docs/
   app-intake.md
   backend.md
   versioning-policy.md
+  release-operator-session.md
   store-review-info.md
   privacy-data-inventory.md
   permissions-inventory.md
 scripts/
   check-expo-release-state.js
   check-ota-safety.js
+  check-release-auth.js
 fastlane/
   Matchfile
   Fastfile
@@ -46,6 +48,7 @@ EXPO_SKILLS.md
   "lint": "expo lint",
   "verify": "npm run typecheck && npm run lint && npm run release:check",
   "release:check": "node scripts/check-expo-release-state.js",
-  "ota:check": "node scripts/check-ota-safety.js"
+  "ota:check": "node scripts/check-ota-safety.js",
+  "release:auth": "node scripts/check-release-auth.js expo"
 }
 ```

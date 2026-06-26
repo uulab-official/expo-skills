@@ -57,6 +57,8 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - Custom update URL:
 - Custom update publish command:
 - Expo owner:
+- Expo login method: local session / EXPO_TOKEN / ask
+- Interactive release needed: yes / no
 - iOS bundle ID:
 - Android package:
 - Support URL:
@@ -81,8 +83,14 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - Credential directory:
 - CI secret manager:
 - Apple team:
+- Apple auth method: App Store Connect API key / interactive 2FA / ask
 - Google Play account:
+- Google Play auth method: service account JSON / ask
 - Firebase project:
+- Supabase CLI auth needed:
+- Appwrite CLI auth needed:
+- Firebase CLI auth needed:
+- fastlane match storage: git / google_cloud / s3 / none
 
 ## Decisions Needed
 

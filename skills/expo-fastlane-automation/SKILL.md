@@ -14,6 +14,7 @@ Use this skill when fastlane should automate store release tasks for an Expo app
 3. Inspect `fastlane/`, `eas.json`, `package.json`, store metadata, screenshots, and credential docs.
 4. Decide fastlane's role: fallback uploader, metadata manager, screenshot uploader, iOS signing manager, or full release lane.
 5. Keep fastlane and EAS complementary. Do not remove EAS scripts just because fastlane is added.
+6. Use `expo-release-operator` for interactive account login, OTP/2FA, match password prompting, and actual upload execution.
 
 ## Recommended Roles
 
@@ -46,6 +47,8 @@ Choose a storage mode deliberately:
 - `s3`: useful when the team already standardizes on AWS S3.
 
 Do not commit match passwords, storage credentials, certificates, or profiles into the app repo. Use private env, CI secrets, Keychain, or a team credential manager.
+
+During real release operations, run match in readonly mode first and let the CLI prompt for credentials or 2FA in the terminal. Do not ask the user to paste match passwords or Apple passwords into chat.
 
 Example `Matchfile` shapes:
 

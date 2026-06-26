@@ -23,6 +23,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Versioning policy: docs/versioning-policy.md
 - Update server policy: docs/update-server-policy.md
 - EAS build policy: docs/eas-build-policy.md
+- Release operator session: docs/release-operator-session.md
 - EAS Update plan checked on:
 - Estimated OTA monthly active users:
 - OTA upgrade threshold:
@@ -30,6 +31,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 ## Team Defaults
 
 - Expo owner:
+- Expo login method: local session / EXPO_TOKEN / ask
 - Bundle prefix:
 - Android package prefix:
 - URL host pattern:
@@ -37,6 +39,9 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Release build number policy:
 - Update server mode: EAS Update / custom Expo Updates protocol server
 - EAS Update plan: free / starter / production / enterprise / custom
+- Apple account source: local session / App Store Connect API key / ask
+- Google Play credential source: service account JSON / ask
+- Backend CLI auth: Supabase / Appwrite / Firebase / none
 
 ## Preferred Skill Order
 
@@ -52,7 +57,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Offline: `expo-data-offline-sync`
 - Notifications: `expo-notifications-background`
 - Quality: `expo-quality-performance`
-- Store: `expo-store-console-setup`, `expo-store-review-info`, `expo-android-jks-signing`, `expo-eas-build-strategy`, `expo-version-ota-governance`, `expo-fastlane-automation`, `expo-release-review`
+- Store: `expo-store-console-setup`, `expo-store-review-info`, `expo-android-jks-signing`, `expo-eas-build-strategy`, `expo-version-ota-governance`, `expo-release-operator`, `expo-fastlane-automation`, `expo-release-review`
 
 ## Safety
 

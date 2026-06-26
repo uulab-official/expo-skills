@@ -14,9 +14,11 @@ Use this skill when preparing an Expo app for TestFlight, Play internal testing,
 3. Inspect `app.config.*`, `eas.json`, `package.json`, `docs/store-review-info.md`, privacy/data inventories, store metadata files, screenshots, and credentials references.
 4. Inspect `release-state.json` and version/OTA check scripts when present.
 5. Inspect `docs/eas-build-policy.md` when present and decide cloud build, local build, or OTA.
-6. Separate native binary changes from OTA-only changes.
-7. Confirm the intended release target: internal test, TestFlight, closed testing, public store review, or OTA update.
-8. Verify current Expo/EAS behavior from official docs when the command or store requirement may have changed.
+6. Inspect `docs/release-operator-session.md` when present for account, credential, and auth status.
+7. Separate native binary changes from OTA-only changes.
+8. Confirm the intended release target: internal test, TestFlight, closed testing, public store review, or OTA update.
+9. Use `expo-release-operator` when the task requires actual local login, OTP/2FA, credential prompts, EAS build/submit, fastlane upload, or backend CLI authentication.
+10. Verify current Expo/EAS behavior from official docs when the command or store requirement may have changed.
 
 ## Secret Safety
 
@@ -38,6 +40,7 @@ Use this skill when preparing an Expo app for TestFlight, Play internal testing,
 - Prefer EAS Build and EAS Submit for Expo-aligned workflows.
 - Use local EAS builds when the team wants cost control, local signing visibility, or to reproduce cloud build failures.
 - Use EAS cloud builds when plan quota/credits are available and shared remote artifacts are useful.
+- Use `expo-release-operator` to run interactive login, OTP/2FA, credential checks, and actual submit/upload commands.
 - Keep cloud builds as an explicit choice when local build requirements are unavailable.
 - Run a verification gate before building.
 - Record the exact profile, platform, build artifact path, and submit command used.

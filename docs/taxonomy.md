@@ -80,6 +80,10 @@ EAS 빌드 운영 전략을 다룹니다. Cloud Build, local EAS build, Free/pai
 
 fastlane 기반 자동화를 다룹니다. match, deliver, supply, TestFlight 업로드, metadata/screenshot 폴더, CI에서 쓰는 lane 설계가 여기에 속합니다.
 
+### `expo-release-operator`
+
+실제 배포 실행 중 필요한 로컬 로그인과 사용자 입력을 다룹니다. Expo/EAS 로그인, Apple/Google 계정 선택, OTP/2FA 입력 유도, fastlane match readonly 검증, Firebase/Supabase/Appwrite CLI 로그인, 로컬 credential path 확인, EAS build/submit 또는 fastlane upload 진행이 여기에 속합니다.
+
 ### `expo-release-review`
 
 스토어 출시를 다룹니다. EAS local/cloud builds, submit, store metadata, screenshots, privacy labels, review notes, version/build number policy가 여기에 속합니다.

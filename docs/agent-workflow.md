@@ -27,6 +27,7 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - EAS Update plan check: plan, pricing checked date, estimated monthly active updated users, upgrade threshold
 - Version policy document: `docs/versioning-policy.md` when present
 - Build strategy: cloud EAS, local EAS, quota budget, or OTA
+- Interactive release access: Expo/EAS login, Apple/Google accounts, OTP/2FA, fastlane match, backend CLI auth
 - Team defaults: owner, bundle prefix, credential directory, URL patterns
 
 ## Recommended Choice Prompts
@@ -67,6 +68,15 @@ Where should private credentials live?
 3. Existing team credential path from the project profile
 ```
 
+### Interactive Release
+
+```text
+Which release operation should I run?
+1. Login/preflight only: verify local accounts and credential paths
+2. Build and submit: EAS/local build plus store upload
+3. Store automation: fastlane match, metadata, screenshots, or track upload
+```
+
 ## Skill Bundles
 
 ### MVP Bundle
@@ -93,6 +103,7 @@ Where should private credentials live?
 - `expo-android-jks-signing`
 - `expo-eas-build-strategy`
 - `expo-version-ota-governance`
+- `expo-release-operator` when local logins, OTP, credential checks, or real upload/build commands are needed
 - `expo-fastlane-automation` when needed
 - `expo-release-review`
 

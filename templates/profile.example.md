@@ -6,6 +6,7 @@ Use this as a starting point for a project or team profile. Replace placeholders
 
 - organization: Example Team
 - expoOwner: example-owner
+- expoLoginMethod: local-session
 - bundlePrefix: com.example
 - androidPackagePrefix: com.example
 - urlHostPattern: <app-slug>.example.com
@@ -34,6 +35,10 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - cloudBuildBudgetAndroid:
 - cloudBuildBudgetIos:
 - fastlaneMatchStorage: git
+- appleAuthMethod: asc-api-key
+- googlePlayAuthMethod: service-account-json
+- backendCliAuth: ask
+- releaseOperatorSessionPath: docs/release-operator-session.md
 - publicVersionStart: 1.0.0
 - appConfigFile: app.config.ts
 

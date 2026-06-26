@@ -7,7 +7,7 @@
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-21-2ea44f)
+![Skills](https://img.shields.io/badge/skills-22-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -29,6 +29,7 @@ Expo 很适合入门，但真实应用通常还需要路由、UI 系统、认证
 - 商店审核、隐私、权限和数据安全模板
 - 版本号、构建号、runtimeVersion 和 OTA 安全检查
 - EAS cloud build、local EAS build 和 OTA 的选择策略
+- 串联本地登录、OTP/2FA、Expo/EAS、Apple/Google、fastlane match 和 backend CLI 的交互式发布执行技能
 - Codex 与 Claude Code 安装方法
 
 ## 安装
@@ -61,7 +62,7 @@ rsync -a --delete skills/ "$HOME/.claude/skills/"
 5. 使用 `expo-startup-ota` 和 `expo-auth-secure-storage` 处理启动流程和认证。
 6. 在 `expo-supabase-backend`、`expo-appwrite-backend`、`expo-firebase-backend` 中选择后端。
 7. 根据需要添加媒体、离线、通知、后台任务和质量相关技能。
-8. 发布前使用 `expo-store-console-setup`、`expo-store-review-info`、`expo-android-jks-signing`、`expo-eas-build-strategy`、`expo-version-ota-governance`、`expo-fastlane-automation`、`expo-release-review`。
+8. 发布前使用 `expo-store-console-setup`、`expo-store-review-info`、`expo-android-jks-signing`、`expo-eas-build-strategy`、`expo-release-operator`、`expo-version-ota-governance`、`expo-fastlane-automation`、`expo-release-review`。
 
 ## OTA 与构建策略
 
@@ -93,8 +94,10 @@ cp templates/release-state.example.json /path/to/app/release-state.json
 cp docs/versioning-policy.md /path/to/app/docs/versioning-policy.md
 cp templates/update-server-policy.md /path/to/app/docs/update-server-policy.md
 cp templates/eas-build-policy.md /path/to/app/docs/eas-build-policy.md
+cp templates/release-operator-session.md /path/to/app/docs/release-operator-session.md
 cp templates/scripts/check-expo-release-state.js /path/to/app/scripts/check-expo-release-state.js
 cp templates/scripts/check-ota-safety.js /path/to/app/scripts/check-ota-safety.js
+cp templates/scripts/check-release-auth.js /path/to/app/scripts/check-release-auth.js
 ```
 
 ## 公开仓库安全规则

@@ -14,6 +14,7 @@ Use this skill when Appwrite is the app backend.
 3. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially backend project naming, credential directory, and local env policy.
 4. Check official Appwrite React Native docs before installing because the React Native SDK has been documented as beta and setup details can change.
 5. Keep server API keys out of the mobile app.
+6. Use `expo-release-operator` when the task requires `appwrite login`, project pull/push, function deploy, non-interactive API key setup, or private token handling.
 
 ## Install
 

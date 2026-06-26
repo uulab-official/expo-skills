@@ -13,7 +13,8 @@ Use this skill before build submission automation. It covers console-side setup 
 2. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, using them only as defaults.
 3. Inspect `app.config.*`, `eas.json`, `credentials.json`, `store.config.json`, `fastlane/`, and docs before making changes.
 4. Separate console tasks from repo tasks. Console tasks may need the account owner in a browser; repo tasks should record required IDs and file paths.
-5. Use official docs for current console UI because Apple, Google, Expo, and fastlane screens change over time.
+5. Use `expo-release-operator` when console setup requires interactive local login, browser authentication, OTP/2FA, or verifying local credential paths.
+6. Use official docs for current console UI because Apple, Google, Expo, and fastlane screens change over time.
 
 ## Required Decisions
 

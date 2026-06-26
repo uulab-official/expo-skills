@@ -14,6 +14,7 @@ Use this skill when Supabase is the app backend.
 3. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially backend project naming, credential directory, and local env policy.
 4. Verify current Supabase and Expo setup from official docs when installing or changing SDK behavior.
 5. Keep service role or secret keys server-side only. On-device apps use the project URL and publishable/anon client key.
+6. Use `expo-release-operator` when the task requires `supabase login`, project linking, function deploy, type generation from a remote project, or private token handling.
 
 ## Install
 

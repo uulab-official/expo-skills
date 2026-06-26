@@ -13,6 +13,7 @@ Use this skill when Firebase is the app backend or native Firebase services are 
 2. Inspect Expo config, `package.json`, service files, auth flow, and native build setup.
 3. Verify current Expo Firebase guidance and React Native Firebase plugin requirements before editing.
 4. Decide whether Expo Go support is required. Native Firebase modules generally require a dev client or production build.
+5. Use `expo-release-operator` when the task requires `firebase login`, project listing, app registration, App Distribution, functions deploy, or private service account handling.
 
 ## Choose SDK Path
 
