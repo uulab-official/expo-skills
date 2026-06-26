@@ -3,7 +3,9 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
-const targets = process.argv.slice(2);
+const args = process.argv.slice(2);
+const strict = args.includes('--strict');
+const targets = args.filter((arg) => arg !== '--strict');
 const selected = new Set(targets.length ? targets : ['expo']);
 let failed = false;
 
@@ -13,7 +15,11 @@ function markFail(message) {
 }
 
 function markWarn(message) {
-  console.warn(`[release-auth] warning: ${message}`);
+  if (strict) {
+    markFail(message);
+  } else {
+    console.warn(`[release-auth] warning: ${message}`);
+  }
 }
 
 function commandExists(command) {
@@ -112,5 +118,6 @@ if (selected.has('appwrite')) {
 if (failed) {
   process.exitCode = 1;
 } else {
-  console.log(`[release-auth] OK for targets: ${Array.from(selected).join(', ')}`);
+  const mode = strict ? 'strict' : 'interactive';
+  console.log(`[release-auth] OK (${mode}) for targets: ${Array.from(selected).join(', ')}`);
 }

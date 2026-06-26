@@ -7,7 +7,8 @@
 - [ ] Skill frontmatter has `name` and `description`
 - [ ] README catalog updated
 - [ ] No private credentials or account values included
-- [ ] Validation passed or reason noted
+- [ ] `npm run validate` passed or reason noted
+- [ ] Release rehearsal example still passes when release templates changed
 
 ## Notes
 

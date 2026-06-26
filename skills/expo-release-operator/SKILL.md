@@ -73,6 +73,7 @@ Commands and flags can change. Verify current official docs when a command fails
 ### 2. Local Access
 
 - Use `templates/scripts/check-release-auth.js` when copied into the app to identify missing tools/env paths.
+- Use `node scripts/check-release-auth.js --strict ...` in CI or final release checks when warnings should fail the run.
 - Check command availability before asking the user to log in.
 - Prefer existing local sessions over creating new credentials.
 - If multiple accounts are possible, ask the user which account/team to use before building or submitting.
@@ -134,6 +135,7 @@ npm run verify
 npm run release:check
 npm run ota:check
 node scripts/check-release-auth.js expo ios android fastlane-match
+node scripts/check-release-auth.js --strict expo ios android fastlane-match
 ```
 
 Report what passed, what required user action, what remains manual in Apple/Google/Expo/backend consoles, and which account/team was used without exposing secrets.

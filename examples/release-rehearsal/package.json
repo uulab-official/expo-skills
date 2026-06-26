@@ -1,0 +1,11 @@
+{
+  "name": "expo-release-rehearsal",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "release:check": "node ../../templates/scripts/check-expo-release-state.js",
+    "ota:check": "node ../../templates/scripts/check-ota-safety.js",
+    "release:auth": "node ../../templates/scripts/check-release-auth.js expo",
+    "release:auth:strict": "node ../../templates/scripts/check-release-auth.js --strict expo ios android"
+  }
+}

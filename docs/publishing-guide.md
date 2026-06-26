@@ -4,8 +4,8 @@
 
 ## Before Publishing
 
-1. Run validation for every skill.
-2. Search for private values before commit.
+1. Run `npm run validate`.
+2. Search for private values before commit when release or credential docs changed.
 3. Keep each skill focused on agent instructions, not long tutorials.
 4. Put human-facing explanation in the root README or docs.
 5. Keep `agents/openai.yaml` aligned with each `SKILL.md`.
@@ -16,7 +16,8 @@
 Run:
 
 ```bash
-rg -n "EXPO_TOKEN|SERVICE_ROLE|MATCH_PASSWORD|FASTLANE|APPLE|GOOGLE|password|secret|keystore|\\.jks|\\.p8|\\.mobileprovision|@gmail\\.com|010-" .
+npm run validate
+rg -n "SERVICE_ROLE=.+\\S|EXPO_TOKEN=.+\\S|MATCH_PASSWORD=.+\\S|ANDROID_(KEYSTORE|KEY)_PASSWORD=.+\\S|APP_REVIEW_DEMO_PASSWORD=.+\\S|AuthKey_[A-Z0-9]{10}\\.p8|-----BEGIN .*PRIVATE KEY-----" README.md docs skills templates examples .github
 ```
 
 Review every hit manually. Some words may appear in safety checklists; real values must not.

@@ -1,0 +1,11 @@
+{
+  "name": "expo-skills",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "validate": "node scripts/validate-repository.js",
+    "release:check:example": "npm --prefix examples/release-rehearsal run release:check",
+    "ota:check:example": "npm --prefix examples/release-rehearsal run ota:check",
+    "release:auth:example": "npm --prefix examples/release-rehearsal run release:auth"
+  }
+}

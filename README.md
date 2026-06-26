@@ -207,6 +207,8 @@ expo-skills/
     update-server-policy.md
     eas-build-policy.md
     scripts/
+  examples/
+    release-rehearsal/
 ```
 
 ## Agent Instructions
@@ -220,8 +222,8 @@ It does not include root `.codex/` or `.claude/` directories. Those are usually 
 For a new Expo app repo, copy the boilerplate files you need:
 
 ```bash
+mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
 cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
-mkdir -p /path/to/app/.expo-skills
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
@@ -230,9 +232,21 @@ cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 
 Then start your agent with [templates/agent-start-prompt.md](templates/agent-start-prompt.md). The recommended entry skill is [expo-skill-orchestrator](skills/expo-skill-orchestrator/SKILL.md), which will choose the smaller specialized skills as needed.
 
+## Release Rehearsal
+
+Use [examples/release-rehearsal](examples/release-rehearsal) to smoke-test release policy scripts without a full Expo app:
+
+```bash
+cd examples/release-rehearsal
+npm run release:check
+npm run ota:check
+npm run release:auth
+```
+
 For store review preparation, also copy:
 
 ```bash
+mkdir -p /path/to/app/docs
 cp templates/store-review-info.md /path/to/app/docs/store-review-info.md
 cp templates/privacy-data-inventory.md /path/to/app/docs/privacy-data-inventory.md
 cp templates/permissions-inventory.md /path/to/app/docs/permissions-inventory.md
@@ -242,9 +256,9 @@ cp templates/store.config.example.json /path/to/app/store.config.example.json
 For version and OTA governance, also copy:
 
 ```bash
+mkdir -p /path/to/app/docs /path/to/app/scripts
 cp docs/versioning-policy.md /path/to/app/docs/versioning-policy.md
 cp templates/release-state.example.json /path/to/app/release-state.json
-mkdir -p /path/to/app/scripts
 cp templates/scripts/check-expo-release-state.js /path/to/app/scripts/check-expo-release-state.js
 cp templates/scripts/check-ota-safety.js /path/to/app/scripts/check-ota-safety.js
 cp templates/update-server-policy.md /path/to/app/docs/update-server-policy.md
@@ -296,6 +310,12 @@ Do not publish real values for:
 Use `.env.example`, placeholders, and a private team credential directory instead. See [docs/team-credential-convention.md](docs/team-credential-convention.md).
 
 ## Validate
+
+Run the repository validation script:
+
+```bash
+npm run validate
+```
 
 If you have Codex's skill validator available:
 

@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Release Rehearsal",
+    "slug": "release-rehearsal",
+    "scheme": "release-rehearsal",
+    "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/PROJECT_ID"
+    },
+    "ios": {
+      "bundleIdentifier": "com.example.releaserehearsal",
+      "buildNumber": "26010101"
+    },
+    "android": {
+      "package": "com.example.releaserehearsal",
+      "versionCode": 26010101
+    }
+  }
+}

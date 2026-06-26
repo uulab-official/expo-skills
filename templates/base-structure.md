@@ -75,10 +75,14 @@ EXPO_SKILLS.md
 {
   "typecheck": "tsc --noEmit",
   "lint": "expo lint",
-  "verify": "npm run typecheck && npm run lint && npm run release:check",
+  "test": "npm run test:unit --if-present",
+  "expo:config": "npx expo config --type public",
+  "doctor": "npx expo-doctor",
+  "verify": "npm run typecheck && npm run lint && npm run test && npm run expo:config && npm run release:check && npm run ota:check && npm run release:auth",
   "release:check": "node scripts/check-expo-release-state.js",
   "ota:check": "node scripts/check-ota-safety.js",
-  "release:auth": "node scripts/check-release-auth.js expo"
+  "release:auth": "node scripts/check-release-auth.js expo",
+  "release:auth:strict": "node scripts/check-release-auth.js --strict expo ios android"
 }
 ```
 

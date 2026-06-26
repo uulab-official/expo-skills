@@ -96,8 +96,8 @@ rsync -a --delete skills/ "$HOME/.claude/skills/"
 ## 앱 레포에 넣을 보일러플레이트
 
 ```bash
-cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 mkdir -p /path/to/app/.expo-skills /path/to/app/docs /path/to/app/scripts
+cp templates/EXPO_SKILLS.md /path/to/app/EXPO_SKILLS.md
 cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md

@@ -1,0 +1,51 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Validate repository
+        run: npm run validate
+
+      - name: Smoke release-state scripts
+        run: |
+          tmpdir="$(mktemp -d)"
+          cp templates/release-state.example.json "$tmpdir/release-state.json"
+          node -e 'const fs=require("fs"); fs.writeFileSync(process.argv[1], JSON.stringify({expo:{version:"1.0.0", runtimeVersion:"1.0.0", updates:{url:"https://u.expo.dev/PROJECT_ID"}, ios:{buildNumber:"26010101"}, android:{versionCode:26010101}}}, null, 2));' "$tmpdir/app.json"
+          node -e 'const fs=require("fs"); fs.writeFileSync(process.argv[1], JSON.stringify({cli:{appVersionSource:"local"}, build:{production:{channel:"production"}}}, null, 2));' "$tmpdir/eas.json"
+          mkdir -p "$tmpdir/scripts"
+          cp templates/scripts/check-expo-release-state.js templates/scripts/check-ota-safety.js "$tmpdir/scripts/"
+          (
+            cd "$tmpdir"
+            git init -q
+            git config user.email "ci@example.com"
+            git config user.name "CI"
+            git add .
+            git commit -qm init
+            node scripts/check-expo-release-state.js
+            node scripts/check-ota-safety.js
+          )
+
+      - name: Validate release rehearsal example
+        run: |
+          cd examples/release-rehearsal
+          npm run release:check
+          npm run ota:check
+          npm run release:auth
