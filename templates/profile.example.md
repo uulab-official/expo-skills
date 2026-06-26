@@ -15,6 +15,25 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - backend: supabase
 - navigation: expo-router
 - releaseBuildNumber: yymmddnn
+- runtimeVersionPolicy: app-version
+- versionSource: local
+- buildNumberPolicy: YYMMDDNN
+- easChannel: production
+- easBranch: production
+- updateServerMode: eas
+- updatesUrlPattern: https://u.expo.dev/<project-id>
+- customUpdatePublishCommand:
+- easUpdatePlan: free
+- easUpdateLimitCheckedAt:
+- easUpdateMonthlyActiveUsersLimit: 1000
+- easUpdateBandwidthLimit: 100 GiB
+- easUpdateStorageLimit: 20 GiB
+- otaEstimatedMonthlyActiveUsers:
+- otaUpgradeThreshold: 800 MAUs or 80 GiB bandwidth
+- easBuildStrategy: mixed
+- cloudBuildBudgetAndroid:
+- cloudBuildBudgetIos:
+- fastlaneMatchStorage: git
 - publicVersionStart: 1.0.0
 - appConfigFile: app.config.ts
 

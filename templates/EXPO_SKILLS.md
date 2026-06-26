@@ -19,6 +19,13 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Auth:
 - Store target: prototype / internal test / public review
 - Store review info: docs/store-review-info.md
+- Release state: release-state.json
+- Versioning policy: docs/versioning-policy.md
+- Update server policy: docs/update-server-policy.md
+- EAS build policy: docs/eas-build-policy.md
+- EAS Update plan checked on:
+- Estimated OTA monthly active users:
+- OTA upgrade threshold:
 
 ## Team Defaults
 
@@ -28,6 +35,8 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - URL host pattern:
 - Credential directory:
 - Release build number policy:
+- Update server mode: EAS Update / custom Expo Updates protocol server
+- EAS Update plan: free / starter / production / enterprise / custom
 
 ## Preferred Skill Order
 
@@ -43,7 +52,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Offline: `expo-data-offline-sync`
 - Notifications: `expo-notifications-background`
 - Quality: `expo-quality-performance`
-- Store: `expo-store-console-setup`, `expo-store-review-info`, `expo-android-jks-signing`, `expo-fastlane-automation`, `expo-release-review`
+- Store: `expo-store-console-setup`, `expo-store-review-info`, `expo-android-jks-signing`, `expo-eas-build-strategy`, `expo-version-ota-governance`, `expo-fastlane-automation`, `expo-release-review`
 
 ## Safety
 

@@ -37,6 +37,40 @@ fastlane/
 
 Keep real credentials outside the repo. Store only placeholders and path references.
 
+## Match Storage Modes
+
+Choose a storage mode deliberately:
+
+- `git`: simple and common for private certificate repositories.
+- `google_cloud`: useful when the team already standardizes on Google Cloud Storage.
+- `s3`: useful when the team already standardizes on AWS S3.
+
+Do not commit match passwords, storage credentials, certificates, or profiles into the app repo. Use private env, CI secrets, Keychain, or a team credential manager.
+
+Example `Matchfile` shapes:
+
+```ruby
+# Git
+storage_mode("git")
+git_url(ENV.fetch("MATCH_GIT_URL"))
+type("appstore")
+```
+
+```ruby
+# Google Cloud Storage
+storage_mode("google_cloud")
+google_cloud_bucket_name(ENV.fetch("MATCH_GCS_BUCKET"))
+type("appstore")
+```
+
+```ruby
+# Amazon S3
+storage_mode("s3")
+s3_bucket(ENV.fetch("MATCH_S3_BUCKET"))
+s3_region(ENV.fetch("MATCH_S3_REGION"))
+type("appstore")
+```
+
 ## App Store Connect API Key
 
 Prefer API key auth for CI and non-interactive workflows:

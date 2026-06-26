@@ -39,6 +39,23 @@ Use this when starting a new Expo app or turning a prototype into a production a
 ## Release
 
 - Target: prototype / internal test / public store
+- Build strategy: EAS cloud / local EAS / mixed / OTA-only
+- Monthly cloud build budget:
+- Public version:
+- iOS build number:
+- Android version code:
+- Runtime version:
+- Version source: local / remote
+- Build number policy: YYMMDDNN / EAS remote / custom
+- EAS channel:
+- EAS branch:
+- Update server: EAS Update / custom
+- EAS Update plan: free / starter / production / enterprise / custom
+- EAS Update plan checked on:
+- Estimated OTA monthly active users:
+- OTA upgrade threshold:
+- Custom update URL:
+- Custom update publish command:
 - Expo owner:
 - iOS bundle ID:
 - Android package:

@@ -23,6 +23,10 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Device features: camera, gallery, location, notifications, background tasks
 - Release target: prototype, internal test, public store
 - Store review info: contact, demo account, privacy policy, data safety, permission reasons
+- Version/OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
+- EAS Update plan check: plan, pricing checked date, estimated monthly active updated users, upgrade threshold
+- Version policy document: `docs/versioning-policy.md` when present
+- Build strategy: cloud EAS, local EAS, quota budget, or OTA
 - Team defaults: owner, bundle prefix, credential directory, URL patterns
 
 ## Recommended Choice Prompts
@@ -43,6 +47,15 @@ Which release track are we targeting?
 1. Prototype: run locally only
 2. Internal test: EAS build + TestFlight/Play internal
 3. Store review: metadata, screenshots, credentials, review notes
+```
+
+### OTA Server
+
+```text
+Which OTA update server should I use?
+1. EAS Update: Expo-hosted updates, best default while plan limits fit
+2. Custom Expo Updates server: self-hosted manifests/assets/rollout
+3. No OTA yet: binary releases only
 ```
 
 ### Credentials
@@ -78,6 +91,8 @@ Where should private credentials live?
 - `expo-store-console-setup`
 - `expo-store-review-info`
 - `expo-android-jks-signing`
+- `expo-eas-build-strategy`
+- `expo-version-ota-governance`
 - `expo-fastlane-automation` when needed
 - `expo-release-review`
 

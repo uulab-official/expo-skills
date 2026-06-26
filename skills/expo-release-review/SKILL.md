@@ -12,9 +12,11 @@ Use this skill when preparing an Expo app for TestFlight, Play internal testing,
 1. Identify the app root and read project release docs.
 2. Read team conventions from `EXPO_SKILLS.md` or `.expo-skills/profile.md` when present, especially release version policy, credential directory, URL patterns, and store account placeholders.
 3. Inspect `app.config.*`, `eas.json`, `package.json`, `docs/store-review-info.md`, privacy/data inventories, store metadata files, screenshots, and credentials references.
-4. Separate native binary changes from OTA-only changes.
-5. Confirm the intended release target: internal test, TestFlight, closed testing, public store review, or OTA update.
-6. Verify current Expo/EAS behavior from official docs when the command or store requirement may have changed.
+4. Inspect `release-state.json` and version/OTA check scripts when present.
+5. Inspect `docs/eas-build-policy.md` when present and decide cloud build, local build, or OTA.
+6. Separate native binary changes from OTA-only changes.
+7. Confirm the intended release target: internal test, TestFlight, closed testing, public store review, or OTA update.
+8. Verify current Expo/EAS behavior from official docs when the command or store requirement may have changed.
 
 ## Secret Safety
 
@@ -34,10 +36,22 @@ Use this skill when preparing an Expo app for TestFlight, Play internal testing,
 ## Build And Submit
 
 - Prefer EAS Build and EAS Submit for Expo-aligned workflows.
-- Use local builds when the team wants cost control or local signing visibility.
+- Use local EAS builds when the team wants cost control, local signing visibility, or to reproduce cloud build failures.
+- Use EAS cloud builds when plan quota/credits are available and shared remote artifacts are useful.
 - Keep cloud builds as an explicit choice when local build requirements are unavailable.
 - Run a verification gate before building.
 - Record the exact profile, platform, build artifact path, and submit command used.
+
+Local EAS build commands:
+
+```bash
+eas build --profile production --platform ios --local
+eas build --profile production --platform android --local
+```
+
+Local builds still require the local machine to have the right native build tools and credentials.
+
+Before using cloud builds, verify current plan quota/credits from official Expo pricing or billing pages. Current public Free plan information has included separate Android and iOS monthly build allowances, but exact limits are time-sensitive.
 
 ## Store Metadata
 
@@ -65,6 +79,7 @@ Prepare or verify:
 - `npm run verify` or equivalent passes.
 - App identity is consistent across Expo config, store metadata, screenshots, and review notes.
 - Version/build numbers are valid and monotonic.
+- `release-state.json` matches app config when the project uses local version governance.
 - Required URLs are live.
 - Demo account works and has non-admin permissions.
 - `docs/store-review-info.md`, privacy inventory, and permissions inventory are current when present.
@@ -78,6 +93,7 @@ Run project gates and a production-like build command when requested:
 
 ```bash
 npm run verify
+npm run release:check
 eas build --profile production --platform all
 ```
 

@@ -27,7 +27,10 @@ Collect or infer these values:
 - auth needs: none, email, social, anonymous, enterprise
 - media/device needs: camera, gallery, location, notifications, background tasks
 - release target: prototype, internal test, TestFlight, Play internal, public store
+- build strategy: EAS cloud build, local EAS build, quota-aware mixed mode, or OTA-only
 - review information: contact, demo account, privacy URLs, data safety, permission reasons
+- version and OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
+- EAS Update plan check: plan name, pricing checked date, estimated monthly active updated users, upgrade threshold
 - team conventions: bundle prefix, Expo owner, credential directory, URL patterns
 
 If many values are unknown, ask one compact question with choices:
@@ -59,6 +62,8 @@ Use these skills in order when relevant:
 - Apple/Google console: `expo-store-console-setup`
 - Store review info: `expo-store-review-info`
 - Android JKS: `expo-android-jks-signing`
+- EAS build strategy: `expo-eas-build-strategy`
+- Version/OTA safety: `expo-version-ota-governance`
 - fastlane: `expo-fastlane-automation`
 - Final release: `expo-release-review`
 
@@ -96,8 +101,10 @@ Use these skills in order when relevant:
 4. `expo-store-console-setup`
 5. `expo-store-review-info`
 6. `expo-android-jks-signing`
-7. `expo-fastlane-automation` when metadata/signing automation is desired
-8. `expo-release-review`
+7. `expo-eas-build-strategy`
+8. `expo-version-ota-governance`
+9. `expo-fastlane-automation` when metadata/signing automation is desired
+10. `expo-release-review`
 
 ## Choice Defaults
 
@@ -109,6 +116,8 @@ Use these defaults unless the user, project, or profile says otherwise:
 - Backend: ask; do not guess between Supabase, Appwrite, and Firebase for a production app
 - Auth storage: secure storage for sensitive credentials
 - Release tooling: EAS first, fastlane as metadata/signing/upload companion
+- Build mode: ask or infer from quota/cost constraints; do not burn cloud builds for JS-only changes
+- OTA server: EAS Update by default; custom Expo Updates server only when the team can own hosting, manifests, rollout, monitoring, and rollback
 - Credentials: private directory outside the app repo
 
 ## Response Pattern

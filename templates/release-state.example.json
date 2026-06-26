@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "iosBuildNumber": "26010101",
+  "androidVersionCode": 26010101,
+  "runtimeVersion": "1.0.0",
+  "channel": "production",
+  "branch": "production",
+  "versionSource": "local",
+  "buildNumberPolicy": "YYMMDDNN",
+  "runtimeVersionPolicy": "app-version",
+  "updateServerMode": "eas",
+  "updatesUrl": "https://u.expo.dev/PROJECT_ID",
+  "customUpdatePublishCommand": "",
+  "easUpdatePlan": "free",
+  "easUpdateLimitCheckedAt": "2026-06-26",
+  "easUpdateMonthlyActiveUsersLimit": 1000,
+  "easUpdateBandwidthLimit": "100 GiB",
+  "easUpdateStorageLimit": "20 GiB",
+  "otaEstimatedMonthlyActiveUsers": 0,
+  "otaUpgradeThreshold": "800 MAUs or 80 GiB bandwidth",
+  "notes": "Copy to release-state.json and update for your app. See docs/versioning-policy.md."
+}

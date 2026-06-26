@@ -4,8 +4,10 @@ Open, practical `SKILL.md` playbooks for building Expo apps from project setup t
 
 Use them with Codex, Claude, or any agent that understands the Agent Skills pattern: a folder with a `SKILL.md` file, YAML frontmatter, and concise operating instructions.
 
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-19-2ea44f)
+![Skills](https://img.shields.io/badge/skills-21-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -23,6 +25,8 @@ This repository turns those workflows into reusable agent skills so anyone can a
 - Backend playbooks for Supabase, Appwrite, and Firebase.
 - Store launch workflows for Apple, Google, JKS signing, EAS, and fastlane.
 - Store review information templates for Apple App Review and Google Play.
+- Version, runtime, and OTA governance checks for safer releases.
+- EAS Build strategy for cloud quota, local builds, OTA tradeoffs, and current EAS Update free-tier planning.
 - Public-safe conventions for credentials without publishing private values.
 - A personalization layer for team defaults without hardcoding private values.
 - Agent boilerplates so LLMs can route tasks, ask useful questions, and proceed end to end.
@@ -33,7 +37,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-org/expo-skills.git
+git clone https://github.com/uulab-official/expo-skills.git
 cd expo-skills
 ```
 
@@ -138,8 +142,10 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 | Production | `expo-store-console-setup` | Apple/Google console setup and API keys |
 | Production | `expo-store-review-info` | Review contact, demo account, privacy, data safety |
 | Production | `expo-android-jks-signing` | JKS upload keys, SHA fingerprints, EAS credentials |
+| Production | `expo-eas-build-strategy` | Cloud/local EAS builds, quota, build profiles |
 | Production | `expo-fastlane-automation` | fastlane match, deliver, supply, TestFlight |
 | Production | `expo-release-review` | EAS build/submit, metadata, screenshots, review |
+| Production | `expo-version-ota-governance` | Store versions, runtimeVersion, OTA safety |
 
 ## Recommended Path
 
@@ -151,7 +157,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 6. Pick a backend: `expo-supabase-backend`, `expo-appwrite-backend`, or `expo-firebase-backend`.
 7. Add app-specific capabilities such as media, offline sync, notifications, and background tasks.
 8. Run `expo-quality-performance`.
-9. Prepare store launch with console setup, review info, Android signing, fastlane, and release review skills.
+9. Prepare store launch with console setup, review info, Android signing, EAS build strategy, fastlane, version/OTA governance, and release review skills.
 
 ## Repository Layout
 
@@ -159,6 +165,9 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 expo-skills/
   CODEX.md
   CLAUDE.md
+  README.ko.md
+  README.ja.md
+  README.zh-CN.md
   skills/
     expo-project-foundation/
       SKILL.md
@@ -171,6 +180,7 @@ expo-skills/
     ...
   docs/
     taxonomy.md
+    versioning-policy.md
     agent-workflow.md
     personalization.md
     publishing-guide.md
@@ -184,6 +194,11 @@ expo-skills/
     privacy-data-inventory.md
     permissions-inventory.md
     store.config.example.json
+    release-state.example.json
+    base-structure.md
+    update-server-policy.md
+    eas-build-policy.md
+    scripts/
 ```
 
 ## Agent Instructions
@@ -212,6 +227,18 @@ cp templates/store-review-info.md /path/to/app/docs/store-review-info.md
 cp templates/privacy-data-inventory.md /path/to/app/docs/privacy-data-inventory.md
 cp templates/permissions-inventory.md /path/to/app/docs/permissions-inventory.md
 cp templates/store.config.example.json /path/to/app/store.config.example.json
+```
+
+For version and OTA governance, also copy:
+
+```bash
+cp docs/versioning-policy.md /path/to/app/docs/versioning-policy.md
+cp templates/release-state.example.json /path/to/app/release-state.json
+mkdir -p /path/to/app/scripts
+cp templates/scripts/check-expo-release-state.js /path/to/app/scripts/check-expo-release-state.js
+cp templates/scripts/check-ota-safety.js /path/to/app/scripts/check-ota-safety.js
+cp templates/update-server-policy.md /path/to/app/docs/update-server-policy.md
+cp templates/eas-build-policy.md /path/to/app/docs/eas-build-policy.md
 ```
 
 ## Personalization
@@ -283,6 +310,12 @@ At minimum, check that every skill has:
 - [Appwrite React Native quickstart](https://appwrite.io/docs/quick-starts/react-native)
 - [Expo app credentials](https://docs.expo.dev/app-signing/app-credentials/)
 - [Expo local credentials](https://docs.expo.dev/app-signing/local-credentials/)
+- [Expo local EAS builds](https://docs.expo.dev/build-reference/local-builds/)
+- [Expo pricing](https://expo.dev/pricing)
+- [Expo usage-based pricing](https://docs.expo.dev/billing/usage-based-pricing/)
+- [Expo app version management](https://docs.expo.dev/build-reference/app-versions/)
+- [Expo EAS Update runtime versions](https://docs.expo.dev/eas-update/runtime-versions/)
+- [How EAS Update works](https://docs.expo.dev/eas-update/how-it-works/)
 - [fastlane docs](https://docs.fastlane.tools/)
 
 ## Contributing

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo EAS Build Strategy"
+  short_description: "Choose EAS cloud or local build strategy."
+  default_prompt: "Choose and configure the right EAS Build strategy for this Expo app."

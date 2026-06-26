@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Version OTA Governance"
+  short_description: "Check Expo versions, runtime, and OTA safety."
+  default_prompt: "Audit Expo versioning, runtimeVersion, and OTA update safety."

@@ -1,0 +1,3 @@
+storage_mode("git")
+git_url(ENV.fetch("MATCH_GIT_URL"))
+type("appstore")
