@@ -2,6 +2,8 @@
 
 Use this document to help an AI agent choose the right Expo Skills without making the user micromanage every step.
 
+For this repository itself, agents should also read the root `CODEX.md` or `CLAUDE.md` file depending on the tool being used.
+
 ## Default Flow
 
 1. Read `EXPO_SKILLS.md` and `.expo-skills/profile.md` if present.

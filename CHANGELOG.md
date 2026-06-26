@@ -9,3 +9,4 @@
 - Add team personalization model with `expo-team-conventions`.
 - Add `expo-skill-orchestrator` and agent boilerplate templates.
 - Add store review information skill and Apple/Google review templates.
+- Add root Codex and Claude instructions for maintaining the skill pack.

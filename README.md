@@ -157,6 +157,8 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 
 ```text
 expo-skills/
+  CODEX.md
+  CLAUDE.md
   skills/
     expo-project-foundation/
       SKILL.md
@@ -183,6 +185,12 @@ expo-skills/
     permissions-inventory.md
     store.config.example.json
 ```
+
+## Agent Instructions
+
+This repository includes root-level [CODEX.md](CODEX.md) and [CLAUDE.md](CLAUDE.md) files so agents know how to maintain the skill pack itself.
+
+It does not include root `.codex/` or `.claude/` directories. Those are usually user-local installation/configuration directories, so committing them in a public skill pack can confuse personal setup with reusable source. Use `skills/*` for distributable skills and `templates/*` for files users can copy into their own app repositories.
 
 ## Agent Boilerplate
 
