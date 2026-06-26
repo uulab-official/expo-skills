@@ -7,7 +7,7 @@
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-22-2ea44f)
+![Skills](https://img.shields.io/badge/skills-23-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -21,6 +21,7 @@ Expo 很适合入门，但真实应用通常还需要路由、UI 系统、认证
 ## 包含内容
 
 - Expo 应用创建、迁移和基础结构
+- 用于底部标签、应用栏、底部弹窗、设置页、主题、启动页和应用图标的应用外壳样板
 - Expo Router、主题、字体、图标、启动页和 OTA
 - shimmer、skeleton、empty、error、offline、progress 加载状态模式
 - 面向 Expo Router 应用的组件结构和文件夹架构
@@ -62,7 +63,7 @@ rsync -a --delete skills/ "$HOME/.claude/skills/"
 1. 使用 `expo-skill-orchestrator` 选择合适的技能。
 2. 使用 `expo-team-conventions` 应用团队默认值。
 3. 使用 `expo-project-foundation` 建立应用基础结构。
-4. 使用 `expo-router-navigation` 和 `expo-ui-system` 搭建页面和 UI 系统。
+4. 使用 `expo-app-shell-boilerplate` 建立通用应用外壳，再用 `expo-router-navigation` 和 `expo-ui-system` 完善页面和 UI 系统。
 5. 使用 `expo-startup-ota` 和 `expo-auth-secure-storage` 处理启动流程和认证。
 6. 在 `expo-supabase-backend`、`expo-appwrite-backend`、`expo-firebase-backend` 中选择后端。
 7. 根据需要添加媒体、离线、通知、后台任务和质量相关技能。
@@ -96,6 +97,8 @@ cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
+cp templates/app-shell-blueprint.md /path/to/app/docs/app-shell-blueprint.md
+cp templates/brand-assets-checklist.md /path/to/app/docs/brand-assets-checklist.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
 cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 cp templates/release-state.example.json /path/to/app/release-state.json

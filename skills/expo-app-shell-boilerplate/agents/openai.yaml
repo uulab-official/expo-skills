@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo App Shell Boilerplate"
+  short_description: "Build shared Expo tabs, app bars, settings, theme, splash, and icons."
+  default_prompt: "Create a production-ready app shell boilerplate for this Expo app."

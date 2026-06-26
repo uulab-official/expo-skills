@@ -13,8 +13,9 @@ Use this skill before feature work when the app foundation is missing, inconsist
 2. Read team/project conventions first: `EXPO_SKILLS.md`, `.expo-skills/profile.md`, `.expo-skills/profile.example.md`, `AGENTS.md`, `CLAUDE.md`, `CODEX.md`, `README.md`, and docs under `docs/`.
 3. Treat team profiles as defaults, not secrets. Never copy private profile values into committed public files.
 4. Inspect `package.json`, Expo config, `eas.json`, TypeScript config, lint/test scripts, and route layout before editing.
-5. Confirm the target Expo SDK from the project. If the user asks for current Expo behavior, verify against official Expo documentation before changing code.
-6. Preserve user changes and avoid introducing unmanaged `ios/` or `android/` folders unless the task explicitly requires a prebuild/native workflow.
+5. Check whether `docs/app-shell-blueprint.md` and `docs/brand-assets-checklist.md` exist; create them from templates when starting a reusable app base.
+6. Confirm the target Expo SDK from the project. If the user asks for current Expo behavior, verify against official Expo documentation before changing code.
+7. Preserve user changes and avoid introducing unmanaged `ios/` or `android/` folders unless the task explicitly requires a prebuild/native workflow.
 
 ## Foundation Checklist
 
@@ -38,10 +39,20 @@ app/
   modals/
   +not-found.tsx
 src/
+  app/
+    AppBootstrap.tsx
+    AppProviders.tsx
   components/
     ui/
+      Button.tsx
+      IconButton.tsx
+      ListItem.tsx
+      SwitchRow.tsx
     feedback/
     layout/
+      AppBar.tsx
+      Screen.tsx
+      Section.tsx
   features/
     auth/
       components/
@@ -51,6 +62,8 @@ src/
       types.ts
     notifications/
     settings/
+      components/
+      screens/
   hooks/
   lib/
     api/
@@ -59,6 +72,9 @@ src/
   providers/
   services/
   theme/
+    tokens.ts
+    ThemeProvider.tsx
+    useTheme.ts
   types/
   utils/
 ```
@@ -72,6 +88,7 @@ Rules:
 - Keep feature modules portable: `screens`, `components`, `hooks`, `services`, and `types` should be enough for most features.
 - Add barrels only when they simplify imports; avoid hiding circular dependencies.
 - Do not put secrets, service account files, keystores, or generated native credentials inside `src/`.
+- Add app shell docs for reusable tabs, app bars, modal sheets, settings, theme, splash, and icon choices.
 
 ## Component Structure
 

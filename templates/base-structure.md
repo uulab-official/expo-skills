@@ -10,14 +10,24 @@ app/
   modals/
   +not-found.tsx
 src/
+  app/
+    AppBootstrap.tsx
+    AppProviders.tsx
   components/
     ui/
+      Button.tsx
+      IconButton.tsx
+      ListItem.tsx
+      SwitchRow.tsx
       Skeleton.tsx
       LoadingOverlay.tsx
       EmptyState.tsx
       ErrorState.tsx
     feedback/
     layout/
+      AppBar.tsx
+      Screen.tsx
+      Section.tsx
   features/
     auth/
       components/
@@ -27,6 +37,8 @@ src/
       types.ts
     notifications/
     settings/
+      components/
+      screens/
     uploads/
   hooks/
   lib/
@@ -43,6 +55,8 @@ src/
     AppProviders.tsx
   theme/
     tokens.ts
+    ThemeProvider.tsx
+    useTheme.ts
   utils/
   types/
 docs/
@@ -50,6 +64,8 @@ docs/
   backend.md
   backend-deployment.md
   social-auth-providers.md
+  app-shell-blueprint.md
+  brand-assets-checklist.md
   component-architecture.md
   ui-loading-patterns.md
   versioning-policy.md
@@ -92,6 +108,8 @@ EXPO_SKILLS.md
 
 - Keep Expo Router files in `app/` thin; render feature screens from `src/features`.
 - Put reusable primitives in `src/components/ui` and domain components inside each feature.
+- Put app bootstrap, root providers, theme wiring, and shell-level startup in `src/app`.
+- Use app shell docs to define tabs, app bars, bottom sheets, settings, splash, and icon choices before building feature screens.
 - Define background tasks in module top-level scope under `src/lib/background`.
 - Keep notification token registration and notification routing under `src/lib/notifications`.
 - Use shared loading/error/empty primitives so shimmer and skeleton states match real layouts.

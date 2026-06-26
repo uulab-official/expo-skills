@@ -49,12 +49,21 @@ Use this when starting a new Expo app or turning a prototype into a production a
 ## UI And Architecture
 
 - Component architecture doc: docs/component-architecture.md
+- App shell blueprint doc: docs/app-shell-blueprint.md
+- Brand assets checklist doc: docs/brand-assets-checklist.md
+- Navigation model: bottom tabs / stack only / drawer / custom
+- App shell needed: app bar / bottom sheet modal / settings / theme / splash / app icon
+- Theme modes: system / light / dark
+- Primary tabs:
+- Modal flows:
 - Loading patterns doc: docs/ui-loading-patterns.md
 - Shimmer/skeleton needed:
 - Empty/error/offline states needed:
 - Image placeholders: expo-image BlurHash / ThumbHash / none
 - Route groups:
 - Feature modules:
+- App icon ready:
+- Native splash ready:
 
 ## Release
 

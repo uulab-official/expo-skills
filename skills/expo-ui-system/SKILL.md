@@ -14,6 +14,7 @@ Use this skill when UI consistency, reusable components, or app-wide styling are
 3. Reuse the current styling system. Do not introduce a new UI framework for a narrow change.
 4. Confirm target platforms: iOS, Android, web, or all.
 5. Inspect loading, empty, error, and offline states before adding new screens.
+6. When building reusable app chrome, read `docs/app-shell-blueprint.md` or use `expo-app-shell-boilerplate`.
 
 ## Design System Rules
 
@@ -48,6 +49,10 @@ Recommended primitives:
 
 ```text
 src/components/ui/
+  Button.tsx
+  IconButton.tsx
+  ListItem.tsx
+  SwitchRow.tsx
   Skeleton.tsx
   LoadingOverlay.tsx
   EmptyState.tsx
@@ -56,6 +61,17 @@ src/components/ui/
 ```
 
 If the project has no animation stack, start with static skeleton blocks. Add `expo-linear-gradient` or `react-native-reanimated` only when shimmer is a product requirement or already part of the stack.
+
+## App Shell Components
+
+- `Screen`: safe area, keyboard avoidance, background color, scroll mode, and consistent horizontal padding.
+- `AppBar`: title, subtitle, back/action buttons, search entry, and optional right-side actions.
+- `BottomSheetModal`: consistent handle, detents/snap points, close action, keyboard behavior, and accessibility labels.
+- `Dialog`: destructive/confirm/cancel states with predictable button order per platform.
+- `ListItem` and `SwitchRow`: settings, account, notification, theme, language, privacy, and support rows.
+- `ToastHost` and `OfflineBanner`: app-wide feedback that does not get duplicated per screen.
+
+Avoid making feature screens directly style their own headers, settings rows, and modal shells once these primitives exist.
 
 ## Screen Composition
 

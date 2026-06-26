@@ -7,7 +7,7 @@ Use them with Codex, Claude, or any agent that understands the Agent Skills patt
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-22-2ea44f)
+![Skills](https://img.shields.io/badge/skills-23-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -22,6 +22,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 
 - Step-by-step Expo app creation and migration guidance.
 - Reusable skills for navigation, UI, auth, media, offline sync, notifications, performance, and release.
+- Common app shell boilerplate for bottom tabs, app bars, bottom sheet modals, settings, theme wiring, splash screens, and app icons.
 - UI loading patterns for shimmer, skeleton, empty, error, offline, and progress states.
 - Expo component and folder architecture conventions for Router apps, feature modules, background tasks, and notification services.
 - Backend playbooks for Supabase, Appwrite, and Firebase.
@@ -133,6 +134,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 | Beginner | `expo-skill-orchestrator` | Pick the right skills and drive broad tasks |
 | Beginner | `expo-project-foundation` | Create or migrate an Expo project foundation |
 | Beginner | `expo-team-conventions` | Apply team/user defaults without hardcoding them |
+| Beginner | `expo-app-shell-boilerplate` | Common app shell, tabs, app bars, settings, theme, splash, icons |
 | Beginner | `expo-router-navigation` | Expo Router, tabs, stacks, modals, deep links |
 | Beginner | `expo-ui-system` | Theme, fonts, icons, app bars, reusable UI |
 | Intermediate | `expo-startup-ota` | Splash, startup boot, EAS Update, OTA progress |
@@ -158,7 +160,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 1. Start with `expo-skill-orchestrator` for broad tasks.
 2. Use `expo-team-conventions` if your team has defaults.
 3. Use `expo-project-foundation`.
-4. Add `expo-router-navigation` and `expo-ui-system`.
+4. Add `expo-app-shell-boilerplate`, then refine with `expo-router-navigation` and `expo-ui-system`.
 5. Add startup and auth with `expo-startup-ota` and `expo-auth-secure-storage`.
 6. Pick a backend: `expo-supabase-backend`, `expo-appwrite-backend`, or `expo-firebase-backend`.
 7. Add app-specific capabilities such as media, offline sync, notifications, and background tasks.
@@ -178,6 +180,7 @@ expo-skills/
     expo-project-foundation/
       SKILL.md
       agents/openai.yaml
+    expo-app-shell-boilerplate/
     expo-skill-orchestrator/
     expo-team-conventions/
     expo-supabase-backend/
@@ -198,6 +201,8 @@ expo-skills/
     app-intake.md
     backend-deployment.md
     social-auth-providers.md
+    app-shell-blueprint.md
+    brand-assets-checklist.md
     component-architecture.md
     ui-loading-patterns.md
     profile.example.md
@@ -232,6 +237,8 @@ cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
+cp templates/app-shell-blueprint.md /path/to/app/docs/app-shell-blueprint.md
+cp templates/brand-assets-checklist.md /path/to/app/docs/brand-assets-checklist.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
 cp templates/ui-loading-patterns.md /path/to/app/docs/ui-loading-patterns.md
 ```
@@ -344,6 +351,10 @@ At minimum, check that every skill has:
 - [Anthropic Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Expo Firebase guide](https://docs.expo.dev/guides/using-firebase/)
 - [Expo Supabase guide](https://docs.expo.dev/guides/using-supabase/)
+- [Expo Router JavaScript tabs](https://docs.expo.dev/router/advanced/tabs/)
+- [Expo Router modals and form sheets](https://docs.expo.dev/router/advanced/modals/)
+- [Expo splash screen and app icon](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/)
+- [Expo app config](https://docs.expo.dev/workflow/configuration/)
 - [Expo Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)
 - [Expo push notifications setup](https://docs.expo.dev/push-notifications/push-notifications-setup/)
 - [Expo BackgroundTask](https://docs.expo.dev/versions/latest/sdk/background-task/)

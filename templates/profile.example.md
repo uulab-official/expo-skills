@@ -17,11 +17,16 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - backendHosting: cloud
 - backendDeploymentPath: docs/backend-deployment.md
 - socialAuthProvidersPath: docs/social-auth-providers.md
+- appShellBlueprintPath: docs/app-shell-blueprint.md
+- brandAssetsChecklistPath: docs/brand-assets-checklist.md
 - socialProviders: kakao, google, apple
 - kakaoAuthProvider: supabase-or-custom
 - googleAuthProvider: backend
 - appleAuthProvider: backend
 - navigation: expo-router
+- navigationModel: expo-router-tabs
+- appShell: bottom-tabs, app-bar, bottom-sheet-modal, settings, theme, splash, app-icon
+- themeModes: system, light, dark
 - folderArchitecture: expo-router-thin-routes-feature-modules
 - loadingPattern: skeleton-first
 - shimmerMotion: respect-reduce-motion

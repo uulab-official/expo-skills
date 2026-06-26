@@ -24,3 +24,5 @@
 - Add repository validation workflow and release rehearsal example.
 - Strengthen Supabase/Appwrite self-hosting and Kakao/Google/Apple social login guidance.
 - Add backend deployment and social auth provider templates.
+- Add `expo-app-shell-boilerplate` for common bottom tabs, app bars, modal sheets, settings, theme, splash, and app icon setup.
+- Add app shell and brand asset templates for reusable Expo app boilerplates.

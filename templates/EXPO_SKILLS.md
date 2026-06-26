@@ -23,6 +23,8 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Store target: prototype / internal test / public review
 - Store review info: docs/store-review-info.md
 - Component architecture: docs/component-architecture.md
+- App shell blueprint: docs/app-shell-blueprint.md
+- Brand assets checklist: docs/brand-assets-checklist.md
 - UI loading patterns: docs/ui-loading-patterns.md
 - Release state: release-state.json
 - Versioning policy: docs/versioning-policy.md
@@ -53,6 +55,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Broad task: `expo-skill-orchestrator`
 - Team defaults: `expo-team-conventions`
 - Project setup: `expo-project-foundation`
+- App shell: `expo-app-shell-boilerplate`
 - Navigation: `expo-router-navigation`
 - UI: `expo-ui-system`
 - Startup/OTA: `expo-startup-ota`

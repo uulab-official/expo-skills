@@ -10,19 +10,30 @@ Use this skill when touching app launch, splash, startup loading, or OTA behavio
 ## First Pass
 
 1. Inspect Expo config for `expo-splash-screen`, `updates`, `runtimeVersion`, `scheme`, and platform icons.
-2. Read the root layout and startup/session providers before editing.
-3. Inspect `release-state.json`, `eas.json` channel/branch setup, and OTA check scripts when present.
-4. Determine whether the change is native config, JS/assets-only, or both. Native config changes require a new binary.
-5. Verify current Expo Updates guidance from official Expo docs if behavior depends on the latest SDK.
+2. Read `docs/brand-assets-checklist.md` when app icon, splash, display name, or scheme are part of the task.
+3. Read the root layout and startup/session providers before editing.
+4. Inspect `release-state.json`, `eas.json` channel/branch setup, and OTA check scripts when present.
+5. Determine whether the change is native config, JS/assets-only, or both. Native config changes require a new binary.
+6. Verify current Expo Updates guidance from official Expo docs if behavior depends on the latest SDK.
 
 ## Startup Rules
 
 - Keep the native splash static and brief. Put logic in React Native after JS starts.
+- Configure native splash through the `expo-splash-screen` config plugin when using managed/prebuild workflows.
+- Keep app icon, Android adaptive icon layers, iOS icon variants, and native splash assets in a predictable `assets/images` path unless the app already has a brand asset convention.
 - Load fonts and minimum assets before rendering UI that depends on them.
 - Run OTA checks before entering the main app when the product expects update gating.
 - Run session/profile bootstrap once and pass the result to the app to avoid a second internal splash.
 - If session fetch fails, use a recoverable guest/signed-out state unless the app must block entry.
 - Fade from startup UI into the app instead of flashing intermediate screens.
+
+## Branding Asset Checklist
+
+- `assets/images/icon.png` exists and matches store branding.
+- Android adaptive icon foreground, monochrome, and background are configured when shipping Android.
+- iOS icon configuration is documented, including light/dark/tinted variants or `.icon` directory when used.
+- `expo-splash-screen` image, background color, dark variant, and image width are configured.
+- Preview or production build is used to verify splash and icon changes; Expo Go alone is not enough.
 
 ## OTA Rules
 

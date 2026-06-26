@@ -26,6 +26,7 @@ Collect or infer these values:
 - backend choice: none, Supabase, Appwrite, Firebase, custom
 - backend hosting: cloud, self-hosted, local development, or undecided
 - auth needs: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
+- app shell needs: bottom tabs, app bars, bottom sheet modals, settings, theme, splash, app icon
 - media/device needs: camera, gallery, location, notifications, background tasks
 - release target: prototype, internal test, TestFlight, Play internal, public store
 - build strategy: EAS cloud build, local EAS build, quota-aware mixed mode, or OTA-only
@@ -50,6 +51,7 @@ Use these skills in order when relevant:
 
 - Team defaults: `expo-team-conventions`
 - New or messy project: `expo-project-foundation`
+- App shell boilerplate: `expo-app-shell-boilerplate`
 - Navigation: `expo-router-navigation`
 - Design system: `expo-ui-system`
 - Startup, splash, OTA: `expo-startup-ota`
@@ -76,18 +78,20 @@ Use these skills in order when relevant:
 
 1. `expo-team-conventions`
 2. `expo-project-foundation`
-3. `expo-router-navigation`
-4. `expo-ui-system`
-5. `expo-quality-performance`
+3. `expo-app-shell-boilerplate`
+4. `expo-router-navigation`
+5. `expo-ui-system`
+6. `expo-quality-performance`
 
 ### Auth App
 
 1. `expo-team-conventions`
 2. `expo-project-foundation`
-3. `expo-router-navigation`
-4. `expo-auth-secure-storage`
-5. One backend skill
-6. `expo-quality-performance`
+3. `expo-app-shell-boilerplate`
+4. `expo-router-navigation`
+5. `expo-auth-secure-storage`
+6. One backend skill
+7. `expo-quality-performance`
 
 ### Media Upload App
 

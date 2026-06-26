@@ -8,6 +8,10 @@
 
 프로젝트를 만들거나 기존 앱을 Expo 실무 구조로 정리하는 시작점입니다. SDK, app config, package scripts, TypeScript, lint/test/verify, env example, EAS 기본값, Expo Router 중심 폴더 아키텍처, feature module 구조를 다룹니다.
 
+### `expo-app-shell-boilerplate`
+
+대부분의 앱에서 반복되는 첫 화면 기반을 다룹니다. bottom tabs, root stack, modal/formSheet routes, app bars, settings screen, theme provider, splash/icon branding, root providers, reusable screen chrome이 여기에 속합니다.
+
 ### `expo-skill-orchestrator`
 
 넓거나 모호한 요청의 진입점을 다룹니다. 필요한 정보를 수집하고, 선택지를 제시하고, `expo-team-conventions`, `expo-project-foundation`, backend/release 관련 스킬을 자연스럽게 조합합니다. 사용자가 "Expo 앱 만들어줘", "스토어까지 준비해줘", "필요한 스킬 알아서 써줘"처럼 요청할 때 먼저 사용합니다.

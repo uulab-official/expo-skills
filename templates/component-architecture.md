@@ -13,7 +13,12 @@ Use this file to keep Expo Router, shared UI, feature modules, background tasks,
 ```text
 src/components/ui/
   Button.tsx
+  IconButton.tsx
   TextField.tsx
+  ListItem.tsx
+  SwitchRow.tsx
+  BottomSheetModal.tsx
+  Dialog.tsx
   Skeleton.tsx
   LoadingOverlay.tsx
   EmptyState.tsx
@@ -22,6 +27,7 @@ src/components/feedback/
   ToastHost.tsx
   OfflineBanner.tsx
 src/components/layout/
+  AppBar.tsx
   Screen.tsx
   Section.tsx
 ```
@@ -32,6 +38,8 @@ Rules:
 - Keep dimensions stable for list rows, cards, thumbnails, and skeleton placeholders.
 - Use icon-only buttons only when they have accessible labels.
 - Keep loading, empty, error, and offline states visually consistent.
+- Use `Screen`, `AppBar`, `ListItem`, `SwitchRow`, `Dialog`, and `BottomSheetModal` before creating one-off screen chrome.
+- Keep bottom sheet snap points, close actions, keyboard behavior, and accessibility labels consistent.
 
 ## Feature Modules
 
@@ -50,6 +58,25 @@ Rules:
 - Put feature data calls in `services/` or hooks.
 - Export only what other features actually need.
 - Avoid circular dependencies between features.
+
+## Settings Feature
+
+```text
+src/features/settings/
+  components/
+    SettingsSection.tsx
+  screens/
+    SettingsScreen.tsx
+  hooks/
+  services/
+  types.ts
+```
+
+Rules:
+
+- Use settings rows for account, theme, notifications, language, privacy, support, app version, and sign out.
+- Keep settings storage and backend calls in hooks/services, not row components.
+- Hide unavailable settings rather than leaving broken placeholder rows.
 
 ## App Services
 

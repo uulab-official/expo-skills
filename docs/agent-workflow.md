@@ -21,6 +21,7 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Backend: none, Supabase, Appwrite, Firebase, custom
 - Backend hosting: cloud, self-hosted, local development, undecided
 - Auth: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
+- App shell: bottom tabs, app bars, bottom sheet modals, settings, theme, splash, app icon
 - Device features: camera, gallery, location, notifications, background tasks
 - Release target: prototype, internal test, public store
 - Store review info: contact, demo account, privacy policy, data safety, permission reasons
@@ -40,6 +41,15 @@ Which backend should I wire?
 1. Supabase: Postgres, RLS, Storage, Realtime, Kakao/Google/Apple social auth
 2. Appwrite: Auth, Databases, Storage, Functions, Google/Apple OAuth
 3. Firebase: Firebase Auth/Firestore/Storage or native Firebase services
+```
+
+### App Shell
+
+```text
+Which app shell should I prepare?
+1. Common mobile app: bottom tabs + app bar + settings + theme
+2. Modal-heavy app: tabs + routed modals + bottom sheet forms
+3. Minimal app: stack navigation + theme + splash/icon only
 ```
 
 ### Social Auth
@@ -93,6 +103,7 @@ Which release operation should I run?
 
 - `expo-team-conventions`
 - `expo-project-foundation`
+- `expo-app-shell-boilerplate`
 - `expo-router-navigation`
 - `expo-ui-system`
 - `expo-quality-performance`
