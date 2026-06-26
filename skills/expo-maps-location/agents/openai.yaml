@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expo Maps Location"
+  short_description: "Add Expo maps with Naver, Kakao, Google, markers, and clustering."
+  default_prompt: "Set up maps and marker performance for this Expo app."

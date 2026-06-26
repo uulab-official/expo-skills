@@ -39,6 +39,13 @@ Use this when starting a new Expo app or turning a prototype into a production a
 - Camera:
 - Gallery:
 - Location:
+- Maps needed:
+- Map provider: Naver / Kakao / Google / Apple / expo-maps / react-native-maps / undecided
+- Maps provider decision doc: docs/maps-provider-decision.md
+- Place search/geocoding:
+- Expected markers per viewport:
+- Marker clustering needed:
+- Marker optimization risk:
 - Push notifications:
 - Push service: Expo Push Service / direct FCM/APNs / none
 - Background tasks:

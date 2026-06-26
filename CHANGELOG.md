@@ -26,3 +26,5 @@
 - Add backend deployment and social auth provider templates.
 - Add `expo-app-shell-boilerplate` for common bottom tabs, app bars, modal sheets, settings, theme, splash, and app icon setup.
 - Add app shell and brand asset templates for reusable Expo app boilerplates.
+- Add `expo-maps-location` for Naver, Kakao, Google, Apple maps, provider decisions, and marker optimization.
+- Add maps provider decision template for Expo app repositories.

@@ -17,6 +17,7 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - backendHosting: cloud
 - backendDeploymentPath: docs/backend-deployment.md
 - socialAuthProvidersPath: docs/social-auth-providers.md
+- mapsProviderDecisionPath: docs/maps-provider-decision.md
 - appShellBlueprintPath: docs/app-shell-blueprint.md
 - brandAssetsChecklistPath: docs/brand-assets-checklist.md
 - socialProviders: kakao, google, apple
@@ -31,6 +32,11 @@ Use this as a starting point for a project or team profile. Replace placeholders
 - loadingPattern: skeleton-first
 - shimmerMotion: respect-reduce-motion
 - imagePlaceholder: expo-image-blurhash-or-thumbhash
+- mapsProvider: undecided
+- koreaMapProviders: naver, kakao
+- globalMapProvider: google-apple
+- mapMarkerStrategy: visible-bounds-query, cluster-low-zoom, native-image-markers
+- mapSearchProvider: provider-specific
 - releaseBuildNumber: yymmddnn
 - runtimeVersionPolicy: app-version
 - versionSource: local

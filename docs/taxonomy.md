@@ -40,6 +40,10 @@
 
 디바이스 권한과 미디어 입출력을 다룹니다. Camera, ImagePicker, MediaLibrary, FileSystem, compression, upload retry, permission copy가 여기에 속합니다.
 
+### `expo-maps-location`
+
+지도와 위치 UI를 다룹니다. Naver Map, Kakao Map, Google Maps, Apple Maps, expo-maps, react-native-maps, 위치 권한, 지도 provider 선택, 검색/geocoding, marker rendering, clustering, viewport query, marker performance가 여기에 속합니다.
+
 ### `expo-supabase-backend`
 
 Supabase 백엔드를 다룹니다. Cloud/self-hosted Supabase, Auth, Kakao/Google/Apple OAuth, Postgres, RLS, Storage, Realtime, Edge Functions, Expo Router auth gate, mobile session persistence가 여기에 속합니다.

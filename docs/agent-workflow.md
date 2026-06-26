@@ -22,7 +22,8 @@ For this repository itself, agents should also read the root `CODEX.md` or `CLAU
 - Backend hosting: cloud, self-hosted, local development, undecided
 - Auth: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
 - App shell: bottom tabs, app bars, bottom sheet modals, settings, theme, splash, app icon
-- Device features: camera, gallery, location, notifications, background tasks
+- Device features: camera, gallery, location, maps, markers, notifications, background tasks
+- Maps: Naver, Kakao, Google, Apple, search/geocoding, marker count, clustering, provider quota
 - Release target: prototype, internal test, public store
 - Store review info: contact, demo account, privacy policy, data safety, permission reasons
 - Version/OTA policy: public version, build numbers, runtimeVersion, channel, branch, update server mode
@@ -59,6 +60,15 @@ Which social login providers should I prepare?
 1. Korea-ready: Kakao + Google + Apple
 2. Global default: Google + Apple
 3. Email only: no social provider
+```
+
+### Maps
+
+```text
+Which map setup should I prepare?
+1. Korea-first: Naver or Kakao map + marker clustering/performance
+2. Global default: Google/Apple maps via Expo-compatible map library
+3. Search-only: no map view yet, just place/geocoding provider docs
 ```
 
 ### Release Track
@@ -106,6 +116,7 @@ Which release operation should I run?
 - `expo-app-shell-boilerplate`
 - `expo-router-navigation`
 - `expo-ui-system`
+- `expo-maps-location` when maps, location UI, place search, or markers are needed
 - `expo-quality-performance`
 
 ### Backend Bundle

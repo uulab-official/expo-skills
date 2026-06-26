@@ -36,6 +36,12 @@ src/
       services/
       types.ts
     notifications/
+    map/
+      components/
+      hooks/
+      screens/
+      services/
+      types.ts
     settings/
       components/
       screens/
@@ -50,6 +56,9 @@ src/
       registerPushToken.ts
       notificationListeners.ts
       notificationRouter.ts
+    location/
+      permissions.ts
+      currentLocation.ts
     supabase.ts or appwrite.ts or firebase.ts
   providers/
     AppProviders.tsx
@@ -64,6 +73,7 @@ docs/
   backend.md
   backend-deployment.md
   social-auth-providers.md
+  maps-provider-decision.md
   app-shell-blueprint.md
   brand-assets-checklist.md
   component-architecture.md
@@ -112,4 +122,5 @@ EXPO_SKILLS.md
 - Use app shell docs to define tabs, app bars, bottom sheets, settings, splash, and icon choices before building feature screens.
 - Define background tasks in module top-level scope under `src/lib/background`.
 - Keep notification token registration and notification routing under `src/lib/notifications`.
+- Keep location permission and current-location helpers under `src/lib/location`.
 - Use shared loading/error/empty primitives so shimmer and skeleton states match real layouts.

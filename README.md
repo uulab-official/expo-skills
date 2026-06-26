@@ -7,7 +7,7 @@ Use them with Codex, Claude, or any agent that understands the Agent Skills patt
 [English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [简体中文](README.zh-CN.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-23-2ea44f)
+![Skills](https://img.shields.io/badge/skills-24-2ea44f)
 ![Expo](https://img.shields.io/badge/Expo-ready-000020)
 ![Codex](https://img.shields.io/badge/Codex-compatible-111827)
 ![Claude](https://img.shields.io/badge/Claude-compatible-6b46c1)
@@ -28,6 +28,7 @@ This repository turns those workflows into reusable agent skills so anyone can a
 - Backend playbooks for Supabase, Appwrite, and Firebase.
 - Cloud or self-hosted Supabase/Appwrite planning with public-safe deployment docs.
 - Kakao, Google, and Apple social login setup guidance for Expo auth flows.
+- Naver Map, Kakao Map, Google Maps, Apple Maps, provider choice, and marker clustering/performance guidance.
 - Store launch workflows for Apple, Google, JKS signing, EAS, and fastlane.
 - Store review information templates for Apple App Review and Google Play.
 - Version, runtime, and OTA governance checks for safer releases.
@@ -140,6 +141,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 | Intermediate | `expo-startup-ota` | Splash, startup boot, EAS Update, OTA progress |
 | Intermediate | `expo-auth-secure-storage` | Auth, sessions, SecureStore, biometrics |
 | Intermediate | `expo-device-media` | Camera, gallery, files, uploads, permissions |
+| Intermediate | `expo-maps-location` | Naver/Kakao/Google/Apple maps, markers, clustering, location UX |
 | Intermediate | `expo-supabase-backend` | Supabase Auth, Postgres, RLS, Storage, Realtime |
 | Intermediate | `expo-appwrite-backend` | Appwrite Auth, Databases, Storage, Functions |
 | Intermediate | `expo-firebase-backend` | Firebase JS SDK or React Native Firebase |
@@ -163,7 +165,7 @@ Use the skill at /path/to/expo-skills/skills/expo-release-review to prepare this
 4. Add `expo-app-shell-boilerplate`, then refine with `expo-router-navigation` and `expo-ui-system`.
 5. Add startup and auth with `expo-startup-ota` and `expo-auth-secure-storage`.
 6. Pick a backend: `expo-supabase-backend`, `expo-appwrite-backend`, or `expo-firebase-backend`.
-7. Add app-specific capabilities such as media, offline sync, notifications, and background tasks.
+7. Add app-specific capabilities such as media, maps, offline sync, notifications, and background tasks.
 8. Run `expo-quality-performance`.
 9. Prepare store launch with console setup, review info, Android signing, EAS build strategy, fastlane, release operator, version/OTA governance, and release review skills.
 
@@ -186,6 +188,7 @@ expo-skills/
     expo-supabase-backend/
     expo-appwrite-backend/
     expo-firebase-backend/
+    expo-maps-location/
     expo-release-operator/
     ...
   docs/
@@ -201,6 +204,7 @@ expo-skills/
     app-intake.md
     backend-deployment.md
     social-auth-providers.md
+    maps-provider-decision.md
     app-shell-blueprint.md
     brand-assets-checklist.md
     component-architecture.md
@@ -237,6 +241,7 @@ cp templates/profile.example.md /path/to/app/.expo-skills/profile.example.md
 cp templates/app-intake.md /path/to/app/docs/app-intake.md
 cp templates/backend-deployment.md /path/to/app/docs/backend-deployment.md
 cp templates/social-auth-providers.md /path/to/app/docs/social-auth-providers.md
+cp templates/maps-provider-decision.md /path/to/app/docs/maps-provider-decision.md
 cp templates/app-shell-blueprint.md /path/to/app/docs/app-shell-blueprint.md
 cp templates/brand-assets-checklist.md /path/to/app/docs/brand-assets-checklist.md
 cp templates/component-architecture.md /path/to/app/docs/component-architecture.md
@@ -351,6 +356,8 @@ At minimum, check that every skill has:
 - [Anthropic Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Expo Firebase guide](https://docs.expo.dev/guides/using-firebase/)
 - [Expo Supabase guide](https://docs.expo.dev/guides/using-supabase/)
+- [Expo Maps](https://docs.expo.dev/versions/latest/sdk/maps/)
+- [Expo react-native-maps](https://docs.expo.dev/versions/latest/sdk/map-view/)
 - [Expo Router JavaScript tabs](https://docs.expo.dev/router/advanced/tabs/)
 - [Expo Router modals and form sheets](https://docs.expo.dev/router/advanced/modals/)
 - [Expo splash screen and app icon](https://docs.expo.dev/develop/user-interface/splash-screen-and-app-icon/)
@@ -369,6 +376,11 @@ At minimum, check that every skill has:
 - [Appwrite OAuth2 login](https://appwrite.io/docs/products/auth/oauth2)
 - [Appwrite Google OAuth](https://appwrite.io/integrations/oauth-google)
 - [Kakao Login](https://developers.kakao.com/docs/latest/en/kakaologin/common)
+- [Kakao Map API](https://developers.kakao.com/docs/en/kakaomap/common)
+- [Naver Cloud Maps](https://guide.ncloud-docs.com/docs/en/maps-overview)
+- [RN Naver Map](https://rnnavermap.mjstudio.net/)
+- [React Native Kakao](https://rnkakao.mjstudio.net/en/)
+- [Google marker clustering](https://developers.google.com/maps/documentation/javascript/marker-clustering)
 - [Expo app credentials](https://docs.expo.dev/app-signing/app-credentials/)
 - [Expo local credentials](https://docs.expo.dev/app-signing/local-credentials/)
 - [Expo local EAS builds](https://docs.expo.dev/build-reference/local-builds/)

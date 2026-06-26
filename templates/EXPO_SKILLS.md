@@ -19,6 +19,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Backend hosting: cloud / self-hosted / local development / undecided
 - Backend deployment: docs/backend-deployment.md
 - Social auth providers: docs/social-auth-providers.md
+- Maps provider decision: docs/maps-provider-decision.md
 - Auth:
 - Store target: prototype / internal test / public review
 - Store review info: docs/store-review-info.md
@@ -62,6 +63,7 @@ Use this file to help Codex, Claude, or another AI agent work on this Expo app.
 - Auth: `expo-auth-secure-storage`
 - Backend: `expo-supabase-backend`, `expo-appwrite-backend`, or `expo-firebase-backend`
 - Media: `expo-device-media`
+- Maps/location: `expo-maps-location`
 - Offline: `expo-data-offline-sync`
 - Notifications: `expo-notifications-background`
 - Shimmer/loading/component architecture: `expo-ui-system`, `expo-project-foundation`

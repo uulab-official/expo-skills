@@ -27,7 +27,8 @@ Collect or infer these values:
 - backend hosting: cloud, self-hosted, local development, or undecided
 - auth needs: none, email, Kakao, Google, Apple, social, anonymous, enterprise, custom OIDC
 - app shell needs: bottom tabs, app bars, bottom sheet modals, settings, theme, splash, app icon
-- media/device needs: camera, gallery, location, notifications, background tasks
+- media/device needs: camera, gallery, location, maps, markers, notifications, background tasks
+- map needs: Naver Map, Kakao Map, Google Maps, Apple Maps, search/geocoding, clustering, marker optimization
 - release target: prototype, internal test, TestFlight, Play internal, public store
 - build strategy: EAS cloud build, local EAS build, quota-aware mixed mode, or OTA-only
 - review information: contact, demo account, privacy URLs, data safety, permission reasons
@@ -60,6 +61,7 @@ Use these skills in order when relevant:
 - Appwrite: `expo-appwrite-backend`
 - Firebase: `expo-firebase-backend`
 - Camera/files/uploads: `expo-device-media`
+- Maps/location UI: `expo-maps-location`
 - Offline/local data/sync: `expo-data-offline-sync`
 - Push/background: `expo-notifications-background`
 - Quality/performance: `expo-quality-performance`
@@ -100,6 +102,14 @@ Use these skills in order when relevant:
 3. `expo-data-offline-sync` when uploads must survive poor network
 4. `expo-quality-performance`
 
+### Map App
+
+1. Foundation and app shell track
+2. `expo-maps-location`
+3. `expo-device-media` when camera/gallery/location permissions are also needed
+4. `expo-data-offline-sync` when markers, places, or map search must work offline
+5. `expo-quality-performance`
+
 ### Store Ready App
 
 1. Product feature skills as needed
@@ -122,6 +132,7 @@ Use these defaults unless the user, project, or profile says otherwise:
 - Config: `app.config.ts` when env or profile values are needed
 - Language: TypeScript
 - Backend: ask; do not guess between Supabase, Appwrite, and Firebase for a production app
+- Maps: ask when choosing between Naver, Kakao, Google, Apple, `expo-maps`, and `react-native-maps`; Korea-first apps usually need Naver/Kakao considered explicitly
 - Kakao auth: verify backend support; Supabase has official Kakao provider, Appwrite support must be checked against the installed version/docs before promising it
 - Auth storage: secure storage for sensitive credentials
 - Release tooling: EAS first, fastlane as metadata/signing/upload companion
