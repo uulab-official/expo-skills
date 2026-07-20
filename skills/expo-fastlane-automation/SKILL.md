@@ -165,7 +165,9 @@ When the service account or app permission is missing, use `expo-store-console-s
 - Keep Apple and Google screenshot upload in metadata-only lanes. Binary upload and review submission lanes must skip metadata, images, screenshots, and changelogs.
 - Apple metadata uploads use `overwrite_screenshots: true`, then compare each locale/device slot against the ordered local MD5 manifest using App Store Connect `source_file_checksum` values.
 - A successful `deliver` exit is not sufficient. App Store Connect processing lag can make fastlane retry screenshots that were already accepted, creating exact duplicates. Reconcile exact checksum duplicates and require two consecutive identical clean remote manifests after the last deletion.
-- Standalone Apple cleanup deletes only repeated non-empty checksums and requires explicit confirmation. If review locks screenshots, cancel review only after confirmation, reconcile, verify, and resubmit the same selected build.
+- Standalone Apple cleanup deletes only repeated non-empty checksums and requires explicit confirmation. If review locks screenshots, cancellation is allowed only for an exact `WAITING_FOR_REVIEW` or `IN_REVIEW` version and requires confirmation plus the expected version and state.
+- Never cancel `PENDING_DEVELOPER_RELEASE`, `PENDING_APPLE_RELEASE`, `READY_FOR_SALE`, or any approved/live version. Do not use `reject_version_if_possible!`; query only review states, match the exact version and state, then reject that target.
+- Provide a read-only store-status lane and run it before and after review mutations. Verify that the live version remains `READY_FOR_SALE` and downloadable, enabled territories remain available, and the intended base-territory price/currency schedule remains active.
 - Google metadata uploads use `sync_image_upload: true`, commit the edit, then compare each locale/image type against the ordered local SHA-256 manifest through the Android Publisher API.
 - Every review submission must run read-only Apple and Google remote asset audits first. Fail on count drift, duplicate hashes, missing checksums, order drift, or content mismatch.
 

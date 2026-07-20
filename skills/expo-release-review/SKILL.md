@@ -68,6 +68,15 @@ Prepare or verify:
 - review contact and demo account placeholders from private env/profile
 - data safety and app privacy answers from a privacy data inventory
 - screenshots for each required locale/platform
+- pricing base territory, currency/price schedule, availability territories, and release method
+
+## Live Store Safety
+
+- Read the current public App Store version, state, downloadability, territories, and active base-territory price before and after any review mutation.
+- Store-status checks are read-only. Never change price, availability, publication, or review state as part of a status check.
+- App Store review cancellation is allowed only for the exact version in `WAITING_FOR_REVIEW` or `IN_REVIEW`, with explicit confirmation and expected version/state inputs.
+- Never cancel or reject `PENDING_DEVELOPER_RELEASE`, `PENDING_APPLE_RELEASE`, `READY_FOR_SALE`, or any approved/live version. Never use broad helpers such as `reject_version_if_possible!`.
+- A version showing `READY_FOR_SALE` is not sufficient by itself: verify it is downloadable, has enabled territories, and has the intended active pricing schedule. Missing price/currency configuration can make a release unavailable.
 
 ## Screenshot Rules
 
@@ -87,6 +96,7 @@ Prepare or verify:
 - Version/build numbers are valid and monotonic.
 - `release-state.json` matches app config when the project uses local version governance.
 - Required URLs are live.
+- Existing public versions remain downloadable with intended territory availability and pricing after review operations.
 - Demo account works and has non-admin permissions.
 - `docs/store-review-info.md`, privacy inventory, and permissions inventory are current when present.
 - Push/deep link/auth flows work in a production-like build.
