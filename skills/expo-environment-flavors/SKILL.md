@@ -77,6 +77,18 @@ Use explicit profiles:
 
 Choose EAS-hosted env variables or profile `env` deliberately. Public `EXPO_PUBLIC_*` values are embedded in the client and must not contain secrets.
 
+## AdMob Environment Boundary
+
+When an app uses `react-native-google-mobile-ads`, make the ads environment explicit:
+
+- `development` and `preview` profiles, Expo start, simulators, and local device-test commands use `EXPO_PUBLIC_ADS_MODE=test` plus `EXPO_PUBLIC_ADMOB_FORCE_TEST_IDS=1`.
+- `production` and `production-local` profiles, TestFlight/App Store/Play artifacts, and production OTA use `EXPO_PUBLIC_ADS_MODE=production` plus `EXPO_PUBLIC_ADMOB_FORCE_TEST_IDS=0`.
+- `eas build --local` identifies where EAS runs, not which IDs to use. A local EAS build with the production profile must use live IDs.
+- Test mode must select both Google's sample native app IDs and Google's test ad-unit IDs. Production mode must select both app-specific live app IDs and live ad-unit IDs.
+- Do not infer ads mode from `__DEV__` or `NODE_ENV`. Missing/invalid mode defaults to test; production preflight fails on missing, malformed, placeholder, or Google sample IDs.
+- Production ad requests never fall back to test IDs. On no-fill or failure, hide the ad slot without removing real records or changing list counts.
+- AdMob app and ad-unit IDs are public client identifiers and may be committed in a private team repo. OAuth client secrets and refresh tokens remain outside git.
+
 ## App Config Pattern
 
 Use dynamic config when flavors affect native identity:
@@ -140,5 +152,6 @@ For each changed flavor, verify:
 - version, build number, version code, runtimeVersion
 - EAS profile channel and branch
 - backend endpoint and public env values
+- AdMob native app IDs and ad-unit IDs match the selected test/production mode
 - fastlane lane target and store track
 - whether the change needs a binary build or OTA is enough

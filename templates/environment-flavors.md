@@ -25,9 +25,22 @@ EXPO_PUBLIC_API_URL=
 EXPO_PUBLIC_SUPABASE_URL=
 EXPO_PUBLIC_APPWRITE_ENDPOINT=
 EXPO_PUBLIC_FIREBASE_PROJECT_ID=
+EXPO_PUBLIC_ADS_MODE=test
+EXPO_PUBLIC_ADMOB_FORCE_TEST_IDS=1
+EXPO_PUBLIC_ADMOB_IOS_APP_ID=
+EXPO_PUBLIC_ADMOB_ANDROID_APP_ID=
 ```
 
 Private values live in local env files, EAS environment variables, CI secrets, or a team credential manager.
+
+AdMob app/ad-unit IDs are public identifiers. Keep app-specific live IDs centralized in committed config or managed production environment values, but never expose AdMob API OAuth secrets through `EXPO_PUBLIC_*`.
+
+| Target | Ads mode | AdMob identity |
+| --- | --- | --- |
+| Expo start / simulator / development / preview | `test` | Google sample app IDs + test ad-unit IDs |
+| TestFlight / App Store / Play / production OTA | `production` | app-specific live app IDs + live ad-unit IDs |
+
+The EAS profile controls this choice. `eas build --local --profile production` is still a production artifact and must use live IDs.
 
 ## Version Rules
 
@@ -88,4 +101,6 @@ Do not publish across flavors unless backend endpoint, runtimeVersion, feature f
 - `release-state.json` values match the intended version/runtime/channel/branch.
 - Store review notes and privacy docs match the flavor and backend.
 - OTA target branch and runtimeVersion are correct.
+- Development/preview AdMob config resolves only Google test IDs.
+- Production AdMob config resolves only app-specific live IDs and fails preflight otherwise.
 - fastlane lane target, artifact path, and store track are correct.
