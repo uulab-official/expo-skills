@@ -160,6 +160,15 @@ When the service account or app permission is missing, use `expo-store-console-s
 - Demo credentials must come from local env or private store, not committed text files.
 - Screenshots should be real app captures or generated compositions using real captures.
 
+## Screenshot Integrity
+
+- Keep Apple and Google screenshot upload in metadata-only lanes. Binary upload and review submission lanes must skip metadata, images, screenshots, and changelogs.
+- Apple metadata uploads use `overwrite_screenshots: true`, then compare each locale/device slot against the ordered local MD5 manifest using App Store Connect `source_file_checksum` values.
+- A successful `deliver` exit is not sufficient. App Store Connect processing lag can make fastlane retry screenshots that were already accepted, creating exact duplicates. Reconcile exact checksum duplicates and repeat the remote audit until processing settles.
+- Standalone Apple cleanup deletes only repeated non-empty checksums and requires explicit confirmation. If review locks screenshots, cancel review only after confirmation, reconcile, verify, and resubmit the same selected build.
+- Google metadata uploads use `sync_image_upload: true`, commit the edit, then compare each locale/image type against the ordered local SHA-256 manifest through the Android Publisher API.
+- Every review submission must run read-only Apple and Google remote asset audits first. Fail on count drift, duplicate hashes, missing checksums, order drift, or content mismatch.
+
 ## Package Scripts
 
 Add thin scripts that load local env outside git:

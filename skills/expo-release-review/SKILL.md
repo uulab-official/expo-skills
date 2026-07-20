@@ -76,6 +76,8 @@ Prepare or verify:
 - Add localized overlay text only if it improves store clarity.
 - Verify dimensions and platform requirements before upload.
 - Visually inspect at least representative final screenshots.
+- Require remote screenshot integrity before submission: for every Apple locale/device slot and Google locale/image type, remote count and unique checksum count must equal the committed local set.
+- Do not accept a successful `deliver` or `supply` command as proof of integrity. Run the read-only remote audit after metadata upload and again immediately before review submission.
 
 ## Final Release Checklist
 
